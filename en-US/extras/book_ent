@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+for file in *.xml; do
+    sed -i -e 's/docbookx.dtd" \[/docbookx.dtd" \[\n<!ENTITY % BOOK_ENTITIES SYSTEM "'${1}'.ent">\n%BOOK_ENTITIES\;/' ${file}; \
+done

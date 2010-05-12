@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="rijm-Role_In_JBoss_Middleware">
+  <title>Role in JBoss Middleware</title>
+  <para>DocBook XML is used extensively throughout JBoss, because the underlying support infrastructure is tailored toward structured authoring.  Apache <application>Maven</application>, the JBoss project management infrastructure, supports XML documentation natively with the <application>Maven</application> <application>jDocBook</application> plugin.  </para>
+  <para>Choosing  DocBook XML  allows Red Hat to contribute to your project by offering internationalization and localization services.  You can also gain the experience of trained Content Authors who can add value to your documentation by editing your XML, and provide guidance on XML authoring.  </para>
+  <para>Red Hat Engineering Content Services can also contribute changes in your enterprise documentation back up into the community stream if you author your documentation using DocBook XML.  </para>
+</section>

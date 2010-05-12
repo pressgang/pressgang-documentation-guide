@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="xa-XML_Advantages">
+  <title>Advantages</title>
+  <para>Choosing DocBook XML for your documentation over other formats has numerous benefits.</para>
+  <variablelist>
+    <varlistentry>
+      <term>Separate content from data</term>
+      <listitem>
+        <para>With XML, you do not have to concern yourself with &quot;styling&quot; your document as you write.  There is no need to think about what size font you need to use for a heading, or if your numbered list will be correct when you publish the content.  </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>Platform independence</term>
+      <listitem>
+        <para>Your XML documentation is compatible on any operating system.  Basic XML authoring does not require expensive  software to write XML, although you may find it easier to use XML authoring tools.  Some of these tools are free (as in beer).  </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>Consistent document structure</term>
+      <listitem>
+        <para>XML documents use a Document Type Definition (DTD) that  specifies the underlying structure of your document.  You still have freedom to structure your document according to the permissions of the DTD, but you will not be able to make errors that would make your document less usable.  For example, putting a sections inside a bulleted list.   </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>Once Source, multiple outputs</term>
+      <listitem>
+        <para>XML allows you to publish your XML content to multiple output formats.  You can output your documentation to PDF, single-page HTML   and multiple-page HTML.  </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>One Source, multiple contributors</term>
+      <listitem>
+        <para>Because XML is designed to be modular, multiple authors can work independently on different parts of  XML documentation.   XML is also compatible with revision control software such as Subversion (SVN) which allows contributors to manage content development and work remotely with ease.   </para>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+</section>

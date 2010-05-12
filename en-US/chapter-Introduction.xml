@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<chapter id="i-Introduction">
+  <title>Introduction</title>
+  <para>Welcome to the JBoss Documentation Guide,   and congratulations on  taking the first step to discovering how you can improve your JBoss user documentation.   </para>
+  <para>If you are new to user documentation, you might be wondering how to get started with your documentation project.  In this guide, you will discover how to set up a book repository that works with <application>Maven</application><application> jDocBook</application> as well as Red Hat&apos;s <application>Publican</application>.    You will also learn about XML structure tips and grammar rules that will help you and your contributors write XML documentation consistently.</para>
+  <para>If you use XML regularly and already have <application>Maven</application> managing your project, it&apos;s time to learn some complimentary skills.  Take your <application>Maven</application> XML documentation to the next level and make it cross-compatible with <application>Publican</application>.  Apply the   language guidelines in this guide to enhance the usability and readability of your documentation.  Read and apply the  XML structure guidelines to see what a little structure can do to your life.  </para>
+  <para>After reading this guide and following its recommendations, you will be able to &quot;keep the code real&quot; for both your project and your documentation. </para>
+</chapter>

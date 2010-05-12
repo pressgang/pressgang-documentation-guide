@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<chapter id="sg-Structure_Guidelines">
+  <title>Structure Guidelines</title>
+  <para>In DocBook, the way some content appears when published relies on a consistently applied XML structure.  There are certain additions to structure that can be useful to help the reader to quickly grasp information.  The following sections are grouped into common areas that you will use regularly in XML authoring.</para>
+  <para>To keep book structure consistent, the following guidelines must be followed when creating XML structure in your JBoss  user guide.</para>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="section-Structure_Guidelines_Banned_XML_Elements.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="section-Structure_Guidelines_Entities.xml" encoding="UTF-8"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="section-Structure_Guidelines_Chapters_And_Sections.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="section-Structure_Guidelines_Lists.xml" encoding="UTF-8"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="section-Structure_Guidelines_Procedures.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="section-Structure_Guidelines_Tables.xml" encoding="UTF-8"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="section-Structure_Guidelines_Bold_Italic_Underline.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="section-Structure_Guidelines_Graphics_and_Screenshots.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="section-Structure_Guidelines_Admonitions_Warning_Important_Note.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="section-Structure_Guidelines_Special_Characters_Symbols.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="section-Structure_Guidelines_Applications_and_Utilities.xml" encoding="UTF-8"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="section-Structure_Guidelines_Menus_Buttons_Labels.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="section-Structure_Guidelines_Code_Examples.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="section-Structure_Guidelines_Links.xml" encoding="UTF-8"/>
+</chapter>

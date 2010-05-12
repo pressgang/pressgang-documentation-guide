@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="sgcas-Structure_Guidlines_Chapters_And_Sections">
+  <title>Chapters and Sections</title>
+  <para>Chapters and Sections form the underlying skeleton for each guide.  Therefore, structuring these important elements consistently is important.  </para>
+  <important>
+    <title>Do not use &lt;sect&gt; elements.</title>
+    <para><sgmltag>&lt;sect&gt;</sgmltag> elements cause issues in Publican with auto-numbering, and incorrect <sgmltag>&lt;title&gt;</sgmltag> font sizes.  This element family also has restrictive  element nesting constraints, which can  make restructuring your guide unnecessarily complex. </para>
+    <para>Use <sgmltag>&lt;section&gt;</sgmltag> elements in your user documentation.  This will ensure your XML is cross-compatible with Publican and jDocBook.</para>
+  </important>
+  <formalpara>
+    <title>New Chapter or Section</title>
+    <para>Over the life of a product, user guides often require content to be reorganized.  Having sections directly included in a chapter, can make reordering book structure difficult.  For this reason, when adding a  <sgmltag>&lt;chapter&gt;</sgmltag> or <sgmltag>&lt;section&gt;</sgmltag> to an existing user guide, each <sgmltag>&lt;chapter&gt;</sgmltag> and <sgmltag>&lt;section&gt;</sgmltag> must be a separate XML file.</para>
+  </formalpara>
+  <para>The file must be included in the book using a xi:include reference.  See <xref linkend="ixf-Interop_XiInclude_Fallbacks"/> for examples of xi:include syntax.</para>
+  <formalpara>
+    <title>Naming Chapter or Section XML Files</title>
+    <para>A complete XML user guide may consist of a large  number of XML files.  Each file included in the book should be  logically, and consistently, named so it is easy to include a file where it is required in the book&apos;s structure. For information about recommended file naming standards, refer to <xref linkend="table-Book-Structure"/>  in <xref linkend="sp-Sample_Project"/>.</para>
+  </formalpara>
+  <formalpara>
+    <title>ID Attributes for Chapter or Section XML Files</title>
+    <para>To allow cross-referencing within the book, the <varname>id</varname> attribute must be set for each chapter or section.  The format for the chapter or section ID is explicit, to ensure cross-referencing within each user guide is consistent.  For more information about links and references, refer to <xref linkend="sgl-Structure_Guidlines_Links"/>   </para>
+  </formalpara>
+  <para>The <code>id</code> attribute is applied to the <sgmltag>&lt;chapter&gt;</sgmltag> or <sgmltag>&lt;section&gt;</sgmltag> element, and uses the following format: </para>
+  <itemizedlist>
+    <listitem>
+      <para>
+     <code>&lt;chapter id=&quot;chap-<replaceable>Book_Name</replaceable>-<replaceable>Chapter_Title</replaceable>&quot;&gt;</code>
+    </para>
+    </listitem>
+    <listitem>
+      <para>
+     <code>&lt;section id=&quot;sect-<replaceable>Book_Name</replaceable>-<replaceable>Chapter_Title</replaceable>-<replaceable>Section_Title</replaceable>&quot;&gt;</code>
+    </para>
+    </listitem>
+  </itemizedlist>
+  <para>For example, the XML ID of this section would be <code>&lt;section id=&quot;sect-JBoss_Documentation_Guide-Structure_Guidelines-Chapters_and_Sections&quot;&gt;</code>.</para>
+</section>

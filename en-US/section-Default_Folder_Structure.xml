@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="dfs-Default_Folder_Structure">
+  <title>Default Directory Structure</title>
+  <para>At the top level of the sample project,  the <filename>en-US</filename> directory  contains the XML files used in a Publican compatible book.</para>
+  <para>Inside the <filename>en-US</filename> directory, there are two additional directories.  The <filename>images</filename> directory stores the screen shots and diagrams that are used throughout the guide.   The <filename>fallback_content</filename> directory  stores the front matter information required by jDocBook. </para>
+</section>

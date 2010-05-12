@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="ss-Syntext_Serna">
+  <title>Syntext Serna</title>
+  <para>Syntext offer a  free (as in beer) What You See Is What You Get (WYSIWYG) XML editor called  <ulink url="http://www.syntext.com/products/serna-free/">
+      <application>Serna Free</application>
+    </ulink>  .  </para>
+  <para>This editor hides much of the complexity of XML authoring, and lets you focus on authoring the content.  You still must have good knowledge of XML structure, because the application still requires you to select the right parent tag before it can auto-complete subsequent selections. </para>
+  <para><application>Serna Free</application> is a cross-platform editor.  By far, the best feature of this editor is the fact that you can open up the root XML file (the <sgmltag>&lt;book&gt;</sgmltag> level), and all  xi:include links, cross-references, entities, and graphics are opened up in the editor as one seamless file.    This really helps with validation, and makes linking between chapters and sections easy.</para>
+</section>

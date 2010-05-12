@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="pwj-Publish_With_jDocBook">
+  <title>Publish with jDocBook</title>
+  <para>You have now added the <application>jDocBook</application> xi:fallback components to the XML in your front-matter, and configured your <filename>pom.xml</filename> project.  You are now ready to publish your user guide using  <application>jDocBook</application>. </para>
+  <para>If you are familiar with <application>Maven</application> and <application>jDocBook</application> you would have noticed the XML comments throughout the <filename>pom.xml</filename> source.  These comments specify the publishing targets.</para>
+  <para>To publish your book, navigate to the <replaceable>book_name</replaceable> directory, and execute one of the following commands in a terminal.</para>
+  <variablelist>
+    <title>Multi-output pom.xml Publishing Targets</title>
+    <varlistentry>
+      <term>
+        <command>mvn compile</command>
+      </term>
+      <listitem>
+        <para>Executes <application>Maven</application> and produces html, html-single, and PDF deliverables.</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>
+        <command>mvn compile -Phtml</command>
+      </term>
+      <listitem>
+        <para>Executes <application>Maven</application> and produces a HTML multi-page  deliverable.</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>
+        <command>mvn compile -Phtml-single</command>
+      </term>
+      <listitem>
+        <para>Executes <application>Maven</application> and produces a  HTML single page deliverable.</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>
+        <command>mvn compile -Ppdf</command>
+      </term>
+      <listitem>
+        <para>Executes <application>Maven</application> and produces a PDF deliverable.</para>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+  <para>Once your book is published, the output target can be viewed by navigating to the output type in the  <filename>/target/docbook/publish/en-US</filename> directory.  From this directory, select the target you want to view, and open it in the appropriate program.</para>
+  <note>
+    <title>Maven Recoverable Errors are OK</title>
+    <para>For each fallback you created in your documentation, <application>Maven</application> will advise you that it couldn&apos;t find the original xi:include, but is reverting to the fallback you specified.  This may alarm you when you first see it, but rest assured it is normal behaviour.</para>
+  </note>
+</section>

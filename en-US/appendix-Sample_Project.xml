@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE appendix PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<appendix id="sp-Sample_Project">
+  <title>Sample Project</title>
+  <para>This user guide is hosted in the <ulink url="http://anonsvn.jboss.org/repos/documentation/JBoss_Documentation_Guide/">JBoss.org anonsvn</ulink>.  The SVN directory that contains the XML source for this guide, also contains a sample project created using Publican.  </para>
+  <para>The sample project is provided to assist you in configuring your documentation repository to work with Maven and Publican.  If your project decides to use the sample project, you will  not technically need to install Publican in order to create your book repository.  </para>
+  <para>Publican can create a docs repository pre-configured for your book.  All you need to do is add the Maven components to your book repository (from the included sample project), and you are ready to produce cross-compatible documentation.   You can learn more about cross-compatibility in <xref linkend="japi-JDocBook_and_Publican_Interoperability"/></para>
+  <para>The Sample Project can be used as a starting point for new projects, and contains the following components:</para>
+  <itemizedlist>
+    <listitem>
+      <para>Publican-compatible directory structure</para>
+    </listitem>
+    <listitem>
+      <para>base <filename>pom.xml</filename> file configured for jDocBook</para>
+    </listitem>
+    <listitem>
+      <para>basic book files, including <sgmltag>&lt;chapter&gt;</sgmltag> and <sgmltag>&lt;section&gt;</sgmltag> files</para>
+    </listitem>
+    <listitem>
+      <para>files named according to the recommendations in this user guide</para>
+    </listitem>
+    <listitem>
+      <para><filename>fallback_content</filename> directory containing XML xi:fallbacks for Maven jDocBook</para>
+    </listitem>
+    <listitem>
+      <para>customization instructions to make the project your own.</para>
+    </listitem>
+  </itemizedlist>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="section-Default_Folder_Structure.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="section-Book_Components.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="section-Customizing_Book_Structure.xml"/>
+</appendix>

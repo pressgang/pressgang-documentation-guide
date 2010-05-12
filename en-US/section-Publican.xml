@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="p-Publican">
+  <title>Publican</title>
+  <para><application>Publican</application> is a Perl-based publishing system developed in-house by Red Hat.  The program is executed from the command-line, with a set of well documented user commands.  It is used by Red Hat&apos;s  Engineering Content Services division as the de-facto standard for producing enterprise documentation according to brand, XML validity, and translation requirements.</para>
+  <para><application>Publican</application> is a cross-platform solution, with versions available for Linux (including Fedora, Red Hat Enterprise Linux, Debian, and Ubuntu), Apple Mac, and Microsoft Windows.</para>
+  <para><application>Publican</application> and  <application>jDocBook</application> can complement each other in your  documentation project.  You can use <application>Publican</application> for the following tasks:</para>
+  <itemizedlist>
+    <listitem>
+      <para>quickly validate your XML to <application>Publican</application> and (by default) <application>jDocBook</application> requirements.  <application>Publican</application> begins to evaluate your XML as soon as you call it, rather than having to wait until  <application>Maven</application> dependencies are downloaded.</para>
+    </listitem>
+    <listitem>
+      <para>produce translation files which  allow your community (and enterprise) documentation to be  translated economically.</para>
+    </listitem>
+  </itemizedlist>
+  <para>For a complete guide to <application>Publican</application>, including installation instructions and commands, visit the <ulink url="https://fedorahosted.org/publican/"><application>Publican</application> home page on fedorahosted.org</ulink>. </para>
+</section>

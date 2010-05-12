@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="bc-Book_Components">
+  <title>Book Components</title>
+  <para><xref linkend="table-Book-Structure"/> describes the mandatory files that must be present in a Publican book, including a description of the file contents, and where the XML file is commonly embedded into the finished user guide. </para>
+  <table frame="all" pgwide="1" id="table-Book-Structure">
+    <title>Book Components</title>
+    <tgroup cols="3" colsep="1">
+      <colspec colnum="1" colname="c0" align="left"/>
+      <colspec colnum="2" colname="c1" align="left"/>
+      <colspec colnum="3" colname="c2" align="left"/>
+      <thead>
+        <row>
+          <entry align="center">XML Book Component</entry>
+          <entry align="center">Description</entry>
+          <entry>Order of Component in the Book</entry>
+        </row>
+      </thead>
+      <tbody>
+        <row>
+          <entry>
+            <filename><replaceable>[Book_Name]</replaceable>.xml</filename>
+          </entry>
+          <entry>Contains the structure of the user guide, represented by xi:include references to each <filename>chapter-<replaceable>[Chapter_Name]</replaceable>.xml</filename> component, and other mandatory components in this table.</entry>
+          <entry>Root Level (or Parent) component of any user guide. </entry>
+        </row>
+        <row>
+          <entry>
+            <filename><replaceable>[Book_Name]</replaceable>.ent</filename>
+          </entry>
+          <entry>Contains all entities used within the user guide. The contents of the file is inserted as a parameter entity in the DOCTYPE header of each chapter and section of the book.</entry>
+          <entry>Inserted by reference into all XML DOCTYPE declarations that contain a parameter entity declaration (refer to <xref linkend="sect-Interop_Insert_Parameter_Entities"/>). </entry>
+        </row>
+        <row>
+          <entry>
+            <filename>Book_Info.xml</filename>
+          </entry>
+          <entry>Contains information about the book title, book version number, abstract, and copyright information.</entry>
+          <entry>1st Child. This is the opening information a reader will see in the user guide. </entry>
+        </row>
+        <row>
+          <entry>
+            <filename>Author_Group.xml</filename>
+          </entry>
+          <entry>Contains contact information about the authors that contributed to the content of the book.</entry>
+          <entry>2nd Child. This component is included in the <filename>Book_Info.xml</filename> component.</entry>
+        </row>
+        <row>
+          <entry>
+            <filename>Preface.xml</filename>
+          </entry>
+          <entry>Contains pre-defined content explaining the typographical standards used in the guide, and other information that will assist the reader with using the guide.</entry>
+          <entry>3rd Child. This component is included after the <filename>Book_Info.xml</filename> content.</entry>
+        </row>
+        <row>
+          <entry>
+            <filename>chapter-<replaceable>[Chapter_Name]</replaceable>.xml</filename>
+          </entry>
+          <entry>Contains XML markup and content included at a Chapter level in the document. The XML file is named only for human-readability.</entry>
+          <entry>4th Child. This is the top level element for each chapter in the user guide. The order of these files in the <filename><replaceable>[Book_Name]</replaceable>.xml</filename> file determines the structure of the guide.</entry>
+        </row>
+        <row>
+          <entry>
+            <filename>section-<replaceable>[Section_Name]</replaceable>.xml</filename>
+          </entry>
+          <entry>Contains XML markup and content included at a Section level in the document. The XML file is named only for human-readability.</entry>
+          <entry>5th Child. This component is included in <filename>chapter-<replaceable>[Chapter_Name]</replaceable>.xml</filename> files by xi:include reference.</entry>
+        </row>
+        <row>
+          <entry>
+            <filename>Revision History.xml</filename>
+          </entry>
+          <entry>Contains a record of the revisions made to the document over time. Top-level information about changes in the guide are provided to the reader.</entry>
+          <entry>6th Child. </entry>
+        </row>
+      </tbody>
+    </tgroup>
+  </table>
+</section>

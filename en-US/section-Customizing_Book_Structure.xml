@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="cbs-Customizing_Book_Structure">
+  <title>Customizing Book Structure</title>
+  <para>Using the sample project as the basis for your docs project requires a few changes to files in the directory.  You need to remove some of the placeholder filenames, and tailor the sample repository to meet your needs.</para>
+  <variablelist>
+    <title>Customizing Files</title>
+    <varlistentry>
+      <term>
+        <filename>publican.cfg</filename>
+      </term>
+      <listitem>
+        <para>You must change the <varname>brand:</varname> attribute to the brand package you wish to use for your project.  Some common brand type have been included in the file.  Uncomment the brand you wish to use, and comment out the rest.  You must install the brand package you specify for the <varname>brand:</varname> attribute</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>All XML files in the <filename>en-US</filename> directory</term>
+      <listitem>
+        <para>Ensure you have changed (or added) the parameter entity  in each XML file <varname>DOCTYPE</varname> declaration.  For more information about parameter entities, refer to <xref linkend="sect-Interop_System_Entities"/>.</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>
+        <filename>Author_Group.xml</filename>
+      </term>
+      <listitem>
+        <para>Change the placeholder information in this file to be the primary author of the guide.  If there are multiple contributors, copy the <sgmltag>&lt;author&gt;</sgmltag> block and duplicate it.</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>
+        <filename>JBoss_Sample_Project.xml</filename>
+      </term>
+      <listitem>
+        <para>Change the name of this file to the new name of your book.  Use underscores to separate words; spaces are not recommended in your book name.</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>
+        <filename>Book_Info.xml</filename>
+      </term>
+      <listitem>
+        <para>Change the <varname>id</varname> attribute according to the requirements in <xref linkend="sgcas-Structure_Guidlines_Chapters_And_Sections"/></para>
+        <para>Change the <sgmltag>&lt;title&gt;</sgmltag> to the name of your book.  Spaces are allowed.</para>
+        <para>Change the <sgmltag>&lt;subtitle&gt;</sgmltag>  to content relevant to your book.</para>
+        <para>Change the <sgmltag>&lt;productname&gt;</sgmltag> to the correct overarching product name for your project.</para>
+        <para>Change the <sgmltag>&lt;abstract&gt;</sgmltag> to content relevant to your book.</para>
+        <para>Change the <sgmltag>&lt;imagedata&gt;</sgmltag> <varname>fileref</varname> to reference the location of your project&apos;s logo.  The <filename>en-US/images</filename> directory should be used to contain a copy of your logo.   A placeholder image will be inserted if you choose not to specify a project logo.    </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>
+        <filename>JBoss_Sample_Project.ent</filename>
+      </term>
+      <listitem>
+        <para>Change the name of this file to the identical name you gave to the <filename>JBoss_Sample_Project.xml</filename> file.    Use underscores to separate words; spaces are not recommended in your book name</para>
+        <para>Change the value for the <varname>PRODUCT</varname> system entity to the value you entered in the <sgmltag>&lt;productname&gt;</sgmltag> element in the <filename>Book_Info.xml</filename> file.</para>
+        <para>Change the value for the <varname>BOOKID</varname> system entity to the name that users will  log bugs against for documentation enhancements.</para>
+        <para>Change the values for the <varname>HOLDER</varname> system entity to the trademark owner of the book content.</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>
+        <filename>Preface.xml</filename>
+      </term>
+      <listitem>
+        <para>Ensure you xi:include the relevant front matter sections in this file, following  the recommendations in <xref linkend="ixf-Interop_XiInclude_Fallbacks"/></para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>
+        <sgmltag>Revision_History.xml</sgmltag>
+      </term>
+      <listitem>
+        <para>Remove the placeholder <sgmltag>&lt;date&gt;</sgmltag> and <sgmltag>&lt;author&gt;</sgmltag>  information, and update with information relevant to the current revision of the document.</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>All <filename>chapter-</filename> and <filename>section-</filename> files</term>
+      <listitem>
+        <para>Change the <varname>id</varname> attributes according to the requirements in <xref linkend="sgcas-Structure_Guidlines_Chapters_And_Sections"/></para>
+        <para>When you rename the  <filename>section-</filename> files referenced by your <filename>chapter-</filename> files to something more relevant, ensure you update the xi:include entries for all affected xi:includes.</para>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+</section>

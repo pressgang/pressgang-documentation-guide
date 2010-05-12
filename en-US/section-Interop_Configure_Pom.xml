@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="icp-Interop_Configure_Pom">
+  <title>Configure pom.xml</title>
+  <para>The <filename>pom.xml</filename> file contains the processing instructions for your book.   The recommended <filename>pom.xml</filename> to use is described in <xref linkend="appendix-Pom_Dot_XML"/>.   </para>
+  <note>
+    <title>pom.xml alternative location</title>
+    <para>If you are having difficulty copying the <filename>pom.xml</filename>, you may find it easier to check-out the file directly from the SVN.  Ensure you change the name from <filename>pom.xml_sample</filename> to <filename>pom.xml</filename> before using.</para>
+    <para><command>svn co http://anonsvn.jboss.org/repos/documentation/JBoss_Documentation_Guide/en-US/extras/pom.xml_sample</command></para>
+  </note>
+  <procedure>
+    <title>Configure pom.xml</title>
+    <para>In this procedure, replace the <replaceable>book_name</replaceable> placeholder with the name of the book you created.</para>
+    <step>
+      <title>Create a pom.xml file for your project</title>
+      <para>Create an empty file named <filename>pom.xml</filename> in the <replaceable>book_name</replaceable> directory.  </para>
+      <para>The <filename>pom.xml</filename> file must be placed at the root directory of your book at the same level as the <filename>publican.cfg</filename> file.</para>
+    </step>
+    <step>
+      <title>Copy the base pom.xml</title>
+      <para>Take a copy of the base <filename>pom.xml</filename> described in <xref linkend="appendix-Pom_Dot_XML"/>.</para>
+    </step>
+    <step>
+      <title>Paste the base pom.xml into the file</title>
+      <para>Paste the base <filename>pom.xml</filename> information into the empty file.</para>
+    </step>
+    <step>
+      <title>Update the &lt;docname&gt; and &lt;bookname&gt; elements in &lt;properties&gt;</title>
+      <para>Replace the placeholder information in  <sgmltag>&lt;docname&gt;</sgmltag> with the   <filename>
+          <replaceable>book_name</replaceable>
+        </filename> XML file name, excluding the <filename>.xml</filename> file extension. Spaces are not permitted.</para>
+      <para>Replace the placeholder information in <sgmltag>&lt;bookname&gt;</sgmltag> with the title of your book. Spaces are permitted.</para>
+      <example>
+        <title>&lt;property&gt; block with sample values completed</title>
+        <programlisting language="XML" role="XML">&lt;properties&gt;
+    &lt;translation&gt;en-US&lt;/translation&gt;
+    &lt;docname&gt;JBoss_Documentation_Guide&lt;/docname&gt;
+    &lt;bookname&gt;JBoss Documentation Guide&lt;/bookname&gt;
+&lt;/properties&gt; </programlisting>
+      </example>
+    </step>
+    <step>
+      <title>Save and close the pom.xml file</title>
+      <para>Once you have made the required changes specified in this procedure, save and close the <filename>pom.xml</filename> file.</para>
+    </step>
+  </procedure>
+</section>

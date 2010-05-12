@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="ii-Interop_Introduction">
+  <title>Introduction</title>
+  <para>The following information will allow you to configure your documentation project to publish in both <application>Maven</application><application> jDocBook</application> and <application>Publican</application>.  The configuration described in this section is recommended if your community project wants Red Hat Engineering Content Services (ECS) to contribute content enterprise documentation enhancements upstream, including translation and content improvements.  </para>
+  <para>The work flow assumes that you are starting from scratch; you need to configure a documentation repository for a new book, and do not have any other cross-compatible repositories in your project. </para>
+  <note>
+    <title>Sample Project</title>
+    <para>If you prefer to take an existing repository and customize it to your requirements, you may wish to review <xref linkend="sp-Sample_Project"/>.  A basic <application>Publican</application> book is provided for you to customize to your requirements.</para>
+  </note>
+  <para>If your project already has a suite of user documentation, and you wish to make your documentation cross-compatible, you can follow the guidelines stated below and implement the correct structure in your documentation repository.  Alternatively, contact the Red Hat JBoss Middleware  team who can assist your project with the conversion process.</para>
+</section>

@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="sect-Structure_Guidlines-Applications_and_Utilities">
+  <title>Applications and Utilities</title>
+  <para>
+    This section lists helpful elements for use when describing and documenting the use of applications and utilities. Also refer to <xref linkend="sgmbl-Structure_Guidlines_Menus_Buttons_Labels"/> for details on documenting an application or utility with a Graphical User Interface (<acronym>GUI</acronym>).
+  </para>
+  <variablelist>
+    <varlistentry>
+      <term>File and Directory Names</term>
+      <listitem>
+        <para>
+          Use <filename>&lt;filename&gt;</filename> for files and directories. For packages and modules, use <sgmltag>&lt;package&gt;</sgmltag>.
+        </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>Packages and Modules</term>
+      <listitem>
+        <para>
+          Use the <sgmltag>&lt;package&gt;</sgmltag> element for packages and modules, such as those which need to be installed for a particular application.
+        </para>
+        <example id="exam-Structure_Guidlines-Applications_and_Utilities-package_example">
+          <title>&lt;package&gt; example</title>
+          <programlisting language="XML" role="XML">
+To install &lt;application&gt;Publican&lt;/application&gt;, download the &lt;package&gt;publican&lt;/package&gt; package.
+</programlisting>
+          <blockquote>
+            <para>
+              To install <application>Publican</application>, download the <package>publican</package> package.
+            </para>
+          </blockquote>
+        </example>
+        <important>
+          <title>&lt;package&gt; requirements</title>
+          <para>
+            The <sgmltag>&lt;package&gt;</sgmltag> element was introduced in DocBook version 4.4, so documents using older versions will need to update their <code>DOCTYPE</code> declaration to use it. A minimum version of DocBook version 4.5 is recommended. The <code>DOCTYPE</code> declaration can be updated with the following code at the top of the document:
+          </para>
+          <programlisting language="XML" role="XML">
+&lt;!DOCTYPE section PUBLIC &quot;-//OASIS//DTD DocBook XML V4.5//EN&quot; &quot;http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd&quot; [
+...
+]&gt;
+</programlisting>
+        </important>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>Parameter Names and Parameter Values</term>
+      <listitem>
+        <para>
+          Use the <classname>&lt;parameter&gt;</classname> element when referring to the <emphasis>name</emphasis> of a parameter for a command. Use <classname>&lt;literal&gt;</classname> for the actual <emphasis>value</emphasis> of a parameter.
+        </para>
+        <example id="exam-DocBook_Structure_Guidlines-Applications_and_Utilities-parameter_example">
+          <title>&lt;parameter&gt; example</title>
+          <programlisting language="XML" role="XML">
+Use the &lt;parameter&gt;--help&lt;/parameter&gt; parameter for assistance.
+</programlisting>
+          <blockquote>
+            <para>
+              Use the <parameter>--help</parameter> parameter for assistance.
+            </para>
+          </blockquote>
+        </example>
+        <para>
+          The <sgmltag>&lt;parameter&gt;</sgmltag> element can also be used for parameters in a method in a programming language. If both uses appear in the same document it may be necessary to differentiate them using the <property>class</property> attribute, which can be set to <option>command</option>, <option>function</option>, or <option>option</option>.
+        </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>Program Names</term>
+      <listitem>
+        <para>
+          Use the <sgmltag>&lt;application&gt;</sgmltag> element for software applications, for example, <application>Mozilla Firefox</application>.
+        <emphasis>Do not</emphasis> use <sgmltag>&lt;productname&gt;</sgmltag> to mark-up the name of a computer program or other product.  <sgmltag>&lt;productname&gt;</sgmltag> can insert a trademark symbol into published output, which may not be correct for the progam in particular legal jurisdictions.  </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>Protocols</term>
+      <listitem>
+        <para>Use the <sgmltag>&lt;systemitem&gt;</sgmltag> element for protocols in general, such as  <systemitem>SSH</systemitem>, <systemitem>TCP</systemitem>, <systemitem>telnet</systemitem>, <systemitem>CGI</systemitem>, and protocols in general. 
+        </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>User-replaceable Text</term>
+      <listitem>
+        <para>
+          Use the <sgmltag>&lt;replaceable&gt;</sgmltag> element for marking descriptive text in a command or computer output which the user is expected to replace with text specific to their particular application. It describes <emphasis>what</emphasis> the user is expected to use, but not the <emphasis>actual text</emphasis> they should use.
+        </para>
+        <example id="exam-Structure_Guidlines-Applications_and_Utilities-replaceable_example">
+          <title>&lt;replaceable&gt; example</title>
+          <programlisting language="XML" role="XML">
+Edit &lt;filename&gt;&lt;replaceable&gt;filename&lt;/replaceable&gt;.xml&lt;/filename&gt;
+</programlisting>
+          <blockquote>
+            <para>
+              Edit <filename><replaceable>filename</replaceable>.xml</filename>
+            </para>
+          </blockquote>
+        </example>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>Terminal Commands</term>
+      <listitem>
+        <para>
+          Use  the <sgmltag>&lt;command&gt;</sgmltag> element for entered commands, such as <command>ls</command>, <command>top</command>, <command>find</command>, <command>mount</command>, and <command>bash</command>. When referring to applications launched this way, also use <sgmltag>&lt;command&gt;</sgmltag>, for example, <command>firefox</command>. When describing lengthy commands it may be suitable to mark up additional parameters within the <sgmltag>&lt;command&gt;</sgmltag> element with the <sgmltag>&lt;parameter&gt;</sgmltag> element.
+        </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>Terminal Command Output</term>
+      <listitem>
+        <para>
+          Use the <sgmltag>&lt;computeroutput&gt;</sgmltag> element in-line with text to represent text that is shown on a computer screen, such as output from a command. For displaying output text in a block, use the <sgmltag>&lt;screen&gt;</sgmltag> element.
+        </para>
+        <example id="exam-Structure_Guidlines-Applications_and_Utilities-computeroutput_example">
+          <title>&lt;computeroutput&gt; example</title>
+          <programlisting language="XML" role="XML">
+The application status will display &lt;computeroutput&gt;cleaning files&lt;/computeroutput&gt;.
+</programlisting>
+          <blockquote>
+            <para>
+              The application status will display <computeroutput>cleaning files</computeroutput>.
+            </para>
+          </blockquote>
+        </example>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>Text Displayed On-screen</term>
+      <listitem>
+        <para>
+          Use the <sgmltag>&lt;screen&gt;</sgmltag> element to represent text that is shown on a screen, usually an output from a command. The text is shown in a block. For referring to display text in-line, use the <sgmltag>&lt;computeroutput&gt;</sgmltag> element.
+        </para>
+        <example id="exam-Structure_Guidlines-Applications_and_Utilities-screen_example">
+          <title>&lt;screen&gt; example</title>
+          <programlisting language="XML" role="XML">
+&lt;screen&gt;
+books        Desktop   documentation  drafts  mss    photos   stuff  svn
+books_tests  Desktop1  downloads      images  notes  scripts  svgs
+&lt;/screen&gt;
+</programlisting>
+          <blockquote>
+            <screen>
+books        Desktop   documentation  drafts  mss    photos   stuff  svn
+books_tests  Desktop1  downloads      images  notes  scripts  svgs
+</screen>
+          </blockquote>
+        </example>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>User Account Names </term>
+      <listitem>
+        <para>Use the <sgmltag>&lt;systemitem&gt;</sgmltag> element for user account names.
+        </para>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+</section>

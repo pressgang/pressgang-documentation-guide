@@ -1,0 +1,338 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="sgce-Structure_Guidlines_Code_Examples">
+  <title>Code Examples</title>
+  <para>Code samples feature prominently throughout JBoss documentation. The correct XML element to use for XML and Java code block examples is the <sgmltag>&lt;programlisting&gt;</sgmltag> element.</para>
+  <para>There are a number of advantages with using <sgmltag>&lt;programlisting&gt;</sgmltag> to capture code samples.  You can specify the way <application>Maven</application> and <application>Publican</application> formats the code sample when published by using the <varname>language</varname> and <varname>role</varname> attributes.  When <varname>language</varname> is defined, <application>
+      <application>Publican</application>
+    </application> will format the code example with highlighting that will assist the reader in understanding the code structure. The <varname>role</varname> attribute does the same when using <application>
+      <application>Maven</application>
+    </application>.  </para>
+  <para>Another advantage is that you do not need to XML escape special characters used as part of XML mark-up (refer to <xref linkend="sgscs-Structure_Guidlines_Special_Characters_Symbols"/> for a list of symbols that must be escaped in normal CDATA elements).</para>
+  <para><sgmltag>&lt;programlisting&gt;</sgmltag> has been used extensively throughout this user guide to highlight the XML structure you need to use in specific situations.  There are two ways you will need to use this element within your user documentation: XML Samples, and Java Samples.</para>
+  <formalpara>
+    <title>XML Samples</title>
+    <para>For XML samples, you must specify <literal>&quot;XML&quot;</literal> (in uppercase) as the <varname>language</varname> and <varname>role</varname> values.</para>
+  </formalpara>
+  <para>The code for an XML program listing will look similar to the following example.</para>
+  <programlisting language="XML" role="XML">&lt;programlisting language=&quot;XML&quot; role=&quot;XML&quot;&gt;
+  &lt;important&gt;
+    &lt;title&gt;Important Summary&lt;/title&gt;
+    &lt;para&gt;Information that will save the reader unnecessary
+      frustration.&lt;/para&gt;
+  &lt;/important&gt;
+&lt;/programlisting&gt;</programlisting>
+  <para>When output, the XML elements are highlighted to assist the reader.</para>
+  <programlisting language="XML" role="XML">&lt;important&gt;
+    &lt;title&gt;Important Summary&lt;/title&gt;
+    &lt;para&gt;Information that will save the reader unnecessary
+      frustration.&lt;/para&gt;
+&lt;/important&gt;</programlisting>
+  <para>If XML is not specified, the output looks far less attractive.</para>
+  <programlisting>&lt;important&gt;
+    &lt;title&gt;Important Summary&lt;/title&gt;
+    &lt;para&gt;Information that will save the reader unnecessary
+      frustration.&lt;/para&gt;
+&lt;/important&gt;</programlisting>
+  <formalpara>
+    <title>Java Samples</title>
+    <para>For Java code samples, the same rules apply.  Instead of <literal>&quot;XML&quot;</literal>, <literal>&quot;JAVA&quot;</literal> is specified as the <varname>role</varname> attribute value and <literal>&quot;Java&quot;</literal> for the <varname>language</varname> attribute.</para>
+  </formalpara>
+  <programlisting language="Java" role="JAVA">
+package org.jboss.book.jca.ex1;
+
+import javax.naming.InitialContext;
+
+public class ExClient
+{
+   public static void main(String args[]) 
+       throws Exception
+   {
+      InitialContext iniCtx = new InitialContext();
+      Object         ref    = iniCtx.lookup(&quot;EchoBean&quot;);
+      EchoHome       home   = (EchoHome) ref;
+      Echo           echo   = home.create();
+
+      System.out.println(&quot;Created Echo&quot;);
+
+      System.out.println(&quot;Echo.echo(&apos;Hello&apos;) = &quot; + echo.echo(&quot;Hello&quot;));
+   }
+   
+}
+</programlisting>
+  <formalpara>
+    <title>Long code samples</title>
+    <para>
+      For lengthy code samples of more then a couple of lines, it is preferable to use an <sgmltag>&lt;xi:include&gt;</sgmltag> to an external file which contains only the code sample. These code sample files should end in the relevant extension and should be placed in an <filename>extras/</filename> directory located in the source language directory.
+    </para>
+  </formalpara>
+  <itemizedlist>
+    <listitem>
+      <para>
+        Java files use the <computeroutput>java</computeroutput> extension.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <acronym>XML</acronym> files use the <computeroutput>xml_sample</computeroutput> extension. When referencing an external <acronym>XML</acronym> file with the <computeroutput>xml</computeroutput> extension, <application>Publican</application> formats the file as though it were DocBook text. Using <computeroutput>xml_sample</computeroutput> avoids this.
+      </para>
+    </listitem>
+  </itemizedlist>
+  <example id="exam-JBoss_Documentation_Guide-Code_Examples-programlisting_example">
+    <title>&lt;programlisting&gt; example</title>
+    <programlisting language="XML" role="XML">
+<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="extras/exam-JBoss_Documentation_Guide-Code_Examples-programlisting_example.xml_sample" parse="text"/>
+</programlisting>
+    <para>
+      <xref linkend="exam-JBoss_Documentation_Guide-Code_Examples-programlisting_example"/> describes itself.
+    </para>
+  </example>
+  <formalpara>
+    <title>In-Line Code Samples</title>
+    <para>Where <sgmltag>&lt;programlisting&gt;</sgmltag> presents the code in a separate block, there are multiple elements to use when using code samples in-line with other text.</para>
+  </formalpara>
+  <variablelist>
+    <varlistentry>
+      <term>Attribute, Property, and Parameter Values</term>
+      <listitem>
+        <para>
+        Use the <sgmltag>&lt;literal&gt;</sgmltag> element for <emphasis>values</emphasis> of attributes, properties and parameters. In the Directory Server documentation, for example, the <parameter>nsslapd-accesslog-level</parameter> attribute can have values of <literal>0</literal>, <literal>4</literal>, <literal>256</literal>, and beyond. The <computeroutput>&lt;literal&gt;</computeroutput> elements should be used for these values.
+      </para>
+        <para>
+        Alternatively, the <sgmltag>&lt;option&gt;</sgmltag> element can be used for those attributes, properties and parameters with a limited set of possible values, for example, a <type>boolean</type> value of <option>true</option> or <option>false</option>, or an enumerated type.
+      </para>
+        <para>
+        Use the <sgmltag>&lt;parameter&gt;</sgmltag> element when referring to the <emphasis>name</emphasis> of the parameter, attribute, or property itself. When writing the parameter and its value together, or the parameter and its method or class together, use the <sgmltag>&lt;code&gt;</sgmltag> element.
+      </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>Classes (Java or similar)</term>
+      <listitem>
+        <para>
+        Use the <sgmltag>&lt;classname&gt;</sgmltag> element in-line with text to mark classes or similar objects in programming languages. Typically it refers to a class in an object-oriented language, such as Java.
+      </para>
+        <example id="exam-JBoss_Documentation_Guide-Code_Examples-classname_example">
+          <title>&lt;classname&gt; example</title>
+          <programlisting language="XML" role="XML">
+Use the &lt;classname&gt;java.lang.Object&lt;/classname&gt; class in an example.
+</programlisting>
+          <blockquote>
+            <para>
+            Use the <classname>java.lang.Object</classname> class in an example.
+          </para>
+          </blockquote>
+        </example>
+        <para>
+        When writing the class together with a method or parameter, use the <sgmltag>&lt;code&gt;</sgmltag> element.
+      </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>Computer Programming Code In-line With Text</term>
+      <listitem>
+        <para>Use the <sgmltag>&lt;code&gt;</sgmltag> element in-line with text to mark computer programming code. </para>
+        <important>
+          <title>&lt;code&gt; Compatible with DocBook 4.3 Onwards</title>
+          <para>The <sgmltag>&lt;code&gt;</sgmltag> element was introduced in DocBook version 4.3.  For <sgmltag>&lt;code&gt;</sgmltag> to be supported, documents  must reference the correct  DocBook version in the <code>DOCTYPE</code> declaration. A minimum version of DocBook version 4.5 is recommended. The <code>DOCTYPE</code> declaration can be updated with the following code at the top of the document:
+        </para>
+          <programlisting language="XML" role="XML">
+&lt;!DOCTYPE section PUBLIC &quot;-//OASIS//DTD DocBook XML V4.5//EN&quot; &quot;http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd&quot; [
+...
+]&gt;
+</programlisting>
+        </important>
+        <para>The <sgmltag>&lt;code&gt;</sgmltag> element does not offer syntax highlighting. To provide sample code in a block, use the <sgmltag>&lt;programlisting&gt;</sgmltag> element instead.
+      </para>
+        <para>For simplicity, do <emphasis>not</emphasis> mark individual elements within a <sgmltag>&lt;code&gt;</sgmltag> element.  If you feel identifying elements  of the code is necessary for readability, the following elements are available:
+      </para>
+        <itemizedlist>
+          <listitem>
+            <para>
+            <sgmltag>&lt;classname&gt;</sgmltag>
+          </para>
+          </listitem>
+          <listitem>
+            <para>
+            <sgmltag>&lt;literal&gt;</sgmltag>
+          </para>
+          </listitem>
+          <listitem>
+            <para>
+            <sgmltag>&lt;methodname&gt;</sgmltag>
+          </para>
+          </listitem>
+          <listitem>
+            <para>
+            <sgmltag>&lt;option&gt;</sgmltag>
+          </para>
+          </listitem>
+          <listitem>
+            <para>
+            <sgmltag>&lt;parameter&gt;</sgmltag>
+          </para>
+          </listitem>
+          <listitem>
+            <para>
+            <sgmltag>&lt;sgmltag&gt;</sgmltag>
+          </para>
+          </listitem>
+          <listitem>
+            <para>
+            <sgmltag>&lt;type&gt;</sgmltag>
+          </para>
+          </listitem>
+          <listitem>
+            <para>
+            <sgmltag>&lt;varname&gt;</sgmltag>
+          </para>
+          </listitem>
+          <listitem>
+            <para>
+            Any other code-related elements not covered in this section.
+          </para>
+          </listitem>
+        </itemizedlist>
+        <example id="exam-JBoss_Documentation_Guide-Code_Examples-code_example">
+          <title>&lt;code&gt; example</title>
+          <variablelist>
+            <varlistentry>
+              <term>Java</term>
+              <listitem>
+                <programlisting language="XML" role="XML">
+Use &lt;code&gt;a.equals(b)&lt;/code&gt; to determine if object &lt;parameter&gt;a&lt;/parameter&gt; is equal to object &lt;parameter&gt;b&lt;/parameter&gt;.
+</programlisting>
+                <blockquote>
+                  <para>
+                  Use <code>a.equals(b)</code> to determine if object <parameter>a</parameter> is equal to object <parameter>b</parameter>.
+                </para>
+                </blockquote>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>XML</term>
+              <listitem>
+                <programlisting language="XML" role="XML">
+Use &lt;code&gt;&amp;lt&semi;programlisting language=&quot;XML&quot; role=&quot;XML&quot;&amp;gt&semi;&lt;/code&gt; to mark &lt;acronym&gt;XML&lt;/acronym&gt; code.
+</programlisting>
+                <blockquote>
+                  <para>
+                  Use <code>&lt;programlisting language=&quot;XML&quot; role=&quot;XML&quot;&gt;</code> to mark <acronym>XML</acronym> code.
+                </para>
+                </blockquote>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </example>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>Data Types</term>
+      <listitem>
+        <para>
+        Use the <sgmltag>&lt;type&gt;</sgmltag> element for data types, such as <type>int</type>, <type>char</type>, or <type>boolean</type>. Although the markup is not styled by <application>Publican</application>, it clarifies the term&apos;s use for translation. For actual values for data types, use the <sgmltag>&lt;literal&gt;</sgmltag> element.
+      </para>
+        <example id="exam-JBoss_Documentation_Guide-Code_Examples-type_example">
+          <title>&lt;type&gt; example</title>
+          <programlisting language="XML" role="XML">
+Used for data types, such as &lt;type&gt;int&lt;/type&gt;, &lt;type&gt;char&lt;/type&gt;, or &lt;type&gt;boolean&lt;/type&gt;.
+</programlisting>
+          <blockquote>
+            <para>
+            Used for data types, such as <type>int</type>, <type>char</type>, or <type>boolean</type>.
+          </para>
+          </blockquote>
+        </example>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>Method or Constructor Parameter Names</term>
+      <listitem>
+        <para>
+        Use the <sgmltag>&lt;parameter&gt;</sgmltag> element when referring to the <emphasis>name</emphasis> of a parameter for a method or constructor in a programming language. Use <sgmltag>&lt;literal&gt;</sgmltag> for the actual <emphasis>value</emphasis> of a parameter.
+      </para>
+        <para>
+        When writing the parameter and its value together, or the parameter and its method or class together, use the <sgmltag>&lt;code&gt;</sgmltag> element.
+      </para>
+        <para>
+        The <sgmltag>&lt;parameter&gt;</sgmltag> element can also be used for parameters in a command. If both uses appear in the same document it may be necessary to differentiate them using the <property>class</property> attribute, which can be set to <option>command</option>, <option>function</option>, or <option>option</option>.
+      </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>Programming Methods</term>
+      <listitem>
+        <para>
+        Use the <sgmltag>&lt;methodname&gt;</sgmltag> element in-line with text to mark the name of a method in a programming language. </para>
+        <para>If including the class to clarify the method name, include the whole class in the <sgmltag>&lt;methodname&gt;</sgmltag> element rather than marking the class part with <sgmltag>&lt;classname&gt;</sgmltag>.
+      </para>
+        <example id="exam-JBoss_Documentation_Guide-Code_Examples-methodname_example">
+          <title>&lt;methodname&gt; example</title>
+          <programlisting language="XML" role="XML">
+Use the &lt;methodname&gt;java.lang.Object.toString()&lt;/methodname&gt; method to get a &lt;type&gt;string&lt;/type&gt; representation.
+</programlisting>
+          <blockquote>
+            <para>
+            Use the <methodname>java.lang.Object.toString()</methodname> method to get a <type>string</type> representation.
+          </para>
+          </blockquote>
+        </example>
+        <para>
+        When writing the method together with its class or parameters, use the <sgmltag>&lt;code&gt;</sgmltag> element.
+      </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>Variable and Attributes Names (all languages)</term>
+      <listitem>
+        <para>
+        Use the <sgmltag>&lt;varname&gt;</sgmltag> element when referring to the <emphasis>name</emphasis> of a variable in an object-oriented language such as Java, or the <emphasis>name</emphasis> of an attribute of an <acronym>XML</acronym> element. Use <sgmltag>&lt;literal&gt;</sgmltag> (or <sgmltag>&lt;option&gt;</sgmltag> if appropriate) for the actual <emphasis>value</emphasis> of a variable or attribute.
+      </para>
+        <example id="name">
+          <title>&lt;varname&gt; example</title>
+          <programlisting language="XML" role="XML">
+Use the &lt;varname&gt;class&lt;/varname&gt; attribute, which can be set to &lt;option&gt;command&lt;/option&gt;, &lt;option&gt;function&lt;option&gt;, or &lt;option&gt;option&lt;/option&gt;.
+</programlisting>
+          <blockquote>
+            <para>
+            Use the <property>class</property> attribute, which can be set to <option>command</option>, <option>function</option>, or <option>option</option>.
+          </para>
+          </blockquote>
+        </example>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>XML Elements</term>
+      <listitem>
+        <para>
+        Use the <sgmltag>&lt;sgmltag&gt;</sgmltag> element in-line with text to mark <acronym>XML</acronym> elements.
+      </para>
+        <para>
+        When writing the element together with attributes, use the <sgmltag>&lt;code&gt;</sgmltag> element.
+      </para>
+        <example id="exam-JBoss_Documentation_Guide-Code_Examples-sgmltag_example">
+          <title>&lt;sgmltag&gt; examples</title>
+          <programlisting language="XML" role="XML">
+Use the &lt;sgmltag&gt;&amp;lt&semi;example&amp;gt&semi;&lt;/sgmltag&gt; element for examples.
+</programlisting>
+          <blockquote>
+            <para>
+            Use the <sgmltag>&lt;example&gt;</sgmltag> element for examples.
+          </para>
+          </blockquote>
+          <programlisting language="XML" role="XML">
+Use the &lt;code&gt;id=&quot;[section_name]&quot;&lt;/code&gt; attribute of the &lt;sgmltag&gt;&amp;lt&semi;section&amp;gt&semi;&lt;/sgmltag&gt; element to set the ID for the section.
+
+</programlisting>
+          <blockquote>
+            <para>Use the <code>id=&quot;[section_name]&quot;</code> attribute of the <sgmltag>&lt;section&gt;</sgmltag> element to set the ID for the section.
+          </para>
+          </blockquote>
+        </example>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+</section>

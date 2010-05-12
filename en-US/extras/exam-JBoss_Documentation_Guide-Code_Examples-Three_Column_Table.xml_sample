@@ -1,0 +1,37 @@
+<table frame="all" pgwide="1">
+  <title>Three-column Table</title>
+  <tgroup colsep="1" cols="3">
+    <colspec colnum="1" colname="c0"/>
+    <colspec colnum="2" colname="c1"/>
+    <colspec colnum="3" colname="c2"/>
+    <thead>
+      <row>
+        <entry>Header Row, Column 1</entry>
+        <entry>Header Row, Column 2</entry>
+        <entry>Header Row, Column 3</entry>
+      </row>
+    </thead>
+    <tbody>
+      <row>
+        <entry>A</entry>
+        <entry>B</entry>
+        <entry>C</entry>
+      </row>
+      <row>
+        <entry>D</entry>
+        <entry>E</entry>
+        <entry>F</entry>
+      </row>
+      <row>
+        <entry>G</entry>
+        <entry>H</entry>
+        <entry>I</entry>
+      </row>
+      <row>
+        <entry>J</entry>
+        <entry>K</entry>
+        <entry>L</entry>
+      </row>
+    </tbody>
+  </tgroup>
+</table>

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="iba-Interop_Begin_Authoring">
+  <title>Begin Authoring</title>
+  <para>You have now created your basic book, and can publish this book to both <application>jDocBook</application> and <application>Publican</application>.  Now it is time to begin adding actual content to your book.   </para>
+  <para>Before you begin, there are a number of things  you need to be aware of.   To maintain consistency across all JBoss projects, follow the guidelines specified in <xref linkend="sg-Structure_Guidelines"/>, and <xref linkend="lg-Language_Guidelines"/>.</para>
+</section>

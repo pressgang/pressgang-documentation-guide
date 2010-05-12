@@ -1,0 +1,207 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="iim-Interop_Install_Maven">
+  <title>Install Maven</title>
+  <para>The <filename>pom.xml</filename> configuration file used in this project requires <application>Maven</application> v2.2.0 or later.  Download <application>Maven</application> directly from the Apache Maven homepage, and install and configure your system as described in <xref linkend="proc-Install_Maven"/>.</para>
+  <procedure id="proc-Install_Maven">
+    <title>Install Maven</title>
+    <step>
+      <title>Verify Java Developer Kit 1.5 or above is installed </title>
+      <formalpara>
+        <title>For Linux Users</title>
+        <para><application>Maven</application> is a pure Java application, and requires Java 1.5 or later.  </para>
+      </formalpara>
+      <para>Ensure you have <application>Java</application> installed on your system, and have set the <varname>JAVA_HOME</varname> environment variable in your <filename>~/.bash_profile</filename>.  For more information regarding setting environment variables, refer to the Setting Environment Variables step in this procedure. </para>
+      <important>
+        <title>Publican 1.0 requires Java OpenJDK</title>
+        <para><application>Publican</application> 1.0 requires <application>Java OpenJDK</application> (jre-1.6.0-openjdk), because of a dependency with the <application>FOP</application> renderer.  PDF generation may be affected if you install a Sun JDK version.  HTML generation is unaffected, as is the ability to create books and validate your XML to <application>Publican</application> standards.</para>
+      </important>
+      <formalpara>
+        <title>For Windows Users</title>
+        <para>Maven requires the Sun Microsystems Java Development Kit (JDK).  The Java Runtime Environment (JRE) is not sufficient.  You can obtain the JDK from the <ulink url="http://java.sun.com/javase/downloads/index.jsp">Java SE Downloads page</ulink>.</para>
+      </formalpara>
+      <para>The <varname>JAVA_HOME</varname> environment variable must be set for <application>Maven</application> to execute on Windows systems.  Setting <varname>JAVA_HOME</varname> is covered later in this procedure.</para>
+    </step>
+    <step>
+      <title>Download Maven</title>
+      <para>Visit <ulink url="http://maven.apache.org/download.html">http://maven.apache.org/download.html</ulink>.</para>
+      <para>Click the compiled zip archive link, for example <filename>apache-maven-2.2.1-bin.zip</filename></para>
+      <para>Select a download mirror from the list.</para>
+      <formalpara>
+        <title>For Linux Users</title>
+        <para>Save the zip archive to your <filename>home</filename> directory.</para>
+      </formalpara>
+      <formalpara>
+        <title>For Windows Users</title>
+        <para>Save the zip archive to your  <filename>C:\Documents and Settings\<replaceable>user_name</replaceable></filename> directory. </para>
+      </formalpara>
+    </step>
+    <step>
+      <title>Install Maven</title>
+      <formalpara>
+        <title>For Linux Users</title>
+        <para>Extract the zip file to your <filename>home</filename> directory. If you selected the zip archive in Step 2, and do not rename the directory, the extracted directory is named <filename>apache-maven-2.2.1</filename>.</para>
+      </formalpara>
+      <formalpara>
+        <title>For Windows Users</title>
+        <para>Extract the zip archive to C:\Program Files\Apache Software Foundation. If you selected the zip archive in Step 2, and do not rename the directory, the extracted directory is named <filename>apache-maven-2.2.1</filename>.</para>
+      </formalpara>
+    </step>
+    <step>
+      <title>Configure Environment Variables</title>
+      <formalpara>
+        <title>For Linux Users</title>
+        <para>Add the following lines   to your <filename>~/.bash_profile</filename>.  Ensure you change the <replaceable>[username]</replaceable> to your actual username. </para>
+      </formalpara>
+      <screen>export M2_HOME=/home/<replaceable>[username]</replaceable>/apache-maven-2.2.1
+export M2=$M2_HOME/bin
+export PATH=$M2:$PATH</screen>
+      <para>By including <varname>M2</varname> at the beginning of your path, the <application>Maven</application> version you just installed will be the default version used.  You may also want to set the path of your <varname>JAVA_HOME</varname> environment variable to the location of the Java OpenJDK on your system.  </para>
+      <formalpara>
+        <title>For Windows Users</title>
+        <para>Add the <varname>M2_HOME</varname>, <varname>M2</varname>, and <varname>JAVA_HOME</varname> environment variables.</para>
+      </formalpara>
+      <orderedlist>
+        <listitem>
+          <para>Press <keycombo>
+              <keycap>Start</keycap>
+              <keycap>Pause|Break</keycap>
+            </keycombo>. The System Properties dialog box is displayed.</para>
+        </listitem>
+        <listitem>
+          <para>Click the <guilabel>Advanced</guilabel> tab, then click the <guibutton>Environment Variables</guibutton> button.</para>
+        </listitem>
+        <listitem>
+          <para>Under <guilabel>System Variables</guilabel>, select <guibutton>Path</guibutton>.</para>
+        </listitem>
+        <listitem>
+          <para>Click <guibutton>Edit</guibutton>, and append the two <application>Maven</application> paths using a semi-colon to separate each entry. Quotation marks are not required around paths.</para>
+          <itemizedlist>
+            <listitem>
+              <para>Add the variable  <varname>M2_HOME</varname> and set the path to  <filename>C:\Program Files\Apache Software Foundation\apache-maven-2.2.1</filename>.  </para>
+            </listitem>
+            <listitem>
+              <para>Add the variable  <varname>M2</varname> and set the value to  <filename>%M2_HOME%\bin</filename>.</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+        <listitem>
+          <para>In the same dialog, create the <varname>JAVA_HOME</varname> environment variable:</para>
+          <itemizedlist>
+            <listitem>
+              <para>Add the variable <varname>%JAVA_HOME%</varname> and set the value to the location of your JDK.  For example <filename>C:\Program Files\Java\jdk1.6.0_02</filename>.</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+        <listitem>
+          <para>In the same dialog, update or create the Path environment variable:</para>
+          <itemizedlist>
+            <listitem>
+              <para>Add the variable <varname>%M2%</varname> to allow Maven to be executed from the command-line.</para>
+            </listitem>
+            <listitem>
+              <para>Add the variable <varname>%JAVA_HOME%\bin</varname> to set the path to the correct Java installation.</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+        <listitem>
+          <para>Click <guibutton>OK</guibutton> until the <guilabel>System Properties</guilabel> dialog box closes.</para>
+        </listitem>
+      </orderedlist>
+    </step>
+    <step>
+      <title>Implement changes to .bash_profile</title>
+      <formalpara>
+        <title>For Linux Users Only</title>
+        <para>To update the changes made to the  .bash_profile in the current terminal session, source your .bash_profile.</para>
+      </formalpara>
+      <para><screen>[localhost]$ source ~/.bash_profile</screen></para>
+    </step>
+    <step>
+      <title>Update gnome-terminal profile</title>
+      <formalpara>
+        <title>For Linux Users Only</title>
+        <para>Update the terminal profile to ensure that subsequent iterations of  gnome-terminal (or Konsole terminal)  read the new environment variables.</para>
+      </formalpara>
+      <para><orderedlist>
+          <listitem>
+            <para>Click <menuchoice>
+                <guimenu>Edit</guimenu>
+                <guisubmenu>Profiles</guisubmenu>
+              </menuchoice></para>
+          </listitem>
+          <listitem>
+            <para>Select <guimenuitem>Default</guimenuitem>, and click the <guibutton>Edit</guibutton> button.</para>
+          </listitem>
+          <listitem>
+            <para>In the <guilabel>Editing Profile</guilabel> dialog, click the <guilabel>Title and Command</guilabel> tab.</para>
+          </listitem>
+          <listitem>
+            <para>Select the <guilabel>Run command as login shell</guilabel> check box.</para>
+          </listitem>
+          <listitem>
+            <para>Close all open Terminal dialog boxes.</para>
+          </listitem>
+        </orderedlist>  </para>
+    </step>
+    <step>
+      <title>Verify the .bash_profile changes and Maven install</title>
+      <formalpara>
+        <title>For Linux Users</title>
+        <para>To verify that the changes have been implemented correctly, open a terminal and execute the following commands:</para>
+      </formalpara>
+      <itemizedlist>
+        <listitem>
+          <para>Execute <command>echo $M2_HOME</command>, which should return the following result.</para>
+          <para><screen>[localhost]$ echo $M2_HOME
+/home/username/apache-maven-2.2.1</screen></para>
+        </listitem>
+        <listitem>
+          <para>Execute <command>echo $M2</command>, which should return the following result.</para>
+          <para><screen>[localhost]$ echo $M2
+/home/username/apache-maven-2.2.1/bin</screen></para>
+        </listitem>
+        <listitem>
+          <para>Execute <command>echo $PATH</command>, and verify the <application>Maven</application> <filename>/bin</filename> directory is included.</para>
+          <para><screen>[localhost]$ echo $PATH
+/home/username/apache-maven-2.2.1/bin</screen></para>
+        </listitem>
+        <listitem>
+          <para>Execute <command>which mvn</command>, which should display the  path to the <application>Maven</application> executable.</para>
+          <para><screen>[localhost]$ which mvn
+~/apache-maven-2.2.1/bin/mvn</screen></para>
+        </listitem>
+        <listitem>
+          <para>Execute <command>mvn -version</command>, which should display the  <application>Maven</application> version,  related Java version, and operating system information.</para>
+          <para><screen>[localhost]$ $ mvn -version
+Apache Maven 2.2.1 (r801777; 2009-08-07 05:16:01+1000)
+Java version: 1.6.0_0
+Java home: /usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: &quot;Linux&quot; version: &quot;2.6.30.9-96.fc11.i586&quot; arch: &quot;i386&quot; Family: &quot;unix&quot;
+</screen></para>
+        </listitem>
+      </itemizedlist>
+      <formalpara>
+        <title>For Windows Users</title>
+        <para>To verify that the changes have been implemented correctly, open a terminal and execute the following command:</para>
+      </formalpara>
+      <itemizedlist>
+        <listitem>
+          <para>In a command prompt, execute <command>mvn -version</command></para>
+          <screen>C:\&gt; mvn -version
+Apache Maven 2.2.1 (r801777; 2009-08-06 12:16:01-0700)
+Java version: 1.6.0_17
+Java home: C:\Sun\SDK\jdk\jre
+Default locale: en_US, platform encoding: Cp1252
+OS name: &quot;windows xp&quot; version: &quot;5.1&quot; arch: &quot;x86&quot; Family: &quot;windows&quot;
+</screen>
+        </listitem>
+      </itemizedlist>
+    </step>
+  </procedure>
+  <para>You have now successfully configured <application>Maven</application> for use with <application>jDocBook</application>.</para>
+</section>

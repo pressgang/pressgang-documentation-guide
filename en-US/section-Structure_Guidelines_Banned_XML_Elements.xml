@@ -1,0 +1,400 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="sect-JBoss_Documentation_Guide-Structure_Guidelines_Banned_XML_Elements">
+  <title>Disallowed Elements and Attributes</title>
+  <note>
+    <title>Supported, unsupported, and disallowed</title>
+    <para>
+   Not every <firstterm>element</firstterm>  and attribute that works with <application>Publican</application> is <firstterm>supported</firstterm>. Specifically, not every element has been tested with regards its effect on the presentation of a document once it has been built in HTML or PDF.
+  </para>
+  </note>
+  <para>
+  <application>Publican</application> works with almost all DocBook 4.5 elements and their attributes, and most of these elements are <firstterm>supported</firstterm>. Supported elements and attributes are those whose presentation in <application>Publican</application> HTML and PDF output has been tested and is of an acceptable quality.
+ </para>
+  <para>
+  Other elements and attributes that are not known to be harmful or redundant but which have not been tested for quality are <firstterm>unsupported</firstterm>. If material within a particular DocBook element does not look correct when you build a document in HTML or PDF, the problem could be that the transformation logic for that element has not yet been tested. Build the document again and examine <application>Publican</application>&apos;s output as the document builds. <application>Publican</application> presents warnings about unsupported elements that it encounters in your XML files.
+ </para>
+  <para>
+  Finally, a small group of elements and attributes are <firstterm>disallowed</firstterm>. These elements and attributes are set out below, each accompanied by rationale explaining why it is disallowed.
+ </para>
+  <section id="sect-Users_Guide-Disallowed_elements_and_attributes-Disallowed_elements">
+    <title>Disallowed elements</title>
+    <variablelist>
+      <varlistentry>
+        <term>
+          <sgmltag>&lt;caution&gt;</sgmltag>
+        </term>
+        <term>
+          <sgmltag>&lt;tip&gt;</sgmltag>
+        </term>
+        <listitem>
+          <para>
+      DocBook XML supports five <firstterm>admonitions</firstterm> of varying severity: <sgmltag>&lt;tip&gt;</sgmltag>, <sgmltag>&lt;note&gt;</sgmltag>, <sgmltag>&lt;important&gt;</sgmltag>, <sgmltag>&lt;caution&gt;</sgmltag>, and <sgmltag>&lt;warning&gt;</sgmltag>. Taken together, these represent a very fine-grained set of distinctions. It is unlikely that these fine distinctions can be applied consistently within a document, especially when more than one person writes or maintains the document. Moreover, this level of granularity is meaningless to readers. By design, <application>Publican</application> disallows the <sgmltag>&lt;tip&gt;</sgmltag> and <sgmltag>&lt;caution&gt;</sgmltag> elements, these elements being the two most redundant in the set.
+     </para>
+          <para>
+      Use <sgmltag>&lt;note&gt;</sgmltag> instead of <sgmltag>&lt;tip&gt;</sgmltag>, and use either <sgmltag>&lt;important&gt;</sgmltag> or <sgmltag>&lt;warning&gt;</sgmltag> instead of <sgmltag>&lt;caution&gt;</sgmltag>. Some criteria by which you might select a suitable level of severity are presented in the &lsquo;Document Conventions&rsquo; section of the preface of books produced with <application>Publican</application>&apos;s default brand.
+     </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <sgmltag>&lt;entrytbl&gt;</sgmltag>
+        </term>
+        <listitem>
+          <para>
+      <application>Publican</application> depends on an external application, <application>FOP</application>, to render PDF documents. At present, <application>FOP</application> does not support nested tables, so attempts to build PDF files from <application>Publican</application> documents that contain nested tables fail.
+     </para>
+          <para>
+      Nested tables are therefore disallowed at least until they are supported in <application>FOP</application>. If you planned to include a nested table in your document, reconsider your data structure.
+     </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <sgmltag>&lt;glossdiv&gt;</sgmltag>
+        </term>
+        <term>
+          <sgmltag>&lt;glosslist&gt;</sgmltag>
+        </term>
+        <listitem>
+          <para>
+      This element set presents terms in glossaries in alphabetical order; however, the terms are sorted according to the original language of the XML, regardless of how these terms are translated into any other language. For example, a glossary produced with <sgmltag>&lt;glossdiv&gt;</sgmltag>s that looks like this in English:
+     </para>
+          <variablelist>
+            <varlistentry>
+              <term>A</term>
+              <listitem>
+                <para>
+         <literal>Apple</literal> — an <firstterm>apple</firstterm> is&hellip;
+        </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>G</term>
+              <listitem>
+                <para>
+         <literal>Grapes</literal> — <firstterm>grapes</firstterm> are&hellip;
+        </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>O</term>
+              <listitem>
+                <para>
+         <literal>Orange</literal> — an <firstterm>orange</firstterm> is&hellip;
+        </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>P</term>
+              <listitem>
+                <para>
+         <literal>Peach</literal> — a <firstterm>peach</firstterm> is&hellip;
+        </para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+          <para>
+      looks like this in Spanish:
+     </para>
+          <variablelist>
+            <varlistentry>
+              <term>A</term>
+              <listitem>
+                <para>
+         <literal>Manzana</literal> — la <firstterm>manzana</firstterm> es&hellip;
+        </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>G</term>
+              <listitem>
+                <para>
+         <literal>Uva</literal> — la <firstterm>uva</firstterm> es&hellip;
+        </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>O</term>
+              <listitem>
+                <para>
+         <literal>Naranja</literal> — la <firstterm>naranja</firstterm> es&hellip;
+        </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>P</term>
+              <listitem>
+                <para>
+         <literal>Melocotonero</literal> — el <firstterm>melocotonero</firstterm> es&hellip;
+        </para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+          <para>
+      In a translated language that does not share the same writing system with the original language in which the XML was written, the result is even more nonsensical.
+     </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <sgmltag>&lt;inlinegraphic&gt;</sgmltag>
+        </term>
+        <listitem>
+          <para>
+      This element presents information as a graphic rather than as text and does not provide an option to present a text alternative to the graphic. This element therefore hides information from people with visual impairments. In jurisdictions that have legal requirements for electronic content to be accessible to people with visual impairments, documents that use this element will not satisfy those requirements. Section 508 of the <citetitle>Rehabilitation Act of 1973</citetitle><footnote>
+              <para>
+       Refer to <ulink url="http://www.section508.gov/">http://www.section508.gov/</ulink>
+      </para>
+            </footnote> is an example of such a requirement for federal agencies in the United States.
+     </para>
+          <para>
+      Note that <sgmltag>&lt;inlinegraphic&gt;</sgmltag> is not valid in DocBook version 5.
+     </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <sgmltag>&lt;link&gt;</sgmltag>
+        </term>
+        <listitem>
+          <para>
+      The <sgmltag>&lt;link&gt;</sgmltag> element provides a general-purpose hyperlink and therefore offers nothing that the <sgmltag>&lt;xref&gt;</sgmltag> and <sgmltag>&lt;ulink&gt;</sgmltag> elements do not, for internal and external hyperlinks respectively. The <sgmltag>&lt;link&gt;</sgmltag> element is disallowed due to its redundancy.
+     </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <sgmltag>&lt;olink&gt;</sgmltag>
+        </term>
+        <listitem>
+          <para>
+      The <sgmltag>&lt;olink&gt;</sgmltag> element provides cross-references between XML documents. For <sgmltag>&lt;olink&gt;</sgmltag>s to work outside of documents that are all hosted within the same library of XML files, you must provide a URL for the document to which you are linking. In environments that use <sgmltag>&lt;olink&gt;</sgmltag>s, these URLs can be supplied either as an XML entity or with a server-side script. <application>Publican</application> produces documents intended for wide dissemination in which URLs are always necessary for cross-references. Therefore, the <sgmltag>&lt;olink&gt;</sgmltag> element offers no advantage over the <sgmltag>&lt;ulink&gt;</sgmltag> element, and is disallowed due to its redundancy.
+     </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </section>
+  <section id="sect-Users_Guide-Disallowed_elements_and_attributes-Disallowed_attributes">
+    <title>Disallowed attributes</title>
+    <variablelist>
+      <varlistentry>
+        <term>
+          <sgmltag>&lt;[element] xreflabel=&quot;[any_string_here]&quot;&gt;</sgmltag>
+        </term>
+        <listitem>
+          <para>
+      The presence of an <sgmltag>&lt;xreflabel&gt;</sgmltag> attribute reduces the usability of printed versions of a book. As well, attribute values are not seen by translators and, consequently, cannot be translated.
+     </para>
+          <para>
+      For example, if you have the following:
+     </para>
+          <programlisting language="XML">
+&lt;chapter id=&quot;ch03&quot; xreflabel=&quot;Chapter Three&quot;&gt;
+ &lt;title&gt;The Secret to Eternal Life&lt;/title&gt;
+ &lt;para&gt;The secret to eternal life is&hellip;&lt;/para&gt;
+&lt;/chapter&gt;
+
+[more deathless prose here]     
+
+&hellip;see &lt;xref linkend=&quot;ch03&quot;&gt; for details.
+</programlisting>
+          <para>
+      when your XML is built to HTML, the <sgmltag>&lt;xref&gt;</sgmltag> element becomes an HTML anchor element as follows:
+     </para>
+          <programlisting language="XML">
+&hellip;see &lt;a href=&quot;#ch03&quot;&gt;Chapter Three&lt;/a&gt; for details.
+</programlisting>
+          <para>
+      The text contained by the anchor element is the same as the data in the <sgmltag>&lt;xreflabel&gt;</sgmltag> attribute. In this case, it means that readers of printed copies have less information available to them.
+     </para>
+          <para>
+      You could work around this if you make the value of the <sgmltag>&lt;xreflabel&gt;</sgmltag> attribute the same as the text within the <sgmltag>&lt;title&gt;</sgmltag><sgmltag>&lt;/title&gt;</sgmltag> element. However, this duplication increases the risk of typo-level errors and otherwise offers no underlying improvement. And it still reduces the amount of information presented to readers of printed copies.
+     </para>
+          <para>
+      The following XML:
+     </para>
+          <programlisting language="XML">
+&lt;chapter id=&quot;ch03&quot; xreflabel=&quot;The Secret to Eternal Life&quot;&gt;
+ &lt;title&gt;The Secret to Eternal Life&lt;/title&gt;
+ &lt;para&gt;The secret to eternal life is&hellip;&lt;/para&gt;
+&lt;/chapter&gt;
+
+[more deathless prose here]     
+
+&hellip;see &gt;xref linkend=&quot;ch03&quot;&gt; for details.
+</programlisting>
+          <para>
+      Will result in an HTML anchor element as follows:
+     </para>
+          <programlisting language="XML">
+&hellip;see &lt;a href=&quot;#ch03&quot;&gt;The Secret to Eternal Life&lt;/a&gt; for details.
+</programlisting>
+          <para>
+      This is not as informative as the text presented to a reader if you do not use an <sgmltag>&lt;xreflabel&gt;</sgmltag> attribute. The following:
+     </para>
+          <programlisting language="XML">
+&lt;chapter id=&quot;ch03&quot;&gt;
+ &lt;title&gt;The Secret to Eternal Life&lt;/title&gt;
+ &lt;para&gt;The secret to eternal life is&hellip;&lt;/para&gt;
+&lt;/chapter&gt;
+
+[more deathless prose here]  
+
+&hellip;see &lt;xref linkend=&quot;ch03&quot;&gt; for details.
+</programlisting>
+          <para>
+      transforms the <sgmltag>&lt;xref&gt;</sgmltag> element as follows when built to HTML:
+     </para>
+          <programlisting language="XML">
+&hellip;see &lt;a href=&quot;#ch03&quot;&gt;Chapter 3: The Secret to Eternal Life&lt;/a&gt; for details.
+</programlisting>
+          <para>
+      More important, however, are the translation problems that <sgmltag>&lt;xreflabel&gt;</sgmltag> elements cause. Attribute values are not seen by translators. Consequently, they are not translated. Consider the second example above again:
+     </para>
+          <programlisting language="XML">
+&lt;chapter id=&quot;ch03&quot; xreflabel=&quot;The Secret to Eternal Life&quot;&gt;
+ &lt;title&gt;The Secret to Eternal Life&lt;/title&gt;
+ &lt;para&gt;The secret to eternal life is&hellip;&lt;/para&gt;
+&lt;/chapter&gt;
+
+[more deathless prose here]  
+
+&hellip;see &lt;xref linkend=&quot;ch03&quot;&gt; for details.
+</programlisting>
+          <para>
+      In English, the <sgmltag>&lt;xref&gt;</sgmltag> is still transformed into an anchor element as follows:
+     </para>
+          <programlisting language="XML">
+&hellip;see &lt;a href=&quot;#ch03&quot;&gt;The Secret to Eternal Life&lt;/a&gt; for details.
+</programlisting>
+          <para>
+      Someone reading the German version, however, will have this as their underlying HTML:
+     </para>
+          <programlisting language="XML">
+&hellip;Sehen Sie &lt;a href=&quot;#ch03&quot;&gt;The Secret to Eternal Life&lt;/a&gt; für Details.
+</programlisting>
+          <para>
+      If the <sgmltag>&lt;xreflabel&gt;</sgmltag> attribute is not used, the title and chapter indicator, both properly translated, appear to the reader. That is, the following:
+     </para>
+          <programlisting language="XML">
+&lt;chapter id=&quot;ch03&quot;&gt;
+ &lt;title&gt;The Secret to Eternal Life&lt;/title&gt;
+ &lt;para&gt;The secret to eternal life is&hellip;&lt;/para&gt;
+&lt;/chapter&gt;
+
+[more deathless prose here]  
+
+&hellip;see &lt;xref linkend=&quot;ch03&quot;&gt; for details.
+</programlisting>
+          <para>
+      will, after translation, present thus to a German-speaking reader:
+     </para>
+          <programlisting language="XML">
+&hellip;Sehen Sie &lt;a href=&quot;#ch03&quot;&gt;Kapitel 3: Das Geheimnis des ewigen Lebens&lt;/a&gt; für Details.
+</programlisting>
+          <para>
+      This is, not surprisingly, what we want.
+     </para>
+          <para>
+      The <parameter>xreflabel</parameter> attribute is therefore disallowed.
+     </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <sgmltag>&lt;[element] endterm=&quot;[any_string_here]&quot;&gt;</sgmltag>
+        </term>
+        <listitem>
+          <para>
+      The <parameter>endterm</parameter> attribute allows you to present hyperlinked text other than the name of the section or chapter to which the hyperlink points. As such, it decreases the usability of printed versions of documents, and causes difficulty for translators.
+     </para>
+          <para>
+      The text presented in an element (such as an <sgmltag>&lt;xref&gt;</sgmltag>) that contains the <parameter>endterm</parameter> attribute is taken from a <sgmltag>&lt;titleabbrev&gt;</sgmltag> element in the target chapter or section. Although the content of the <sgmltag>&lt;titleabbrev&gt;</sgmltag> element is available to translators in the document&apos;s PO files, it is removed from the context of the <sgmltag>&lt;xref&gt;</sgmltag>. The absence of this context makes reliable translation impossible in languages that mark prepositions or articles for grammatical number and grammatical gender.
+     </para>
+          <para>
+      For example, if you have the following:
+     </para>
+          <programlisting language="XML">
+&lt;chapter id=&quot;The_Secret&quot;&gt;
+ &lt;title&gt;The Secret to Eternal Life&lt;/title&gt;
+ &lt;titleabbrev id=&quot;final&quot;&gt;the final chapter&lt;/titleabbrev&gt;
+
+ &lt;para&gt;The secret to eternal life is&hellip;&lt;/para&gt;
+&lt;/chapter&gt;
+
+[more deathless prose here]     
+
+The solution is in &lt;xref linkend=&quot;The_Secret&quot; endterm=&quot;final&quot;/&gt;.
+</programlisting>
+          <para>
+      The text surrounding the <sgmltag>&lt;xref&gt;</sgmltag> presents in the English version of the document as:
+     </para>
+          <blockquote>
+            <para>
+       The solution is in <literal>the final chapter</literal>.
+      </para>
+          </blockquote>
+          <para>
+      A translator sees the <sgmltag>&lt;titleabbrev&gt;</sgmltag> in a PO file as:
+     </para>
+          <programlisting>
+#. Tag: titleabbrev
+#, no-c-format
+msgid &quot;the final chapter&quot;
+msgstr &quot;&quot;
+</programlisting>
+          <para>
+      and sees the text that contains the <sgmltag>&lt;xref&gt;</sgmltag> elsewhere in the PO file (or, more likely, in a completely different PO file) as:
+     </para>
+          <programlisting>
+#. Tag: para
+#, no-c-format
+msgid &quot;The solution is in &lt;xref linkend=&quot;The_Secret&quot; endterm=&quot;final&quot;/&gt;.&quot;
+msgstr &quot;&quot;
+</programlisting>
+          <para>
+      The translator has no way of telling what will be substituted for <sgmltag>&lt;xref linkend=&quot;The_Secret&quot; endterm=&quot;final&quot;/&gt;</sgmltag> when the document builds, so a translation in Italian might read:
+     </para>
+          <programlisting>
+#. Tag: para
+#, no-c-format
+msgid &quot;The solution is in &lt;xref linkend=&quot;The_Secret&quot; endterm=&quot;final&quot;/&gt;.&quot;
+msgstr &quot;La soluzione è in &lt;xref linkend=&quot;The_Secret&quot; endterm=&quot;final&quot;/&gt;.&quot;
+</programlisting>
+          <para>
+      Note the preposition <literal>in</literal>.
+     </para>
+          <para>
+      If the translator rendered <literal>the final chapter</literal> in Italian as <literal>l&apos;ultimo capitolo</literal>, the result when the document builds will read:
+     </para>
+          <blockquote>
+            <para>
+       La soluzione è in <literal>l&apos;ultimo capitolo</literal>.
+      </para>
+          </blockquote>
+          <para>
+      This result is comprehensible, but inelegant, because Italian combines some of its prepositions with its definite articles. More elegant Italian would be:
+     </para>
+          <blockquote>
+            <para>
+       La soluzione è nell&apos;<literal>ultimo capitolo</literal>.
+      </para>
+          </blockquote>
+          <para>
+      Without knowing what text will appear in place of <sgmltag>&lt;xref linkend=&quot;The_Secret&quot; endterm=&quot;final&quot;/&gt;</sgmltag>, the translator into Italian cannot know whether to leave the preposition <literal>in</literal> to stand by itself, or which of seven different possible combinations with the definite article to use: <literal>nel</literal>, <literal>nei</literal>, <literal>nello</literal>, <literal>nell&apos;</literal>, <literal>negli</literal>, <literal>nella</literal>, or <literal>nelle</literal>.
+     </para>
+          <para>
+      Furthermore, note that the combined preposition and article also poses a problem with regard to whether this word should be placed in the text surrounding the <sgmltag>&lt;xref&gt;</sgmltag>, or in the <sgmltag>&lt;titleabbrev&gt;</sgmltag>. Whichever of these two solutions the translator selects will cause problems when the <parameter>endterm</parameter> appears in other grammatical contexts, because not all Italian prepositions can combine with the definite article in this way.
+     </para>
+          <para>
+      Due to the problems that <parameter>endterm</parameter> presents for translation, <application>Publican</application> disallows this attribute.
+     </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </section>
+</section>

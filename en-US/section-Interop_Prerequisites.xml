@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="ip-Interop_Prerequisites">
+  <title>Prerequisites</title>
+  <para>The following prerequisites are necessary for <application>Maven</application> <application>jDocBook</application> and <application>Publican</application> interoperability.  It is assumed that you do not have any of the following components installed, and require some basic configuration instructions--or links to  appropriate resources-- to make the installation process simple.  </para>
+  <note>
+    <title>jDocBook local installation not required</title>
+    <para>If you use  the <filename>pom.xml</filename> file recommended in <xref linkend="appendix-Pom_Dot_XML"/>, <application>Maven jDocBook</application> is called as a dependency at publish time.  A local copy of <application>jDocBook</application> is therefore not required.  </para>
+  </note>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="section-Interop_Install_Maven.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="section-Interop_Install_Publican.xml"/>
+</section>

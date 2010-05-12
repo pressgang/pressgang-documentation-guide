@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "../JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section>
+  <title>Acknowledgements</title>
+  <para>Many thanks to the following Red Hat  Engineering Content Services contributors for adding valuable content to this reference.</para>
+  <para>Darrin Mison contributed  the base   technical information for <xref linkend="iim-Interop_Install_Maven"/>,  and <xref linkend="pwj-Publish_With_jDocBook"/>.</para>
+  <para>Sean Rogers  contributed heavily to <xref linkend="sg-Structure_Guidelines"/> with reworked and detailed XML element guidelines from the ECS wiki.   These guidelines were originally written by David O&apos;Brien.</para>
+  <para>Many thanks to  Ruediger Landmann and the Publican Team for allowing us to directly include <xref linkend="sect-Users_Guide-Disallowed_elements_and_attributes-Disallowed_attributes"/>, <xref linkend="sect-Users_Guide-Disallowed_elements_and_attributes-Disallowed_elements"/>, and <xref linkend="sge-Structure_Guidlines_Entities"/> from the Publican User Guide.   </para>
+</section>

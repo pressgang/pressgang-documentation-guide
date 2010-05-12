@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="xr-XML_References">
+  <title>XML References</title>
+  <para>There are numerous resources available that discuss XML authoring.  By far the most authoritative resource for DocBook XML is <citetitle>DocBook: The Definitive Guide</citetitle>, which is freely available online at <ulink url="http://www.docbook.org/tdg/en/html/"/> . This guide provides you with definitions for all available elements  in the DocBook standard.  </para>
+  <para>If you are new to XML authoring, you may wish to learn the basics behind XML before beginning your documentation project.  A <citetitle>Technical Introduction to XML</citetitle> by Norman Walsh is a great place to start.  You can access the resource online at <ulink url="http://nwalsh.com/docs/articles/xml/"/></para>
+  <para>In JBoss, some elements and attributes  are excluded from use, because they impact translation and localization.  You can read more about   disallowed elements in <xref linkend="sect-Users_Guide-Disallowed_elements_and_attributes-Disallowed_elements"/>.   <xref linkend="sect-Users_Guide-Disallowed_elements_and_attributes-Disallowed_attributes"/> discusses the attributes that are disallowed due to translation impacts.</para>
+  <para>In this user guide, <xref linkend="sg-Structure_Guidelines"/> discusses the JBoss standard XML elements.  You will learn how to apply the elements correctly according to what you are documenting. </para>
+</section>

@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="sect-Interop_Insert_Parameter_Entities">
+  <title>Insert .ent Parameter Entities</title>
+  <para>Publican references the <filename><replaceable>book_name</replaceable>.ent</filename> file for all entities contained within your book.  Local  entities declared in the <code>DOCTYPE</code> declaration will cause Publican builds to fail.</para>
+  <para>To ensure <application>jDocBook</application> and <application>Publican</application> can parse the entities declared throughout your book, you must append a parameter entity to each <code>DOCTYPE</code> declaration in your book&apos;s XML files.   The parameter entity specifies the location of the <filename><replaceable>book_name</replaceable>.ent</filename> file, then calls the file as part of a single parameter entity declared in each XML file&apos;s <code>DOCTYPE</code> declaration.</para>
+  <note>
+    <title>Bulk Append</title>
+    <para>If you have a number of files to convert initially, you may find it easier to use a command line utility to append the entity declaration.  Refer to <xref linkend="proc-Adding_System_Entities_Command_Line"/> for instructions relevant to large conversions.</para>
+  </note>
+  <procedure>
+    <title>Adding parameter entities manually</title>
+    <para>This procedure describes the method to manually insert a parameter entity declaration into the XML <code>DOCTYPE</code> declaration.  </para>
+    <para>In this procedure, replace the <replaceable>book_name</replaceable> placeholder with the name of the book you created.</para>
+    <step>
+      <title>Open the XML file</title>
+      <para>Open the XML file that must contain the parameter entity in a text editor.</para>
+    </step>
+    <step>
+      <title>Locate the DOCTYPE declaration</title>
+      <para>The <code>DOCTYPE</code> declaration is located at the very beginning of the file.  For example, a <sgmltag>&lt;section&gt;</sgmltag> <code>DOCTYPE</code> declaration will look similar to the following sample.</para>
+      <programlisting language="XML" role="XML">&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;!DOCTYPE section PUBLIC &quot;-//OASIS//DTD DocBook XML V4.5//EN&quot; &quot;docbookV4.5/docbookx.dtd&quot; [
+]&gt;
+</programlisting>
+      <para>For <sgmltag>&lt;chapter&gt;</sgmltag> XML files, change the <code>DOCTYPE</code> declaration to <literal>chapter</literal>.</para>
+      <important>
+        <title>DOCTYPE declarations are mandatory</title>
+        <para>If the XML file does not contain a <code>DOCTYPE</code> declaration, you must add the correct declaration to the XML file.  </para>
+      </important>
+    </step>
+    <step>
+      <title>Append the parameter entity to the DOCTYPE declaration</title>
+      <para>The parameter entity declaration sets the  <varname>BOOK_ENTITIES</varname>  entity.  The entity resolves to the <filename><replaceable>book_name</replaceable>.ent</filename> file in your book&apos;s repository.  </para>
+      <programlisting language="XML" role="XML">&lt;!ENTITY % BOOK_ENTITIES SYSTEM &quot;<replaceable>book_name</replaceable>.ent&quot;&gt;
+%BOOK_ENTITIES;]&gt;</programlisting>
+      <para>The entity is declared, then subsequently called in the <code>DOCTYPE</code> by specifying  <literal>%BOOK_ENTITIES</literal> in the <code>DOCTYPE</code> declaration.</para>
+      <programlisting language="XML" role="XML">&lt;!ENTITY % BOOK_ENTITIES SYSTEM &quot;<replaceable>book_name</replaceable>.ent&quot;&gt;
+%BOOK_ENTITIES;</programlisting>
+      <para>Insert the parameter entity declaration between the square brackets ([ and ]) in the <code>DOCTYPE</code> declaration.</para>
+      <programlisting language="XML" role="XML">&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;!DOCTYPE section PUBLIC &quot;-//OASIS//DTD DocBook XML V4.5//EN&quot; &quot;docbookV4.5/docbookx.dtd&quot; [
+&lt;!ENTITY % BOOK_ENTITIES SYSTEM &quot;<replaceable>book_name</replaceable>.ent&quot;&gt;
+%BOOK_ENTITIES;
+]&gt;</programlisting>
+    </step>
+    <step>
+      <title>Repeat for all files in your repository</title>
+      <para>Append the parameter entity to all files in your book repository.  This includes any files in your <filename>fallback_content</filename> directory.  </para>
+    </step>
+  </procedure>
+  <procedure id="proc-Adding_System_Entities_Command_Line">
+    <title>Adding parameter entities using the command line</title>
+    <para>This procedure describes adding the parameter entity declaration to XML files by creating, and subsequently running the <filename>book_ent</filename> script.  The procedure assumes  you are using a Linux-based operating system.   </para>
+    <para>The script provided is a Bourne Again Shell script, therefore will work on Linux systems only. </para>
+    <note>
+      <title>book_ent script alternative location</title>
+      <para>If you are having difficulty copying the <filename>book_ent</filename> script in this procedure, you may find it easier to check-out the file directly from the SVN repository and customize it according to this procedure.  </para>
+      <para><command>svn co http://anonsvn.jboss.org/repos/documentation/JBoss_Documentation_Guide/en-US/extras/book_ent</command></para>
+    </note>
+    <para>In this procedure, replace the <replaceable>book_name</replaceable> placeholder with the name of the book you created.</para>
+    <step>
+      <title>Create a book_ent shell script</title>
+      <para>In your <filename>home</filename> directory, create a <filename>/bin</filename> directory.</para>
+      <programlisting>[home]$ mkdir /bin
+[home]$</programlisting>
+      <para>Create an empty file  in the <filename>/bin</filename> directory named <filename>book_ent</filename>, and add the following code to the file.  </para>
+      <programlisting><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="text" href="extras/book_ent"/></programlisting>
+      <para>Make the file executable.</para>
+      <programlisting>[bin]$ chmod 777 book_ent</programlisting>
+    </step>
+    <step>
+      <title>Configure Environment Variables</title>
+      <para>In your <filename>~/.bash_profile</filename>, set the following PATH: </para>
+      <screen>PATH=$PATH:$HOME/bin</screen>
+      <para>By including the <filename>/bin</filename> directory as a PATH, you will be able to execute <filename>book_ent</filename> as a command in any directory. Use <filename>/bin</filename> to store any other automation scripts you choose to create.</para>
+    </step>
+    <step>
+      <title>Implement changes to .bash_profile</title>
+      <para>To quickly verify the changes to ~/<filename>.bash_profile</filename>, execute the following commands:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Source your .bash_profile.</para>
+          <screen>[localhost]$ source ~/.bash_profile</screen>
+        </listitem>
+        <listitem>
+          <para>Execute <command>echo $PATH</command>, and verify the  <filename>/bin</filename> directory is included.</para>
+          <para><screen>[localhost]$ echo $PATH
+/home/username/bin</screen></para>
+        </listitem>
+      </itemizedlist>
+    </step>
+    <step>
+      <title>Navigate to your en-US directory</title>
+      <para>In the open terminal,  navigate to the location of the <filename>en-US</filename> directory of your book.</para>
+    </step>
+    <step>
+      <title>Append the XML DOCTYPE to all XML files in the en-US directory</title>
+      <para>In the <filename>en-US</filename> directory, execute the <command>book_ent</command> script.  Substitute  <replaceable>book_name</replaceable> with the name of your <filename><replaceable>book_name</replaceable>.ent</filename> file.  You do not need to specify the <filename>.ent</filename> file extension.  </para>
+      <screen>[en-US]$ book_ent <replaceable>book_name</replaceable></screen>
+      <para>All XML files in the <filename>en-US</filename> directory have now been changed.</para>
+    </step>
+    <step>
+      <title>Append the XML DOCTYPE to all XML files in sub-directories</title>
+      <para>The <command>book_ent</command> script is not recursive.  Therefore, you must execute the script for all XML files contained in sub-directories (for example, the <filename>fallback_content</filename> directory).  </para>
+      <orderedlist>
+        <listitem>
+          <para>Navigate to  a sub-directory that contains XML files to update.</para>
+        </listitem>
+        <listitem>
+          <para>Execute the script again, specifying the relative  path to the <filename><replaceable>book_name</replaceable>.ent</filename> file. Use two backslash characters to escape the forward-slash   </para>
+          <screen>[fallback_content]$ book_ent <replaceable>..\\/book_name</replaceable></screen>
+        </listitem>
+        <listitem>
+          <para>All XML files in the <filename>fallback_content</filename> directory have now been changed.</para>
+        </listitem>
+        <listitem>
+          <para>Repeat steps one and two for all other sub-directories in your book repository.</para>
+        </listitem>
+      </orderedlist>
+    </step>
+  </procedure>
+</section>

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="iip-Interop_Install_Publican">
+  <title>Install Publican</title>
+  <para><application>Publican</application> is a publication system, not just a DocBook processing tool. As well as ensuring your DocBook XML is valid, <application>Publican</application> works to ensure your XML is up to a publishable and translatable  standard. </para>
+  <para>Refer to <xref linkend="p-Publican"/> for a basic overview, and links to <application>Publican</application> resources such as the <citetitle>Publican User Guide</citetitle>.  </para>
+  <para>Install the JBoss Community <application>Publican</application> brand as part of your installation.</para>
+</section>

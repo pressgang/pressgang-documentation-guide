@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="sgmbl-Structure_Guidlines_Menus_Buttons_Labels">
+  <title>Menus, Buttons, and Labels</title>
+  <para>In DocBook 4.5, there are a number of elements that can be used to mark-up items that the user has access to in a program Graphical User Interface (<acronym>GUI</acronym>).  A user appreciates consistency in the way user commands are represented because it allows them to quickly identify the sequence of menu transitions required to execute a product feature.</para>
+  <para>
+  Use the following elements as appropriate when describing a GUI:
+ </para>
+  <itemizedlist>
+    <listitem>
+      <para>
+    <sgmltag>&lt;guibutton&gt;</sgmltag>
+   </para>
+    </listitem>
+    <listitem>
+      <para>
+    <sgmltag>&lt;guiicon&gt;</sgmltag>
+   </para>
+    </listitem>
+    <listitem>
+      <para>
+    <sgmltag>&lt;guilabel&gt;</sgmltag>
+   </para>
+    </listitem>
+    <listitem>
+      <para>
+    <sgmltag>&lt;menuchoice&gt;</sgmltag>
+   </para>
+    </listitem>
+    <listitem>
+      <para>
+    <sgmltag>&lt;guimenu&gt;</sgmltag>
+   </para>
+    </listitem>
+    <listitem>
+      <para>
+    <sgmltag>&lt;guimenuitem&gt;</sgmltag>
+   </para>
+    </listitem>
+    <listitem>
+      <para>
+    <sgmltag>&lt;guisubmenu&gt;</sgmltag>
+   </para>
+    </listitem>
+  </itemizedlist>
+  <para>
+  <sgmltag>&lt;guimenu&gt;</sgmltag>, <sgmltag>&lt;guisubmenu&gt;</sgmltag>, and <sgmltag>&lt;guimenuitem&gt;</sgmltag> elements can be listed inside a <sgmltag>&lt;menuchoice&gt;</sgmltag> to provide a simplified notation for traversing the menu hierarchy, as demonstrated in  <xref linkend="exam-JBoss_Documentation_Guide-Menus_Buttons_and_Labels-GUI_tags_example"/>. Alternatively each can be used individually to describe menus and menu items.
+ </para>
+  <example id="exam-JBoss_Documentation_Guide-Menus_Buttons_and_Labels-GUI_tags_example">
+    <title>GUI elements example</title>
+    <programlisting language="XML" role="XML">
+Choose &lt;menuchoice&gt;&lt;guimenu&gt;System&lt;/guimenu&gt;&lt;guisubmenu&gt;Preferences&lt;/guisubmenu&gt;&lt;guimenuitem&gt;Mouse&lt;/guimenuitem&gt; &lt;/menuchoice&gt; from the main menu bar to launch &lt;application&gt;Mouse Preferences&lt;/application&gt;. In the &lt;guilabel&gt;Buttons&lt;/guilabel&gt; tab, click the &lt;guilabel&gt;Left-handed mouse&lt;/guilabel&gt; check box and click &lt;guibutton&gt;Close&lt;/guibutton&gt; to switch the primary mouse button from the left to the right (making the mouse suitable for use in the left hand).
+</programlisting>
+    <blockquote>
+      <para>
+    Choose <menuchoice>
+          <guimenu>System</guimenu>
+          <guisubmenu>Preferences</guisubmenu>
+          <guimenuitem>Mouse</guimenuitem>
+        </menuchoice> from the main menu bar to launch <application>Mouse Preferences</application>. In the <guilabel>Buttons</guilabel> tab, click the <guilabel>Left-handed mouse</guilabel> check box and click <guibutton>Close</guibutton> to switch the primary mouse button from the left to the right (making the mouse suitable for use in the left hand).
+   </para>
+    </blockquote>
+  </example>
+</section>

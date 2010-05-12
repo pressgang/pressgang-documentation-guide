@@ -1,0 +1,21 @@
+<procedure id="proc-Procedure_Title">
+    <title>&lt;procedure&gt; Title</title>
+        <step>
+            <title>Step 1 Title</title>
+            <para>Step one info.  You can have multiple <sgmltag>&lt;para&gt;</sgmltag> elements, in one step.</para>
+            <para>Second para to further describe step.  </para>
+        </step>
+        <step>
+            <title>Step 2 Title</title>
+            <para>If you find you need sub-steps, use an <sgmltag>&lt;orderedlist&gt;</sgmltag> to capture these:</para>
+            <para>The ordered list should have a lead-in sentence introducing the list:</para>
+            <orderedlist>
+                <listitem>
+                    <para>Sub-step one.</para>
+                </listitem>
+                <listitem>
+                    <para>Sub-step two, etc.</para>
+                </listitem>
+            </orderedlist>
+        </step>
+</procedure>

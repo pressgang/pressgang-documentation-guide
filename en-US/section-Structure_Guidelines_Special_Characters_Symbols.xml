@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="sgscs-Structure_Guidlines_Special_Characters_Symbols">
+  <title>Special Characters (Symbols)</title>
+  <para>When writing XML documentation, certain symbols can prevent XML from validating correctly.  When parsing an XML document, the validator interprets symbols as XML processing instructions.  As a rule, a good WYSIWYG XML Editor will correctly replace special characters with their literal value entities automatically.  </para>
+  <para>If you are editing XML using a basic text editing program, this automation may not exist.  You must manually insert symbol entities when you need to insert a keyboard symbol (commonly) or non-keyboard symbols (copyright, etc).</para>
+  <para>The most common symbol entities used to replace forbidden symbols are listed for reference. </para>
+  <para><variablelist>
+      <varlistentry>
+        <term>&amp;lt&semi;</term>
+        <listitem>
+          <para>Inserts a left angle bracket &quot;&lt;&quot; symbol.  The left angle bracket is used to open all XML elements, therefore the parser will assume that the text directly proceeding the symbol is a DocBook XML element.  This will cause the publish to fail.  Use this symbol entity when writing menu paths, referring to XML elements within <sgmltag>&lt;para&gt;</sgmltag> or other character data (CDATA) elements, or within  code samples.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>&amp;gt&semi;</term>
+        <listitem>
+          <para>Inserts a right angle bracket &quot;&gt;&quot; symbol.   Use this symbol to close off XML elements when describing XML elements in CDATA elements such as <sgmltag>&lt;para&gt;</sgmltag> elements and within code samples.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>&amp;amp&semi;</term>
+        <listitem>
+          <para>Inserts an ampersand &quot;&amp;&quot; symbol.  Ampersand is used to start an entity reference, so this will break the XML publish if you directly insert it into your document.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist></para>
+</section>

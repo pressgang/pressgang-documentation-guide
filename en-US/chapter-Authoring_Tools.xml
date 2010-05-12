@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<chapter id="at-Authoring_Tools">
+  <title>Authoring Tools</title>
+  <para>While you can write XML using a basic text editor, the easiest way to author XML is by using an XML Authoring Tool.  A good XML Authoring Tool can auto-complete structure for you, and most importantly, validate the XML content you have written to ensure it is well-formed and valid to the standard.</para>
+  <para>The number of XML authoring tools available can seem daunting to a first-time content author.  The following applications will help you to get started with XML authoring, and ease your transition into the  world of structured authoring.</para>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="section-Syntext_Serna.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="section-Oxygen_XML_Editor.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="section-XML_Copy_Editor.xml"/>
+</chapter>

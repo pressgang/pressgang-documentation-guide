@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="sggas-Structure_Guidlines_Graphics_And_Screenshots">
+  <title>Graphics and Screenshots</title>
+  <para>There are a number of graphical elements that are supported in DocBook.  For consistency, the best element to use is  <sgmltag>&lt;figure&gt;</sgmltag>.</para>
+  <para>The <sgmltag>&lt;figure&gt;</sgmltag> element has the advantage of containing a well-formatted title for the image. It is suitable for  diagrams and screenshots that  are included through the use of the <sgmltag>&lt;mediaobject&gt;</sgmltag> element. The <sgmltag>&lt;mediaobject&gt;</sgmltag> element must also contain a <sgmltag>&lt;textobject&gt;</sgmltag> element with a description of the image for accessibility purposes.</para>
+  <formalpara>
+    <title>ID Attributes for Figures</title>
+    <para>To allow cross-referencing within the book, the <varname>id</varname> attribute must be set for each figure.  The format for the figure ID is explicit, to ensure cross-referencing within each user guide is consistent.  For more information about links and references, refer to <xref linkend="sgl-Structure_Guidlines_Links"/>   </para>
+  </formalpara>
+  <para>The format to use for <sgmltag>&lt;figure&gt;</sgmltag> IDs throughout your documentation is as follows:</para>
+  <para><code>&lt;figure id=&quot;figure-<replaceable>[figure_title]</replaceable>&quot;&gt;</code></para>
+  <para>Replace the <replaceable>[figure_title]</replaceable> text with the actual title of the figure. Exclude any XML special characters from your ID.</para>
+  <note>
+    <title>Screenshots increase user guide maintenance</title>
+    <para>Think carefully before inserting a screen shot.  Often, you can explain what fields a user must complete in the user interface without a screen shot.  If you can, you will save a lot of maintenance in the future.</para>
+    <para>Screenshots increase the maintenance of a user guide.  What happens if the interface changes?  What happens if the product logo is updated? These situations require the screen shot to be recaptured.</para>
+  </note>
+  <example>
+    <title>&lt;figure&gt; element structure</title>
+    <programlisting>&lt;figure id=&quot;figure-JBoss_Community_Logo&quot;&gt;
+  &lt;title&gt;JBoss Community Logo&lt;/title&gt;
+  &lt;mediaobject&gt;
+    &lt;imageobject&gt;
+      &lt;imagedata fileref=&quot;images/img-JBoss_Community_Logo.svg&quot; format=&quot;PNG&quot;/&gt;
+    &lt;/imageobject&gt;
+    &lt;textobject&gt;
+      &lt;para&gt;Logo for the JBoss Community&lt;/para&gt;
+    &lt;/textobject&gt;
+  &lt;/mediaobject&gt;
+&lt;/figure&gt;</programlisting>
+  </example>
+  <para> The XML structure looks like this when published:</para>
+  <figure>
+    <title>JBoss Community Logo</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/img-JBoss_Community_Logo.svg" format="PNG"/>
+      </imageobject>
+      <textobject>
+        <para>Logo for the JBoss Community</para>
+      </textobject>
+    </mediaobject>
+  </figure>
+  <para>The <sgmltag>&lt;imagedata&gt;</sgmltag> element defines the image path, and sets the way the image is displayed in the published output.  Use the following recommendations when inserting <sgmltag>&lt;figure&gt;</sgmltag> elements:</para>
+  <itemizedlist>
+    <listitem>
+      <para>To scale large diagrams or screenshots to fit within  page boundaries, set <code>width=&quot;450&quot;</code> to scale the screen shot within the boundaries of an A4 page.</para>
+    </listitem>
+    <listitem>
+      <para>If you need to include a screen shot of a large user interface, consider including only the area that relates to what you are discussing.  You can get a much better result if you capture a small section of a user interface, because the user can clearly see the detail of the area referred to in the procedure or concept.</para>
+    </listitem>
+  </itemizedlist>
+  <para>If you are using a Linux-based operating system, chances are you will be using a graphics package such as the <application>GNU Image Manipulation Program (GIMP)</application>. You can use the <application>GIMP</application> to capture screenshots, and save them in a format that will provide the best output for both HTML and PDF.</para>
+  <procedure>
+    <title>Correctly capturing screenshots using the GIMP</title>
+    <para>The following procedure describes how to correctly capture and save a screen shot using the Create Screenshot function in <application>The GIMP</application>.   The procedure assumes that you have <application>The GIMP</application> installed, and the program is open.</para>
+    <step>
+      <title>Prepare the Content to Capture</title>
+      <para>Ensure you have the correct application open, and that the part of the application you need to capture is activated.  <application>The GIMP</application> will capture the screen immediately, unless a delay is set.</para>
+    </step>
+    <step>
+      <title>Select the Create Screenshot Option</title>
+      <para>Click <menuchoice>
+          <guimenu>File</guimenu>
+          <guimenuitem> Create Screenshot</guimenuitem>
+        </menuchoice>.</para>
+    </step>
+    <step>
+      <title>Confirm Capture Options</title>
+      <para>In the Screenshot dialog box, select the capture option you require according to the following guidelines:  <itemizedlist>
+          <listitem>
+            <para>Do not include window decorations in <emphasis>any</emphasis> of your screenshots.</para>
+          </listitem>
+          <listitem>
+            <para>Consider  capturing only the section of the screen you need to refer to in the documentation.  It will be clearer for the reader.  </para>
+          </listitem>
+        </itemizedlist></para>
+    </step>
+    <step>
+      <title>Capture the Screen</title>
+      <para>Click the <guibutton>Snap</guibutton> button to begin capturing the screen area. Select the program, or area of the screen you want to capture.</para>
+    </step>
+    <step>
+      <title>Scale the Image</title>
+      <para>Click <menuchoice>
+          <guimenu>Image</guimenu>
+          <guimenuitem>Scale Image</guimenuitem>
+        </menuchoice>.  </para>
+      <para>If you need to scale a large screen shot or diagram, use the following settings:<itemizedlist>
+          <listitem>
+            <para>In the <guilabel>Image Size</guilabel> group, set the <guilabel>Width</guilabel> to (no greater than) 450 pixels.</para>
+          </listitem>
+          <listitem>
+            <para>In the <guilabel>Quality</guilabel> group, set <guimenu>Interpolation</guimenu> to <guimenu>Sinc (Lancosz3)</guimenu>.</para>
+          </listitem>
+        </itemizedlist></para>
+      <para>Click <guibutton>Scale</guibutton> to set the image scale.</para>
+    </step>
+    <step>
+      <title>Save the Image</title>
+      <para>Click <menuchoice>
+          <guimenu>File</guimenu>
+          <guimenuitem>Save As</guimenuitem>
+        </menuchoice>.</para>
+      <para>Name the image according to the image file naming conventions.  If in doubt, look at the naming convention in the <filename>images</filename> directory of your user guide directory.</para>
+      <para>In the Save Image dialog, select PNG image (*.png) from the Image Type drop down menu.</para>
+      <para>Click <guibutton>Save</guibutton>.</para>
+    </step>
+  </procedure>
+</section>

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="ibwp-Interop_Build_With_Publican">
+  <title>Build with Publican</title>
+  <para>Before beginning to customize your newly created <application>Publican</application> book, you should publish your book to verify that it meets requirements.</para>
+  <procedure>
+    <title>Build Your Book</title>
+    <para>In this procedure, replace the <replaceable>book_name</replaceable> placeholder with the name of the book you created.  </para>
+    <step>
+      <title>Navigate to the book directory</title>
+      <para>Assuming you created your book in the  <filename>home</filename> directory, navigate to the <replaceable>book_name</replaceable> directory and obtain a directory listing. </para>
+      <para><screen>[home]$ cd <replaceable>book_name</replaceable>
+[<replaceable>book_name</replaceable>$]$ ls
+en-US   publican.cfg</screen></para>
+    </step>
+    <step>
+      <title>Publish the book</title>
+      <para>The  <replaceable>book_name</replaceable> directory contains the <filename>en-US</filename> directory, and the <filename>publican.cfg</filename> settings file.  This is the directory that you execute all <application>Publican</application> publish commands from.</para>
+      <para>To publish your book to PDF, execute the following command:</para>
+      <para><screen>[book_name]$ publican build --langs=en-US --formats=pdf</screen></para>
+    </step>
+    <step>
+      <title>View the published output</title>
+      <para>After the publican build has completed successfully, the  <replaceable>book_name</replaceable> directory contains the <filename>tmp</filename> directory.  This  directory contains the files produced as part of the Publican build.</para>
+      <para>To view the published output, navigate to the <filename>/tmp/en-US/pdf</filename> directory and open the PDF to review the published book.</para>
+    </step>
+  </procedure>
+</section>

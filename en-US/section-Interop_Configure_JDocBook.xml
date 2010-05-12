@@ -1,0 +1,10 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="icj-Interop_Configure_JDocBook">
+  <title>Configure jDocBook</title>
+  <para>If you use the supplied multi-output <filename>pom.xml</filename> included as part of this guide,  then no further configuration is required.</para>
+  <para>Maven jDocBook is downloaded initially, and updated subsequently, each time you publish.  It is possible to install jDocBook locally on your PC, however this is not necessary or recommended.</para>
+</section>

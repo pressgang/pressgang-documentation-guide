@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "docbookV4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "../JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;]>
+<section id="sasa-Share_and_Share_Alike">
+  <title>License</title>
+  <para>This document is licensed under the Creative Commons  <ulink url="http://creativecommons.org/about/license/">CC-BY-SA license</ulink>.  You are welcome to utilize any content contained in this user guide according to the terms of this license. </para>
+</section>

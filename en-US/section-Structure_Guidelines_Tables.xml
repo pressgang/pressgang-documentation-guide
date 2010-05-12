@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="sgt-Structure_Guidlines_Tables">
+  <title>Tables</title>
+  <para>Depending on the authoring tools you use to edit your XML documentation, inserting  tables may take a few mouse clicks.  If you prefer to author in plain text mode, you will need  sound knowledge of XML table structure so the table you create is valid, and looks the way you want it to when published.</para>
+  <para>For many new XML authors, tables cause a lot of problems .  This section describes the components of an XML table, and includes an XML sample of a three column table.  The concept of splitting cells in a row is also discussed.</para>
+  <formalpara>
+    <title>ID Attributes for Tables</title>
+    <para>To allow cross-referencing within the book, the <varname>id</varname> attribute must be set for each table.  The format for the table ID is explicit, to ensure cross-referencing within each user guide is consistent.  For more information about links and references, refer to <xref linkend="sgl-Structure_Guidlines_Links"/>   </para>
+  </formalpara>
+  <para>The format to use for <sgmltag>&lt;table&gt;</sgmltag> IDs throughout your documentation is as follows:</para>
+  <para><code>&lt;table id=&quot;table-<replaceable>[table_title]</replaceable>&quot;&gt;</code></para>
+  <para>Replace the <replaceable>[table_title]</replaceable> text with the actual title of the table. Exclude any XML special characters from your ID.</para>
+  <para>For the definitive list of table elements and attributes, refer to the <ulink url="http://www.docbook.org/tdg/en/html/table.html">DocBook.org <sgmltag>&lt;table&gt;</sgmltag> page</ulink>.</para>
+  <note>
+    <title>Consider &lt;variablelist&gt; for two-column tables</title>
+    <para>In certain situations, a table that would otherwise only have two columns may be better implemented as a variable list, using the <sgmltag>&lt;variablelist&gt;</sgmltag> element (see <xref linkend="sgl-Structure_Guidlines_Lists"/>).</para>
+  </note>
+  <para>The majority of tables used throughout JBoss documentation are classed as <firstterm>formal tables</firstterm>.  In contrast to <firstterm>informal tables</firstterm>,  formal tables always feature a <sgmltag>&lt;title&gt;</sgmltag> that gives  the reader a basic summary of the table contents. A formal table consists of the following structural elements (in order):</para>
+  <variablelist>
+    <varlistentry>
+      <term>
+        <sgmltag>&lt;table&gt;</sgmltag>
+      </term>
+      <listitem>
+        <para>The parent element of all formal tables, which contains all the child elements. <sgmltag>&lt;table&gt;</sgmltag> accepts attributes that control how the table is processed at publish time.  The <parameter>frame</parameter> and <parameter>pgwide</parameter> attributes are applied to the <sgmltag>&lt;table&gt;</sgmltag> element. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>
+        <sgmltag>&lt;tgroup&gt;</sgmltag>
+      </term>
+      <listitem>
+        <para>Below the <sgmltag>&lt;table&gt;</sgmltag> element, the <sgmltag>&lt;tgroup&gt;</sgmltag> element contains the information that governs the basic framework of your table.  <sgmltag>&lt;tgroup&gt;</sgmltag> contains settings that govern the number  of columns in the table, along with the <sgmltag>&lt;row&gt;</sgmltag> structural information.  <sgmltag>&lt;tgroup&gt;</sgmltag> also contains column and span specifications required to set the table geometry and cell formatting.  </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>
+        <sgmltag>&lt;thead&gt;</sgmltag>
+      </term>
+      <listitem>
+        <para>Defines the column headers for the table.  <sgmltag>&lt;thead&gt;</sgmltag> is also used if you include a table footer, however table footers are not common in JBoss documentation.</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>
+        <sgmltag>&lt;colspec&gt;</sgmltag>
+      </term>
+      <listitem>
+        <para>Defines the column specifications for the table. Column and row separators, and  column widths, are specified as attributes of this element.   <sgmltag>&lt;colspec&gt;</sgmltag> is also used if you include a header (<sgmltag>&lt;thead&gt;</sgmltag>).</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>
+        <sgmltag>&lt;tbody&gt;</sgmltag>
+      </term>
+      <listitem>
+        <para><sgmltag>&lt;tbody&gt;</sgmltag> is a wrapper element for the <sgmltag>&lt;row&gt;</sgmltag> elements that comprise the table.  Generally, no attributes are applied to the <sgmltag>&lt;tbody&gt;</sgmltag> element. </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>
+        <sgmltag>&lt;row&gt;</sgmltag>
+      </term>
+      <listitem>
+        <para>Defines a row in the table, and contains the <sgmltag>&lt;entry&gt;</sgmltag> elements that comprise each cell in the table.</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>
+        <sgmltag>&lt;entry&gt;</sgmltag>
+      </term>
+      <listitem>
+        <para>Defines a cell in the table. Each cell can contain block elements or inline elements, but not both concurrently.  </para>
+        <para>For example, one <sgmltag>&lt;entry&gt;</sgmltag> might contain a paragraph or a list while another <sgmltag>&lt;entry&gt;</sgmltag>  contains parsed character data (#PCDATA), but no single <sgmltag>&lt;entry&gt;</sgmltag> can contain a mixture of both.</para>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+  <example id="exam-JBoss_Documentation_Guide-Code_Examples-Three_Column_Table">
+    <title>Three-column Table</title>
+    <programlisting language="XML" role="XML"><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="extras/exam-JBoss_Documentation_Guide-Code_Examples-Three_Column_Table.xml_sample" parse="text"/></programlisting>
+  </example>
+  <para>When published, the XML structure described in <xref linkend="exam-JBoss_Documentation_Guide-Code_Examples-Three_Column_Table"/> publishes in the following way.</para>
+  <table frame="all" pgwide="1" id="table-Three_Column_Table">
+    <title>Three-column Table</title>
+    <tgroup cols="3" colsep="1">
+      <colspec colnum="1" colname="c0"/>
+      <colspec colnum="2" colname="c1"/>
+      <colspec colnum="3" colname="c2"/>
+      <thead>
+        <row>
+          <entry>Header Row, Column 1</entry>
+          <entry>Header Row, Column 2</entry>
+          <entry>Header Row, Column 3</entry>
+        </row>
+      </thead>
+      <tbody>
+        <row>
+          <entry>A</entry>
+          <entry>B</entry>
+          <entry>C</entry>
+        </row>
+        <row>
+          <entry>D</entry>
+          <entry>E</entry>
+          <entry>F</entry>
+        </row>
+        <row>
+          <entry>G</entry>
+          <entry>H</entry>
+          <entry>I</entry>
+        </row>
+        <row>
+          <entry>J</entry>
+          <entry>K</entry>
+          <entry>L</entry>
+        </row>
+      </tbody>
+    </tgroup>
+  </table>
+  <formalpara>
+    <title>Merging Cells Horizontally (spanning cells)</title>
+    <para>Merging cells horizontally is controlled by specifying the <varname>namest</varname> and <varname>nameend</varname> attributes in the <sgmltag>&lt;entry&gt;</sgmltag> element.  The <varname>colname</varname> value of the starting column and the finishing column are specified in the <sgmltag>&lt;entry&gt;</sgmltag> element that you want the cell span to start from.  </para>
+  </formalpara>
+  <example>
+    <title>Cell spanning</title>
+    <para>This example describes how to  merge the B and C cells together in <xref linkend="table-Three_Column_Table"/> using the <varname>namest</varname> and <varname>nameend</varname> attributes. </para>
+    <para>In the <sgmltag>&lt;thead&gt;</sgmltag> element of the table, the <sgmltag>&lt;colspec&gt;</sgmltag> element has two attributes specified: <varname>colnum</varname> and <varname>colname</varname>.  By default, the <varname>colname</varname> attribute starts from <literal>c0</literal>.  </para>
+    <para>To span the B and C cells, you need to specify <varname>namest</varname>=<literal>&quot;c1&quot;</literal> as the starting cell (the second column) and <varname>nameend</varname>=<literal>&quot;c2&quot;</literal> as the finishing cell (the third column).</para>
+    <programlisting language="XML" role="XML">&lt;row&gt;
+  &lt;entry&gt;A&lt;/entry&gt;
+  &lt;entry <varname>namest</varname>=<option>&quot;c1&quot;</option> <varname>nameend</varname>=<option>&quot;c2&quot;</option>&gt;BC&lt;/entry&gt;
+&lt;/row&gt;
+&lt;row&gt;
+  &lt;entry&gt;D&lt;/entry&gt;
+  &lt;entry&gt;E&lt;/entry&gt;
+  &lt;entry&gt;F&lt;/entry&gt;
+&lt;/row&gt;</programlisting>
+    <para>The result is displayed in <xref linkend="table-Three_Column_Table_Spanned"/>.</para>
+  </example>
+  <table frame="all" pgwide="1" id="table-Three_Column_Table_Spanned">
+    <title>Three-column table with spanning</title>
+    <tgroup cols="3" colsep="1">
+      <colspec colnum="1" colname="c0"/>
+      <colspec colnum="2" colname="c1"/>
+      <colspec colnum="3" colname="c2"/>
+      <thead>
+        <row>
+          <entry>Header Row, Column 1</entry>
+          <entry>Header Row, Column 2</entry>
+          <entry>Header Row, Column 3</entry>
+        </row>
+      </thead>
+      <tbody>
+        <row>
+          <entry>A</entry>
+          <entry namest="c1" nameend="c2">BC</entry>
+        </row>
+        <row>
+          <entry>D</entry>
+          <entry>E</entry>
+          <entry>F</entry>
+        </row>
+        <row>
+          <entry>G</entry>
+          <entry>H</entry>
+          <entry>I</entry>
+        </row>
+        <row>
+          <entry>J</entry>
+          <entry>K</entry>
+          <entry>L</entry>
+        </row>
+      </tbody>
+    </tgroup>
+  </table>
+</section>

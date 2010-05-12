@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+]>
+<section id="sect-JBoss_Sample_Project-Test_Section_B">
+	<title>Test Section B</title>
+	<para>
+		This structure (section, title, para) is the minimum amount of XML structure a section can contain.
+	</para>
+</section>
+
+

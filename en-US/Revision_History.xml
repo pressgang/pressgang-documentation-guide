@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE appendix PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<appendix id="app-Revision_History">
+  <title>Revision History</title>
+  <simpara>
+    <revhistory>
+      <revision>
+        <revnumber>1.1</revnumber>
+        <date>Friday Feb 12 2010</date>
+        <author>
+          <firstname>Jared</firstname>
+          <surname>Morgan</surname>
+          <email>jmorgan@redhat.com</email>
+        </author>
+        <revdescription>
+          <simplelist>
+            <member>Incorporated minor editing comments from Misty Stanley-Jones</member>
+          </simplelist>
+        </revdescription>
+      </revision>
+      <revision>
+        <revnumber>1.0</revnumber>
+        <date>Mon Feb 1 2010</date>
+        <author>
+          <firstname>Jared</firstname>
+          <surname>Morgan</surname>
+          <email>jmorgan@redhat.com</email>
+        </author>
+        <revdescription>
+          <simplelist>
+            <member>First Edition Released</member>
+          </simplelist>
+        </revdescription>
+      </revision>
+      <revision>
+        <revnumber>0.2</revnumber>
+        <date>Fri Dec 4 2009</date>
+        <author>
+          <firstname>Jared</firstname>
+          <surname>Morgan</surname>
+          <email>jmorgan@redhat.com</email>
+        </author>
+        <revdescription>
+          <simplelist>
+            <member>Complete draft for comment. All sections completed. </member>
+          </simplelist>
+        </revdescription>
+      </revision>
+      <revision>
+        <revnumber>0.1</revnumber>
+        <date>Thu Nov 19 2009</date>
+        <author>
+          <firstname>Jared</firstname>
+          <surname>Morgan</surname>
+          <email>jmorgan@redhat.com</email>
+        </author>
+        <revdescription>
+          <simplelist>
+            <member>Draft release for comment. Many sections still need to be completed. </member>
+          </simplelist>
+        </revdescription>
+      </revision>
+    </revhistory>
+  </simpara>
+</appendix>

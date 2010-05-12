@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE bookinfo PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<bookinfo id="jdg-JBoss_Documentation_Guide">
+  <title>JBoss Documentation Guide</title>
+  <subtitle>The canonical reference for JBoss developers and writers </subtitle>
+  <productname>JBoss Documentation Guide</productname>
+  <productnumber>1.1</productnumber>
+  <edition>1</edition>
+  <pubsnumber>12</pubsnumber>
+  <abstract>
+    <para>Throughout JBoss Middleware, the amount of user documentation is
+significant. This guide contains information that will help new and
+existing JBoss projects author XML documentation to a common technical
+and content quality standard. JBoss projects will benefit from the
+information regarding XML structure, and specific grammar guidelines. By
+following the recommendations in this guide, your JBoss project will
+have the style and XML usage information necessary to create
+professional open source software user documentation; be able to
+leverage JBoss&apos; wider content, editorial, and translation
+infrastructure; and be able to easily contribute downstream content to
+supported products, and accept contributions, including translations,
+from products downstream.</para>
+  </abstract>
+  <corpauthor>
+    <inlinemediaobject>
+      <imageobject>
+        <imagedata fileref="images/img-PressGang_Logo_450.png" format="PNG"/>
+      </imageobject>
+      <textobject>
+        <phrase>PressGang Logo </phrase>
+      </textobject>
+    </inlinemediaobject>
+  </corpauthor>
+  <copyright>
+    <year>&YEAR;</year>
+    <holder>&HOLDER;</holder>
+  </copyright>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Author_Group.xml"/>
+</bookinfo>

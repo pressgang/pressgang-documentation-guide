@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="sgbiu-Structure_Guidlines_Bold_Italic_Underline">
+  <title>Emphasis (Bold, Italic, Underline)</title>
+  <para>In DocBook v4.5, the <sgmltag>&lt;emphasis&gt;</sgmltag> element supports attributes that  allow you to override default stylesheet behaviour.  Do not use attributes such as <code>bold</code>, <code>italic</code>, or <code>underline</code> to alter text  enclosed in <sgmltag>&lt;emphasis&gt;</sgmltag> elements.  </para>
+  <para>Remember that XML authoring separates content from style. By applying attributes in this way, you are effectively introducing  style into your content.  </para>
+  <para>If you want to change the way the <sgmltag>&lt;emphasis&gt;</sgmltag> element formats the text at publish time, you should consider updating  the stylesheet, and not &quot;work around&quot; the problem by applying attributes.   </para>
+</section>

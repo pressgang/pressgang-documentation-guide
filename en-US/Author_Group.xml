@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE authorgroup PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<authorgroup>
+  <author>
+    <firstname>Jared</firstname>
+    <surname> Morgan</surname>
+    <affiliation>
+      <shortaffil>Red Hat, Inc.</shortaffil>
+      <jobtitle>Project Lead</jobtitle>
+      <orgdiv>Middleware Documentation Team</orgdiv>
+    </affiliation>
+    <email>jmorgan@redhat.com</email>
+  </author>
+  <author>
+    <firstname>Darrin </firstname>
+    <surname>Mison</surname>
+    <affiliation>
+      <shortaffil>Red Hat, Inc.</shortaffil>
+      <orgdiv>Middleware Documentation Team</orgdiv>
+    </affiliation>
+    <contrib>JDocBook and Publican Interoperability revised content and pom.xml engineering</contrib>
+    <email>dmison@redhat.com</email>
+  </author>
+  <author>
+    <firstname>Sean </firstname>
+    <surname>Rogers</surname>
+    <affiliation>
+      <shortaffil>Red Hat, Inc.</shortaffil>
+      <orgdiv>Middleware Documentation Team</orgdiv>
+    </affiliation>
+    <contrib>XML Element Guidelines</contrib>
+    <email>serogers@redhat.com</email>
+  </author>
+</authorgroup>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="oxe-Oxygen_XML_Editor">
+  <title>oXygen XML Editor</title>
+  <para>The <application>&lt;oXygen/&gt; XML Editor</application> is a multi-platform XML editor, debugger, and profiler that supports Unicode.  Because <application>&lt;oXygen/&gt;</application> is a java application, you can use it on any system that support Java.  If your project uses Eclipse, there is a plug-in available that allows you to run <application>&lt;oXygen/&gt;</application>  as part of your Eclipse infrastructure.</para>
+  <para><application>&lt;oXygen/&gt;</application> is aware of xi:include statements, and therefore can follow xi:include statements as part of the validation process.  This is almost a mandatory feature in the authoring program you choose, because xi:includes are used extensively throughout JBoss documentation. </para>
+  <para>If you prefer to edit in text mode, or prefer full WYSIWYG mode, <application>&lt;oXygen/&gt;</application> offers modes that may suit your requirements.</para>
+  <para>Unlike Serna Free, <application>&lt;oXygen/&gt;</application> is not free, nor is it open-source.   Trial versions are available, so consider it along with the other available authoring tools.  </para>
+</section>

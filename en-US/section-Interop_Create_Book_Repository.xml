@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="icbr-Interop_Create_Book_Repository">
+  <title>Create Book Repository</title>
+  <para>You can use <application>Publican</application> to create a base documentation repository for you with the files required for <application>Publican</application> validity.  Refer to <ulink url="http://jfearn.fedorapeople.org/Publican/chap-Users_Guide-Creating_a_document.html">Creating a Document</ulink> in the <citetitle>Publican User Guide</citetitle> for detailed instructions.  The basic procedure  is described in <xref linkend="proc-Create_A_Publican_Book"/>.</para>
+  <procedure id="proc-Create_A_Publican_Book">
+    <title>Create a Publican Book</title>
+    <para>In this procedure, replace the <replaceable>book_name</replaceable> placeholder with the name of the book you want to create.  The name must not contain spaces.</para>
+    <step>
+      <title>Navigate to your documentation directory</title>
+      <para>Create a directory in your project for your documentation and move into that directory.  </para>
+      <para>Many JBoss Community projects  choose to locate their documentation repository as a child directory in their <filename>/trunk</filename> SVN repository.  This is recommended, because it allows to keep your documentation as a version snapshot when you branch your project source code.</para>
+    </step>
+    <step>
+      <title>Call Publican</title>
+      <para>Execute the following command to create a basic US English <application>Publican</application> book, which uses the JBoss Community brand package.</para>
+<!--TODO: Verify that the brand option for the proposed JBoss community brand is called JBoss_Community-->      <para><screen>[localhost]$ publican create --name book_name --brand jboss-community</screen></para>
+    </step>
+  </procedure>
+</section>

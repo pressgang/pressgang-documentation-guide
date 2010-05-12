@@ -1,0 +1,84 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="sgl-Structure_Guidlines_Links">
+  <title>Links and References</title>
+  <formalpara>
+    <title>Cross-references within the book</title>
+    <para>
+   Use the <sgmltag>&lt;xref&gt;</sgmltag> element to cross-reference a chapter, section, or other content block. The <varname>linkend</varname> attribute points to the target block&apos;s <varname>id</varname> attribute.
+  </para>
+  </formalpara>
+  <example id="exam-JBoss_Documentation_Guide-Code_Examples-xref_example">
+    <title>&lt;xref&gt; example</title>
+    <programlisting language="XML" role="XML">
+For more details refer to &lt;xref linkend=&quot;exam-JBoss_Documentation_Guide-Code_Examples-xref_example&quot; /&gt;.
+</programlisting>
+    <blockquote>
+      <para>
+    For more details refer to <xref linkend="exam-JBoss_Documentation_Guide-Code_Examples-xref_example"/>.
+   </para>
+    </blockquote>
+  </example>
+  <formalpara>
+    <title>Links to external URLs</title>
+    <para>
+   Use the <sgmltag>&lt;ulink&gt;</sgmltag> element to link to an external URL. The <varname>url</varname> attribute points to the target link, and must be a complete URL.
+  </para>
+  </formalpara>
+  <example id="exam-JBoss_Documentation_Guide-Code_Examples-xref_example_1">
+    <title>&lt;ulink&gt; example</title>
+    <programlisting language="XML" role="XML">
+For further information, refer to &lt;ulink url=&quot;http://www.jboss.org&quot; /&gt;.
+</programlisting>
+    <blockquote>
+      <para>
+    For further information,  refer to <ulink url="http://www.jboss.org"/>.
+   </para>
+    </blockquote>
+    <para>By creating the link without providing a link alias, the reader can see the full URL.  This is especially important to consider if you are producing both print-ready and online documentation.  </para>
+  </example>
+  <para>When you need to include a <sgmltag>&lt;ulink&gt;</sgmltag> that resolves to a lengthy URL, you may wish to supply a link alias so the link is formatted cleanly.  The reader can see the full URL, however the information wraps to the next line which can be distracting to the reader.  If you </para>
+  <para>    </para>
+  <example id="exam-JBoss_Documentation_Guide-Code_Examples-xref_example_2">
+    <title>&lt;ulink&gt; link alias examples</title>
+    <para>Long URL without an alias:</para>
+    <programlisting language="XML" role="XML">
+For further information, refer to &lt;ulink url=&quot;http://docs.fedoraproject.org/installation-quick-start-guide/f12/en-US/pdf/Fedora_12_Installation_Quick_Start_Guide.pdf&quot;/&gt;.
+</programlisting>
+    <blockquote>
+      <para>
+    For further information,  refer to <ulink url="http://docs.fedoraproject.org/installation-quick-start-guide/f12/en-US/pdf/Fedora_12_Installation_Quick_Start_Guide.pdf"/>.
+   </para>
+    </blockquote>
+    <para>PDF documentation handles link aliases by creating a footnote at the bottom of each page.  This formatting can distract readers because they have to follow the footnote number and locate the link at the bottom of the page.</para>
+    <para>Long URL with an alias:</para>
+    <programlisting language="XML" role="XML">
+For further information about installing Fedora 12, refer to the &lt;ulink url=&quot;http://docs.fedoraproject.org/installation-quick-start-guide/f12/en-US/pdf/Fedora_12_Installation_Quick_Start_Guide.pdf&quot;&gt;Installation Quick Start Guide&lt;/ulink&gt;.
+</programlisting>
+    <blockquote>
+      <para>For further information about installing Fedora 12, refer to the <ulink url="http://docs.fedoraproject.org/installation-quick-start-guide/f12/en-US/pdf/Fedora_12_Installation_Quick_Start_Guide.pdf">Installation Quick Start Guide</ulink>.</para>
+    </blockquote>
+    <para>By constructing  the sentence differently, you can include the link for those readers that access the online version of the documentation.  Readers who prefer PDF documentation are also supported, because they know what to search for when they are next online.</para>
+  </example>
+  <formalpara>
+    <title>References to external content</title>
+    <para>
+   Use the <varname>&lt;citetitle&gt;</varname> element when referring to another book, article, website, or other form of external content. </para>
+  </formalpara>
+  <para>Unlike the <sgmltag>&lt;xref&gt;</sgmltag> element,  <sgmltag>&lt;citetitle&gt;</sgmltag> does not <emphasis>link</emphasis> to the referenced section, so if the name of the referenced book is changed the <sgmltag>&lt;citetitle&gt;</sgmltag> element will need to be updated manually. External links such as those using the <sgmltag>&lt;ulink&gt;</sgmltag> element should not be used to reference another book, as an external link may become outdated at a later time.
+  </para>
+  <example id="exam-JBoss_Documentation_Guide-Code_Examples-citetitle_example">
+    <title>&lt;citetitle&gt; example</title>
+    <programlisting language="XML" role="XML">
+Refer to &lt;citetitle&gt;DocBook: The Definitive Guide&lt;/citetitle&gt; for further details.
+</programlisting>
+    <blockquote>
+      <para>
+    Refer to <citetitle>DocBook: The Definitive Guide</citetitle> for further details.
+   </para>
+    </blockquote>
+  </example>
+</section>

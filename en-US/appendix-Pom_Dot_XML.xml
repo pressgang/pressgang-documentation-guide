@@ -1,0 +1,6 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE appendix PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "docbookV4.5/docbookx.dtd" []>
+<appendix id="appendix-Pom_Dot_XML">
+  <title>pom.xml Multi-Profile</title>
+  <programlisting language="XML" role="XML"><xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="extras/pom.xml_sample" parse="text"/></programlisting>
+</appendix>

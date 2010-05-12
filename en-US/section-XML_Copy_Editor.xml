@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="xce-XML_Copy_Editor">
+  <title>XML Copy Editor</title>
+  <para><application>XML Copy Editor</application> is a Linux-only text-based editor, that has no WYSIWYG functionality.  You must know your XML rules very well to use this editor.  </para>
+  <para><application>XML Copy Editor</application> contains a DocBook XML Parser, which will validate your XML.  What it cannot  do is open all the xi:includes and resolve internal &lt;xref&gt; declarations that are not in the same file.  This will result in a lot of validation errors, that may mask  actual structural validation issues.</para>
+  <para>The advantage that <application>XML Copy Editor</application> offers is the ability to edit the XML structure in a basic text interface.  This can be very useful when you are trying to debug your XML documentation and need to open up the chapter or section that contains the structural error.  </para>
+</section>
