@@ -6,7 +6,7 @@
 <bookinfo id="jdg-JBoss_Documentation_Guide">
   <title>JBoss Documentation Guide</title>
   <subtitle>The canonical reference for JBoss developers and writers </subtitle>
-  <productname>JBoss Documentation Guide</productname>
+  <productname>PressGang</productname>
   <productnumber>1.1</productnumber>
   <edition>1</edition>
   <pubsnumber>12</pubsnumber>
@@ -27,7 +27,7 @@ from products downstream.</para>
   <corpauthor>
     <inlinemediaobject>
       <imageobject>
-        <imagedata fileref="images/img-PressGang_Logo_450.png" format="PNG"/>
+        <imagedata fileref="images/img-pressgang_logo_450px.svg" format="SVG"/>
       </imageobject>
       <textobject>
         <phrase>PressGang Logo </phrase>
