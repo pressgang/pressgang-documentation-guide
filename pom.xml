@@ -16,26 +16,52 @@
   </properties> 
 
   <repositories>
-      <repository>
+      <!--repository>
           <id>repository.jboss.org</id>
           <name>JBoss Repository</name>
           <layout>default</layout>
-          <url>http://repository.jboss.org/maven2/</url>
+          <url>http://repository.jboss.org/nexus/</url>
           <snapshots>
               <enabled>false</enabled>
+          </snapshots>
+      </repository-->
+      <repository>
+          <id>jboss-public-repository-group</id>
+          <name>JBoss Public Maven Repository Group</name>
+          <url>https://repository.jboss.org/nexus/content/groups/public/</url>
+          <layout>default</layout>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
           </snapshots>
       </repository>
   </repositories>
   <pluginRepositories>
-    <pluginRepository>
+    <!--pluginRepository>
       <id>repository.jboss.org</id>
       <name>JBoss Repository</name>
       <layout>default</layout>
-      <url>http://repository.jboss.org/maven2/</url>
+      <url>http://repository.jboss.org/nexus/</url>
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
-    </pluginRepository>
+    </pluginRepository-->
+    <pluginRepository>
+          <id>jboss-public-repository-group</id>
+          <name>JBoss Public Maven Repository Group</name>
+          <url>https://repository.jboss.org/nexus/content/groups/public/</url>
+          <layout>default</layout>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </pluginRepository>
   </pluginRepositories>
   
   
@@ -166,7 +192,7 @@
 			<plugin>
 				<groupId>org.jboss.maven.plugins</groupId>
 				<artifactId>maven-jdocbook-plugin</artifactId>
-				<version>2.2.1</version>
+				<version>2.3.0</version>
 				<extensions>true</extensions>
 				<dependencies>
 					<dependency>
@@ -177,7 +203,7 @@
 					<dependency>
 						<groupId>org.jboss</groupId>
 						<artifactId>jbossorg-jdocbook-style</artifactId>
-						<version>1.1.0</version>
+						<version>1.1.1.SNAPSHOT</version>
 						<type>jdocbook-style</type>
 					</dependency>
 				</dependencies>
