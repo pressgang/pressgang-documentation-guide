@@ -27,10 +27,6 @@
 ]&gt;
 </programlisting>
       <para>For <sgmltag>&lt;chapter&gt;</sgmltag> XML files, change the <code>DOCTYPE</code> declaration to <literal>chapter</literal>.</para>
-      <important>
-        <title>DOCTYPE declarations are mandatory</title>
-        <para>If the XML file does not contain a <code>DOCTYPE</code> declaration, you must add the correct declaration to the XML file.  </para>
-      </important>
     </step>
     <step>
       <title>Append the parameter entity to the DOCTYPE declaration</title>

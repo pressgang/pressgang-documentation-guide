@@ -9,4 +9,5 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="section-Advantages.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="section-Role_In_JBoss_Middleware.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="section-XML_References.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="section-XML_Validation.xml"/>
 </chapter>

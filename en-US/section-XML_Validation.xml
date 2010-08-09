@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="xr-XML_Validation">
+  <title>XML Validation</title>
+  <para>
+    Each docbook XML file starts with a DTD or XSD declaration. This will validate it's structure.
+    Most authoring tools will add this for you.
+  </para>
+  <important>
+    <title>A DTD or XSD declaration is mandatory</title>
+    <para>
+      If the XML file does not contain a DTD (<code>DOCTYPE</code>) or a XSD (<code>xsi:schemaLocation</code>) declaration,
+      you must add the correct declaration to the XML file.
+    </para>
+  </important>
+  <section>
+    <title>DTD validation</title>
+    <para>
+      With DocBook 4.5, use DTD validation and the non-namespaced styles (for example <code>jbossorg-docbook-xslt</code>).
+    </para>
+    <para>
+      The <code>DOCTYPE</code> declaration is located at the very beginning of a file.
+      For example, a <sgmltag>&lt;section&gt;</sgmltag> <code>DOCTYPE</code> declaration will look similar to the following sample.
+    </para>
+    <programlisting language="XML" role="XML">&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;
+&lt;!DOCTYPE section PUBLIC &quot;-//OASIS//DTD DocBook XML V4.5//EN&quot; &quot;docbookV4.5/docbookx.dtd&quot; [
+]&gt;</programlisting>
+    <para>For <sgmltag>&lt;chapter&gt;</sgmltag> XML files, change the <code>DOCTYPE</code> declaration to <literal>chapter</literal>.</para>
+  </section>
+  <section>
+    <title>XSD validation</title>
+    <para>
+      With DocBook 5, use XSD validation and the namespaced styles (for example <code>jbossorg-docbook-xslt-ns</code>).
+      Publican might not support docbook 5 yet.
+    </para>
+    <para>
+      The <code>xsi:schemaLocation</code> declaration is located at the very beginning of a file.
+      For example, a <sgmltag>&lt;section&gt;</sgmltag> <code>xsi:schemaLocation</code> declaration will look similar to the following sample.
+    </para>
+    <programlisting language="XML" role="XML">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;section version=&quot;5.0&quot;
+         xmlns=&quot;http://docbook.org/ns/docbook&quot;
+         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+         xmlns:xi=&quot;http://www.w3.org/2001/XInclude&quot;
+         xsi:schemaLocation=&quot;http://docbook.org/ns/docbook http://www.docbook.org/xml/5.0/xsd/docbook.xsd&quot;&gt;</programlisting>
+  </section>
+
+</section>

@@ -22,7 +22,7 @@
     <varlistentry>
       <term>Consistent document structure</term>
       <listitem>
-        <para>XML documents use a Document Type Definition (DTD) that  specifies the underlying structure of your document.  You still have freedom to structure your document according to the permissions of the DTD, but you will not be able to make errors that would make your document less usable.  For example, putting a sections inside a bulleted list.   </para>
+        <para>The XML documents use a Document Type Definition (DTD) or an XML schema definition (XSD) that validates the underlying structure of your document. You still have freedom to structure your document according to the permissions of the DTD/XSD, but you can not use invalid constructs that would make your document less usable. For example, you can not put a section inside a bulleted list.</para>
       </listitem>
     </varlistentry>
     <varlistentry>

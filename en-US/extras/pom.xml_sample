@@ -167,7 +167,8 @@
         <dependencies>
           <dependency>
             <groupId>org.jboss</groupId>
-            <artifactId>jbossorg-docbook-xslt</artifactId>
+              <artifactId>jbossorg-docbook-xslt</artifactId><!-- DTD variant -->
+              <!-- The XSD variant is: <artifactId>jbossorg-docbook-xslt-ns</artifactId> -->
             <version>1.1.0</version>
           </dependency>
           <dependency>
