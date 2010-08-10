@@ -55,7 +55,7 @@
     <note>
       <title>book_ent script alternative location</title>
       <para>If you are having difficulty copying the <filename>book_ent</filename> script in this procedure, you may find it easier to check-out the file directly from the SVN repository and customize it according to this procedure.  </para>
-      <para><command>svn co http://anonsvn.jboss.org/repos/documentation/JBoss_Documentation_Guide/en-US/extras/book_ent</command></para>
+      <para><command>svn co http://anonsvn.jboss.org/repos/pressgang/JBoss_Documentation_Guide/en-US/extras/book_ent</command></para>
     </note>
     <para>In this procedure, replace the <replaceable>book_name</replaceable> placeholder with the name of the book you created.</para>
     <step>

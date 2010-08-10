@@ -6,6 +6,7 @@
 <section id="sect-Interop_System_Entities">
   <title>Build with jDocBook</title>
   <para>You have created your book, and verified that it publishes using <application>Publican</application>.  The next step is to add the <application>Maven</application> elements to your book.</para>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="section-XML_Validation.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="section-Interop_XiInclude_Fallbacks.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="section-Interop_System_Entities.xml" encoding="UTF-8"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="section-Interop_Configure_Pom.xml"/>

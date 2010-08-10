@@ -9,7 +9,7 @@
   <note>
     <title>pom.xml alternative location</title>
     <para>If you are having difficulty copying the <filename>pom.xml</filename>, you may find it easier to check-out the file directly from the SVN.  Ensure you change the name from <filename>pom.xml_sample</filename> to <filename>pom.xml</filename> before using.</para>
-    <para><command>svn co http://anonsvn.jboss.org/repos/documentation/JBoss_Documentation_Guide/en-US/extras/pom.xml_sample</command></para>
+    <para><command>svn co http://anonsvn.jboss.org/repos/pressgang/JBoss_Documentation_Guide/en-US/extras/pom.xml_sample</command></para>
   </note>
   <procedure>
     <title>Configure pom.xml</title>

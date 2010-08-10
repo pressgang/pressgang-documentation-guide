@@ -4,10 +4,9 @@
 %BOOK_ENTITIES;
 ]>
 <section id="xr-XML_Validation">
-  <title>XML Validation</title>
+  <title>DTD or XSD Validation</title>
   <para>
-    Each docbook XML file starts with a DTD or XSD declaration. This will validate it's structure.
-    Most authoring tools will add this for you.
+    Each docbook XML file starts with a DTD or XSD declaration that is used during validation to ensure the contents meet the structure requirements.  If you are using an XML authoring tool, this information is usually added automatically.
   </para>
   <important>
     <title>A DTD or XSD declaration is mandatory</title>
@@ -19,7 +18,7 @@
   <section>
     <title>DTD validation</title>
     <para>
-      With DocBook 4.5, use DTD validation and the non-namespaced styles (for example <code>jbossorg-docbook-xslt</code>).
+      With DocBook 4.5, use DTD validation and the non-namespaced styles (<code>jbossorg-docbook-xslt</code>).
     </para>
     <para>
       The <code>DOCTYPE</code> declaration is located at the very beginning of a file.
@@ -33,9 +32,13 @@
   <section>
     <title>XSD validation</title>
     <para>
-      With DocBook 5, use XSD validation and the namespaced styles (for example <code>jbossorg-docbook-xslt-ns</code>).
-      Publican might not support docbook 5 yet.
-    </para>
+      With DocBook 5, use XSD validation and the namespaced styles (<code>jbossorg-docbook-xslt-ns</code>).
+      </para>
+    <warning>
+      <title>Warning - Productization Impact</title>
+      <para>If your project is productized by Red Hat, implementing DocBook 5 in your XML source documentation will cause increased work for your productization team.  </para>
+      <para>DocBook 5 is not yet supported by the Publican toolchain. Your documentation productization team will need to expend extra effort converting your XML to DocBook 4.5 compatible XML.  </para>
+    </warning>
     <para>
       The <code>xsi:schemaLocation</code> declaration is located at the very beginning of a file.
       For example, a <sgmltag>&lt;section&gt;</sgmltag> <code>xsi:schemaLocation</code> declaration will look similar to the following sample.
@@ -47,5 +50,4 @@
          xmlns:xi=&quot;http://www.w3.org/2001/XInclude&quot;
          xsi:schemaLocation=&quot;http://docbook.org/ns/docbook http://www.docbook.org/xml/5.0/xsd/docbook.xsd&quot;&gt;</programlisting>
   </section>
-
 </section>

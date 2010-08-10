@@ -8,6 +8,21 @@
   <simpara>
     <revhistory>
       <revision>
+        <revnumber>1.3</revnumber>
+        <date>Tuesday Aug 10 2010</date>
+        <author>
+          <firstname>Jared</firstname>
+          <surname>Morgan</surname>
+          <email>jmorgan@redhat.com</email>
+        </author>
+        <revdescription>
+          <simplelist>
+            <member>Updated repo links in Maven Interoperability section.</member>
+            <member>Section discussing XSD compatibility as per JDOCBOOKSTYLE-15</member>
+          </simplelist>
+        </revdescription>
+      </revision>
+      <revision>
         <revnumber>1.1</revnumber>
         <date>Friday Feb 12 2010</date>
         <author>

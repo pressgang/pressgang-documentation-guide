@@ -12,7 +12,7 @@
     <para>This procedure assumes you are using a Linux-based operating system,  Publican is installed and correctly configured, and your <replaceable>book_name</replaceable> directory is located in your <filename>home</filename> directory.</para>
     <note>
       <para>The front matter mentioned in this procedure  is also available in the  SVN repository for this project. </para>
-      <para><command>svn co http://anonsvn.jboss.org/repos/documentation/JBoss_Documentation_Guide/</command></para>
+      <para><command>svn co http://anonsvn.jboss.org/repos/pressgang/JBoss_Documentation_Guide/</command></para>
     </note>
     <step>
       <title>Navigate to the Publican Common_Content directory</title>
