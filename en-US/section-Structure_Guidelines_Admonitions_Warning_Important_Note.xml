@@ -5,7 +5,8 @@
 ]>
 <section id="sgawin-Structure_Guidlines_Admonitions_Warning_Important_Note">
   <title>Admonitions (Warning, Important, Note)</title>
-  <para>To alert readers to information that might otherwise be overlooked, DocBook v4.5 supports a number of admonitions you  can use to highlight concepts for readers.   The supported options are limited to:</para>
+  <para>To alert readers to information that might otherwise be overlooked, DocBook v4.5 supports a number of
+     admonitions you  can use to highlight concepts for readers.   The supported options are limited to:</para>
   <itemizedlist>
     <listitem>
       <para>Warning</para>
@@ -38,26 +39,49 @@
       </listitem>
     </varlistentry>
   </variablelist>
-  <para>The way these elements are formatted depends on what publishing system you use to produce a user guide.  The <application>Publican</application> JBoss brand  formats this information using  lots of color, bold graphics, and a slightly different typeface to the normal content.   The <application>Publican</application> jboss-community brand and the default <application>jDocBook</application> style format the information slightly less aggressively by using softer colors, however  each admonition is still  quite conspicuous to the reader.</para>
-  <para>When writing information for any of these elements, you can maximize the effectiveness of the information by keeping the structure of the information consistent.  Consider the following examples to see how effective this is.</para>
+  <para>The way these elements are formatted depends on what publishing system you use to produce a user guide.  The
+     <application>Publican</application> JBoss brand  formats this information using  lots of color, bold graphics, and
+     a slightly different typeface to the normal content.   The <application>Publican</application> jboss-community
+     brand and the default <application>jDocBook</application> style format the information slightly less aggressively
+     by using softer colors, however  each admonition is still  quite conspicuous to the reader.</para>
+  <para>When writing information for any of these elements, you can maximize the effectiveness of the information by
+     keeping the structure of the information consistent.  Consider the following examples to see how effective this
+     is.</para>
+  <para>If using the &lt;title&gt; element, it is mandatory to start the title with the admonition level, as shown in
+     the examples.</para>
   <example>
     <title>Warning and Important</title>
-    <para>Use the following XML structure when creating a Warning or Important admonition.  See the sample Warning and Important in this example as a reference.</para>
+    <para>Use the following XML structure when creating a Warning or Important admonition.  See the sample Warning and
+       Important in this example as a reference.</para>
     <programlisting language="XML" role="XML">&lt;warning&gt;
-  &lt;title&gt;Warning Summary&lt;/title&gt;
+  &lt;title&gt;<replaceable>Warning</replaceable> - Warning Summary&lt;/title&gt;
   &lt;para&gt;Imperative instruction to the user.  Reason why the user should obey the instruction.&lt;/para&gt;
 &lt;/warning&gt;</programlisting>
     <programlisting language="XML" role="XML">&lt;important&gt;
-  &lt;title&gt;Important Summary&lt;/title&gt;
+  &lt;title&gt;<replaceable>Important</replaceable> - Important Summary&lt;/title&gt;
   &lt;para&gt;Information that will save the reader unnecessary frustration.&lt;/para&gt;
 &lt;/important&gt;</programlisting>
   </example>
   <warning>
-    <title>Open Office Package Dependencies</title>
-    <para>Do not uninstall <application>Open Office</application> from Gnome Desktop systems. <application>Open Office</application> package dependencies may result in critical system files, including X Windows System files, being unintentionally  removed.</para>
+     <title>Warning - Warning Summary</title>
+     <para>Imperative instruction to the user. Reason why the user should obey the instruction.</para>
   </warning>
   <important>
-    <title>Install MSS for JBoss 0.7 or Later</title>
-    <para>Only MSS for JBoss v0.7 bundles the Diameter JBoss Service (the Diameter SAR, or Servlet Archive), which is required to run the Diameter Event-Charging Service.</para>
+     <title>Important - Important Summary</title>
+     <para>Information that will save the reader unnecessary frustration</para>
+  </important>
+  <para>
+     The following are examples of a warning and an important admonition using this structure.
+  </para>
+  <warning>
+    <title>Warning - Open Office Package Dependencies</title>
+    <para>Do not uninstall <application>Open Office</application> from Gnome Desktop systems. <application>Open
+          Office</application> package dependencies may result in critical system files, including X Windows System
+       files, being unintentionally  removed.</para>
+  </warning>
+  <important>
+    <title>Important - Install MSS for JBoss 0.7 or Later</title>
+    <para>Only MSS for JBoss v0.7 bundles the Diameter JBoss Service (the Diameter SAR, or Servlet Archive), which is
+       required to run the Diameter Event-Charging Service.</para>
   </important>
 </section>
