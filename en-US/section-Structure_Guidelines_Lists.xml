@@ -4,133 +4,149 @@
 %BOOK_ENTITIES;
 ]>
 <section id="sgl-Structure_Guidlines_Lists">
-  <title>Lists</title>
-  <para>The two most common list types in DocBook are not named according to such programs as Microsoft Word, or Open Office.  You would think that for a bulleted list, you would start the list using  <sgmltag>&lt;bullets&gt;</sgmltag> or <sgmltag>&lt;bulletedlist&gt;</sgmltag>.  Likewise, for a numbered list, you might consider using <sgmltag>&lt;numlist&gt;</sgmltag> or <sgmltag>&lt;numberedlist&gt;</sgmltag>.</para>
-  <para>In DocBook, these types of lists are referred to according to the following nomenclature:</para>
-  <itemizedlist>
-    <listitem>
-      <para>Bulleted List - <sgmltag>&lt;itemizedlist&gt;</sgmltag></para>
-    </listitem>
-    <listitem>
-      <para>Numbered List - <sgmltag>&lt;orderedlist&gt;</sgmltag></para>
-    </listitem>
-  </itemizedlist>
-  <important>
-    <title>&lt;orderedlist&gt; is no substitute for &lt;procedure&gt;</title>
-    <para>If you are documenting a complex set of steps, you must use a &lt;procedure&gt; to contain the steps.   Procedures can contain multiple steps, and offer greater content flexibility.  For more information about <sgmltag>&lt;procedure&gt;</sgmltag>, refer to <xref linkend="sgp-Structure_Guidlines_Procedures"/></para>
-  </important>
-  <important>
-    <title>Lead-in Sentence is Mandatory</title>
-    <para>A list must have an introductory sentence, and it <emphasis>must not</emphasis> be a sentence fragment.  Sentence fragments are very hard to translate.  </para>
-  </important>
-  <formalpara>
-    <title>&lt;itemizedlist&gt;</title>
-    <para>An itemized list is used to replace a semi-colon separated list in a sentence.</para>
-  </formalpara>
-  <para>The  XML form of an itemized list has a number of mandatory elements.  For a complete list, refer to the  <ulink url="http://www.docbook.org/tdg/en/html/itemizedlist.html">DocBook.org <sgmltag>&lt;itemizedlist&gt;</sgmltag> page</ulink>.  </para>
-  <example>
-    <title>&lt;itemizedlist&gt; Mandatory Elements</title>
-    <programlisting language="XML" role="XML">&lt;itemizedlist&gt;
-    &lt;listitem&gt;
-        &lt;para&gt;Item One.&lt;/para&gt;
-    &lt;/listitem&gt;
-    &lt;listitem&gt;
-        &lt;para&gt;Item Two.&lt;/para&gt;
-    &lt;/listitem&gt;
-    &lt;listitem&gt;
-        &lt;para&gt;Item Three.&lt;/para&gt;
-    &lt;/listitem&gt;
-&lt;/itemizedlist&gt;</programlisting>
-    <para>The XML Structure looks like this when published:</para>
-    <itemizedlist>
+   <title>Lists</title>
+   <para>The two most common list types in DocBook are not named according to such programs as Microsoft Word, or Open
+      Office.  You would think that for a bulleted list, you would start the list using
+      <sgmltag>&lt;bullets&gt;</sgmltag> or <sgmltag>&lt;bulletedlist&gt;</sgmltag>.  Likewise, for a numbered list, you
+      might consider using <sgmltag>&lt;numlist&gt;</sgmltag> or <sgmltag>&lt;numberedlist&gt;</sgmltag>.</para>
+   <para>In DocBook, these types of lists are referred to according to the following nomenclature:</para>
+   <itemizedlist>
       <listitem>
-        <para>Item One.</para>
+         <para>Bulleted List - <sgmltag>&lt;itemizedlist&gt;</sgmltag></para>
       </listitem>
       <listitem>
-        <para>Item Two.</para>
+         <para>Numbered List - <sgmltag>&lt;orderedlist&gt;</sgmltag></para>
+      </listitem>
+   </itemizedlist>
+   <important>
+      <title>&lt;orderedlist&gt; is no substitute for &lt;procedure&gt;</title>
+      <para>If you are documenting a complex set of steps, you must use a &lt;procedure&gt; to contain the steps.
+         Procedures can contain multiple steps, and offer greater content flexibility.  For more information about
+         <sgmltag>&lt;procedure&gt;</sgmltag>, refer to <xref linkend="sgp-Structure_Guidlines_Procedures"/></para>
+   </important>
+   <important>
+      <title>Lead-in Sentence is Mandatory</title>
+      <para>A list must have an introductory sentence, and it <emphasis>must not</emphasis> be a sentence fragment.
+         Sentence fragments are very hard to translate.  </para>
+   </important>
+   <formalpara>
+      <title>&lt;itemizedlist&gt;</title>
+      <para>An itemized list is used to replace a semi-colon separated list in a sentence.</para>
+   </formalpara>
+   <para>The  XML form of an itemized list has a number of mandatory elements.  For a complete list, refer to the  <ulink url="http://www.docbook.org/tdg/en/html/itemizedlist.html">DocBook.org <sgmltag>&lt;itemizedlist&gt;</sgmltag> page</ulink>.  </para>
+   <example>
+      <title>&lt;itemizedlist&gt; Mandatory Elements</title>
+      <programlisting language="XML" role="XML">&lt;itemizedlist&gt;
+         &lt;listitem&gt;
+         &lt;para&gt;Item One.&lt;/para&gt;
+         &lt;/listitem&gt;
+         &lt;listitem&gt;
+         &lt;para&gt;Item Two.&lt;/para&gt;
+         &lt;/listitem&gt;
+         &lt;listitem&gt;
+         &lt;para&gt;Item Three.&lt;/para&gt;
+         &lt;/listitem&gt;
+         &lt;/itemizedlist&gt;</programlisting>
+      <para>The XML Structure looks like this when published:</para>
+      <itemizedlist>
+         <listitem>
+            <para>Item One.</para>
+         </listitem>
+         <listitem>
+            <para>Item Two.</para>
+         </listitem>
+         <listitem>
+            <para>Item Three.</para>
+         </listitem>
+      </itemizedlist>
+   </example>
+   <para>You can further enhance the <sgmltag>&lt;itemizedlist&gt;</sgmltag> by adding in a
+      <sgmltag>&lt;title&gt;</sgmltag> element after the opening <sgmltag>&lt;itemizedlist&gt;</sgmltag> element.   A
+      title might assist the reader with understanding what a large list contains.  The XML structure looks like this
+      when published:</para>
+   <itemizedlist>
+      <title>&lt;itemizedlist&gt; Title</title>
+      <listitem>
+         <para>Item One.</para>
       </listitem>
       <listitem>
-        <para>Item Three.</para>
-      </listitem>
-    </itemizedlist>
-  </example>
-  <para>You can further enhance the <sgmltag>&lt;itemizedlist&gt;</sgmltag> by adding in a <sgmltag>&lt;title&gt;</sgmltag> element after the opening <sgmltag>&lt;itemizedlist&gt;</sgmltag> element.   A title might assist the reader with understanding what a large list contains.  The XML structure looks like this when published:</para>
-  <itemizedlist>
-    <title>&lt;itemizedlist&gt; Title</title>
-    <listitem>
-      <para>Item One.</para>
-    </listitem>
-    <listitem>
-      <para>Item Two.</para>
-    </listitem>
-    <listitem>
-      <para>Item Three.</para>
-    </listitem>
-  </itemizedlist>
-  <formalpara>
-    <title>&lt;orderedlist&gt;</title>
-    <para>An <sgmltag>&lt;orderedlist&gt;</sgmltag> is just like an <sgmltag>&lt;itemizedlist&gt;</sgmltag>, except  it displays the content in number order.  This type of list is better suited to listing small sub-steps in <sgmltag>&lt;procedure&gt;</sgmltag> lists.  </para>
-  </formalpara>
-  <para>The  XML form of an itemized list has a number of mandatory elements.  For a complete list, refer to the  <ulink url="http://www.docbook.org/tdg/en/html/orderedlist.html">DocBook.org <sgmltag>&lt;itemizedlist&gt;</sgmltag> page</ulink>.  </para>
-  <example>
-    <title>&lt;orderedlist&gt; Mandatory Elements</title>
-    <programlisting language="XML" role="XML">&lt;orderedlist&gt;
-    &lt;listitem&gt;
-        &lt;para&gt;Item One.&lt;/para&gt;
-    &lt;/listitem&gt;
-    &lt;listitem&gt;
-        &lt;para&gt;Item Two.&lt;/para&gt;
-    &lt;/listitem&gt;
-    &lt;listitem&gt;
-        &lt;para&gt;Item Three.&lt;/para&gt;
-    &lt;/listitem&gt;
-&lt;/orderedlist&gt;</programlisting>
-    <para>You can further enhance the <sgmltag>&lt;orderedlist&gt;</sgmltag> by adding in a <sgmltag>&lt;title&gt;</sgmltag> element after the opening <sgmltag>&lt;orderedlist&gt;</sgmltag> element.   A title might assist the reader with understanding what a large list contains.  </para>
-    <para>The XML structure looks like this when published:</para>
-    <orderedlist>
-      <title>&lt;orderedlist&gt; Title</title>
-      <listitem>
-        <para>Item One.</para>
+         <para>Item Two.</para>
       </listitem>
       <listitem>
-        <para>Item Two.</para>
+         <para>Item Three.</para>
       </listitem>
-      <listitem>
-        <para>Item Three.</para>
-      </listitem>
-    </orderedlist>
-  </example>
-  <formalpara>
-    <title>&lt;variablelist&gt;</title>
-    <para>
-      A <sgmltag>&lt;variablelist&gt;</sgmltag> can be used to define a list of terms, or in situations where a table of only two columns might be used. Variable lists can have optional titles.
-    </para>
-  </formalpara>
-  <example id="exam-JBoss_Documentation_Guide-Code_Examples-variablelist_example">
-    <title>&lt;variablelist&gt; example</title>
-    <programlisting language="XML" role="XML">
-<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="extras/exam-JBoss_Documentation_Guide-Code_Examples-variablelist_example.xml_sample" parse="text"/>
-</programlisting>
-  </example>
-  <para>The XML structure looks like this when published:</para>
-  <variablelist>
-    <title>This Title is Optional</title>
-    <varlistentry>
-      <term>This is the first term</term>
-      <listitem>
-        <para>
-              Here are the item details for the first term.
+   </itemizedlist>
+   <formalpara>
+      <title>&lt;orderedlist&gt;</title>
+      <para>An <sgmltag>&lt;orderedlist&gt;</sgmltag> is just like an <sgmltag>&lt;itemizedlist&gt;</sgmltag>, except
+         it displays the content in number order.  This type of list is better suited to listing small sub-steps in
+         <sgmltag>&lt;procedure&gt;</sgmltag> lists.  </para>
+   </formalpara>
+   <para>The  XML form of an itemized list has a number of mandatory elements.  For a complete list, refer to the
+      <ulink url="http://www.docbook.org/tdg/en/html/orderedlist.html">DocBook.org
+         <sgmltag>&lt;itemizedlist&gt;</sgmltag> page</ulink>.  </para>
+   <example>
+      <title>&lt;orderedlist&gt; Mandatory Elements</title>
+      <programlisting language="XML" role="XML">&lt;orderedlist&gt;
+         &lt;listitem&gt;
+         &lt;para&gt;Item One.&lt;/para&gt;
+         &lt;/listitem&gt;
+         &lt;listitem&gt;
+         &lt;para&gt;Item Two.&lt;/para&gt;
+         &lt;/listitem&gt;
+         &lt;listitem&gt;
+         &lt;para&gt;Item Three.&lt;/para&gt;
+         &lt;/listitem&gt;
+         &lt;/orderedlist&gt;</programlisting>
+      <para>You can further enhance the <sgmltag>&lt;orderedlist&gt;</sgmltag> by adding in a
+         <sgmltag>&lt;title&gt;</sgmltag> element after the opening <sgmltag>&lt;orderedlist&gt;</sgmltag> element.   A
+         title might assist the reader with understanding what a large list contains.  </para>
+      <para>The XML structure looks like this when published:</para>
+      <orderedlist>
+         <title>&lt;orderedlist&gt; Title</title>
+         <listitem>
+            <para>Item One.</para>
+         </listitem>
+         <listitem>
+            <para>Item Two.</para>
+         </listitem>
+         <listitem>
+            <para>Item Three.</para>
+         </listitem>
+      </orderedlist>
+   </example>
+   <formalpara>
+      <title>&lt;variablelist&gt;</title>
+      <para>
+         A <sgmltag>&lt;variablelist&gt;</sgmltag> can be used to define a list of terms, or in situations where a table
+         of only two columns might be used. Variable lists can have optional titles.
+      </para>
+   </formalpara>
+   <example id="exam-JBoss_Documentation_Guide-Code_Examples-variablelist_example">
+      <title>&lt;variablelist&gt; example</title>
+      <programlisting language="XML" role="XML">
+         <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="extras/exam-JBoss_Documentation_Guide-Code_Examples-variablelist_example.xml_sample" parse="text"/>
+      </programlisting>
+   </example>
+   <para>The XML structure looks like this when published:</para>
+   <variablelist>
+      <title>This Title is Optional</title>
+      <varlistentry>
+         <term>This is the first term</term>
+         <listitem>
+            <para>
+               Here are the item details for the first term.
             </para>
-      </listitem>
-    </varlistentry>
-    <varlistentry>
-      <term>This is the second term</term>
-      <term>this is the third term</term>
-      <listitem>
-        <para>
-              Here are the item details for the second and third terms.
+         </listitem>
+      </varlistentry>
+      <varlistentry>
+         <term>This is the second term</term>
+         <term>this is the third term</term>
+         <listitem>
+            <para>
+               Here are the item details for the second and third terms.
             </para>
-      </listitem>
-    </varlistentry>
-  </variablelist>
+         </listitem>
+      </varlistentry>
+   </variablelist>
 </section>
