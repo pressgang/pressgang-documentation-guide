@@ -1,9 +1,7 @@
 <example id="exam-JBoss_Documentation_Guide-Code_Examples-programlisting_example">
-	<title>&lt;programlisting&gt; example</title>
-<programlisting language="XML" role="XML">
-<xi:include parse="text" href="extras/exam-JBoss_Documentation_Guide-Code_Examples-programlisting_example.xml_sample" xmlns:xi="http://www.w3.org/2001/XInclude" />
-</programlisting>
-	<para>
-		<xref linkend="exam-JBoss_Documentation_Guide-Code_Examples-programlisting_example"/> describes itself.
-	</para>
+   <title>&lt;programlisting&gt; example</title>
+<programlisting language="XML" role="XML"><xi:include parse="text" href="extras/exam-JBoss_Documentation_Guide-Code_Examples-programlisting_example.xml_sample" xmlns:xi="http://www.w3.org/2001/XInclude" /></programlisting>
+<para>
+      <xref linkend="exam-JBoss_Documentation_Guide-Code_Examples-programlisting_example"/> describes itself.
+   </para>
 </example>
