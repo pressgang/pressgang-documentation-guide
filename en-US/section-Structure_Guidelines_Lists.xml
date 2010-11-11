@@ -98,12 +98,11 @@
       &lt;para&gt;Item Three.&lt;/para&gt;
    &lt;/listitem&gt;
 &lt;/orderedlist&gt;</programlisting>
-      <para>You can further enhance the <sgmltag>&lt;orderedlist&gt;</sgmltag> by adding in a
-         <sgmltag>&lt;title&gt;</sgmltag> element after the opening <sgmltag>&lt;orderedlist&gt;</sgmltag> element.   A
-         title might assist the reader with understanding what a large list contains.  </para>
-      <para>The XML structure looks like this when published:</para>
+      <para>Similar to an <sgmltag>&lt;itemizedlist&gt;</sgmltag>, you can further enhance the
+         <sgmltag>&lt;orderedlist&gt;</sgmltag> by adding in a <sgmltag>&lt;title&gt;</sgmltag> element after the
+         opening <sgmltag>&lt;orderedlist&gt;</sgmltag> element.   A title might assist the reader with understanding
+         what a large list contains.  </para> <para>The XML structure looks like this when published:</para>
       <orderedlist>
-         <title>&lt;orderedlist&gt; Title</title>
          <listitem>
             <para>Item One.</para>
          </listitem>
