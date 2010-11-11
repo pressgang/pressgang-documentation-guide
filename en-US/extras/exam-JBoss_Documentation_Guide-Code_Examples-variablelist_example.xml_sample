@@ -1,16 +1,16 @@
 <variablelist>
-	<title>This Title is Optional</title>
-	<varlistentry>
-		<term>This is the first term</term>
-		<listitem>
-			<para>Here are the item details for the first term.</para>
-		</listitem>
-	</varlistentry>
-	<varlistentry>
-		<term>This is the second term</term>
-		<term>this is the third term</term>
-		<listitem>
-			<para>Here are the item details for the second and third terms.</para>
-		</listitem>
-	</varlistentry>
+   <title>This Title is Optional</title>
+   <varlistentry>
+      <term>This is the first term</term>
+      <listitem>
+         <para>Here are the item details for the first term.</para>
+      </listitem>
+   </varlistentry>
+   <varlistentry>
+      <term>This is the second term</term>
+      <term>this is the third term</term>
+      <listitem>
+         <para>Here are the item details for the second and third terms.</para>
+      </listitem>
+   </varlistentry>
 </variablelist>

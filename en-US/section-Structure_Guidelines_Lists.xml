@@ -37,16 +37,16 @@
    <example>
       <title>&lt;itemizedlist&gt; Mandatory Elements</title>
       <programlisting language="XML" role="XML">&lt;itemizedlist&gt;
-         &lt;listitem&gt;
-         &lt;para&gt;Item One.&lt;/para&gt;
-         &lt;/listitem&gt;
-         &lt;listitem&gt;
-         &lt;para&gt;Item Two.&lt;/para&gt;
-         &lt;/listitem&gt;
-         &lt;listitem&gt;
-         &lt;para&gt;Item Three.&lt;/para&gt;
-         &lt;/listitem&gt;
-         &lt;/itemizedlist&gt;</programlisting>
+   &lt;listitem&gt;
+      &lt;para&gt;Item One.&lt;/para&gt;
+   &lt;/listitem&gt;
+   &lt;listitem&gt;
+      &lt;para&gt;Item Two.&lt;/para&gt;
+   &lt;/listitem&gt;
+   &lt;listitem&gt;
+      &lt;para&gt;Item Three.&lt;/para&gt;
+   &lt;/listitem&gt;
+&lt;/itemizedlist&gt;</programlisting>
       <para>The XML Structure looks like this when published:</para>
       <itemizedlist>
          <listitem>
@@ -88,16 +88,16 @@
    <example>
       <title>&lt;orderedlist&gt; Mandatory Elements</title>
       <programlisting language="XML" role="XML">&lt;orderedlist&gt;
-         &lt;listitem&gt;
-         &lt;para&gt;Item One.&lt;/para&gt;
-         &lt;/listitem&gt;
-         &lt;listitem&gt;
-         &lt;para&gt;Item Two.&lt;/para&gt;
-         &lt;/listitem&gt;
-         &lt;listitem&gt;
-         &lt;para&gt;Item Three.&lt;/para&gt;
-         &lt;/listitem&gt;
-         &lt;/orderedlist&gt;</programlisting>
+   &lt;listitem&gt;
+      &lt;para&gt;Item One.&lt;/para&gt;
+   &lt;/listitem&gt;
+   &lt;listitem&gt;
+      &lt;para&gt;Item Two.&lt;/para&gt;
+   &lt;/listitem&gt;
+   &lt;listitem&gt;
+      &lt;para&gt;Item Three.&lt;/para&gt;
+   &lt;/listitem&gt;
+&lt;/orderedlist&gt;</programlisting>
       <para>You can further enhance the <sgmltag>&lt;orderedlist&gt;</sgmltag> by adding in a
          <sgmltag>&lt;title&gt;</sgmltag> element after the opening <sgmltag>&lt;orderedlist&gt;</sgmltag> element.   A
          title might assist the reader with understanding what a large list contains.  </para>
@@ -124,29 +124,29 @@
    </formalpara>
    <example id="exam-JBoss_Documentation_Guide-Code_Examples-variablelist_example">
       <title>&lt;variablelist&gt; example</title>
-      <programlisting language="XML" role="XML">
-         <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="extras/exam-JBoss_Documentation_Guide-Code_Examples-variablelist_example.xml_sample" parse="text"/>
-      </programlisting>
+      <programlisting language="XML" role="XML"><xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+            href="extras/exam-JBoss_Documentation_Guide-Code_Examples-variablelist_example.xml_sample"
+            parse="text"/></programlisting>
+      <para>The XML structure looks like this when published:</para>
+      <variablelist>
+         <title>This Title is Optional</title>
+         <varlistentry>
+            <term>This is the first term</term>
+            <listitem>
+               <para>
+                  Here are the item details for the first term.
+               </para>
+            </listitem>
+         </varlistentry>
+         <varlistentry>
+            <term>This is the second term</term>
+            <term>this is the third term</term>
+            <listitem>
+               <para>
+                  Here are the item details for the second and third terms.
+               </para>
+            </listitem>
+         </varlistentry>
+      </variablelist>
    </example>
-   <para>The XML structure looks like this when published:</para>
-   <variablelist>
-      <title>This Title is Optional</title>
-      <varlistentry>
-         <term>This is the first term</term>
-         <listitem>
-            <para>
-               Here are the item details for the first term.
-            </para>
-         </listitem>
-      </varlistentry>
-      <varlistentry>
-         <term>This is the second term</term>
-         <term>this is the third term</term>
-         <listitem>
-            <para>
-               Here are the item details for the second and third terms.
-            </para>
-         </listitem>
-      </varlistentry>
-   </variablelist>
 </section>
