@@ -8,8 +8,27 @@
   <simpara>
     <revhistory>
       <revision>
-        <revnumber>1.3</revnumber>
-        <date>Tuesday Aug 10 2010</date>
+        <revnumber>1.4-1</revnumber>
+        <date>Fri Dec 10 2010</date>
+        <author>
+          <firstname>Jared</firstname>
+          <surname>Morgan</surname>
+          <email>jmorgan@redhat.com</email>
+        </author>
+        <revdescription>
+          <simplelist>
+            <member>Incorporated project fixes, including the following JIRA.</member>
+            <member>PRESSGANG-2 - Updated information about title element usage in <xref linkend="sgawin-Structure_Guidlines_Admonitions_Warning_Important_Note"/></member>
+            <member>PRESSGANG-4 - Clarified that xi:included code samples must not contain whitespace in <xref linkend="sgce-Structure_Guidlines_Code_Examples"/>.</member>
+            <member>PRESSGANG-12 - Specified the location of the publican common content files in <xref linkend="ixf-Interop_XiInclude_Fallbacks"/>.</member>
+            <member>PRESSGANG-23 - Updated example for &lt;orderedlist&gt; for consistency in <xref linkend="sgl-Structure_Guidlines_Lists"/>.</member>
+            <member>PRESSGANG-24 - Updated example for &lt;varlist&gt; for consistency in <xref linkend="sgl-Structure_Guidlines_Lists"/>.</member>
+          </simplelist>
+        </revdescription>
+      </revision>
+      <revision>
+        <revnumber>1.3-0</revnumber>
+        <date>Tue Aug 10 2010</date>
         <author>
           <firstname>Jared</firstname>
           <surname>Morgan</surname>
@@ -23,8 +42,8 @@
         </revdescription>
       </revision>
       <revision>
-        <revnumber>1.1</revnumber>
-        <date>Friday Feb 12 2010</date>
+        <revnumber>1.1-0</revnumber>
+        <date>Fri Feb 12 2010</date>
         <author>
           <firstname>Jared</firstname>
           <surname>Morgan</surname>
@@ -37,7 +56,7 @@
         </revdescription>
       </revision>
       <revision>
-        <revnumber>1.0</revnumber>
+        <revnumber>1.0-0</revnumber>
         <date>Mon Feb 1 2010</date>
         <author>
           <firstname>Jared</firstname>

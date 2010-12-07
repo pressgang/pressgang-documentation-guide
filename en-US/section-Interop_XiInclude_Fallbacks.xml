@@ -18,7 +18,7 @@
        configured, and your <replaceable>book_name</replaceable> directory is located in your <filename>home</filename>
        directory.</para>
     <important>
-      <para>The front matter mentioned in this procedure  is also available in the  SVN repository for this project. </para>
+      <para>The front matter mentioned in this procedure  is also available in the  PressGang SVN repository. </para>
       <para><command>svn co http://anonsvn.jboss.org/repos/pressgang/JBoss_Documentation_Guide/</command></para>
     </important>
     <step>
@@ -51,8 +51,7 @@ Conventions.xml   css   Feedback.xml   images  Legal_Notice.xml </screen>
   </note>
   <para>Now you have created local copies of the front-matter to include in your book, you must add the content as XML
      fallbacks to certain files in your <filename>Preface.xml</filename> and <filename>Book_Info.xml</filename> files.
-     Refer to <xref linkend="proc-xi_fallbacks"/>   for instructions relating to including xi:fallbacks.  <xref
-        linkend="table-jDocBook_Content"/> describes the fallback files in more detail.</para>
+     Refer to <xref linkend="proc-xi_fallbacks"/>   for instructions relating to including xi:fallbacks.  <xref linkend="table-jDocBook_Content"/> describes the fallback files in more detail.</para>
   <table frame="all" pgwide="1" id="table-jDocBook_Content">
     <title>jDocBook Content</title>
     <tgroup cols="3" colsep="1">
@@ -71,24 +70,21 @@ Conventions.xml   css   Feedback.xml   images  Legal_Notice.xml </screen>
           <entry>
             <filename>Conventions.xml</filename>
           </entry>
-          <entry>Contains typographical standards used within the guide. This information is optional, and can be
-             included at the discretion of your project.</entry>
+          <entry>Contains typographical standards used within the guide. This information is optional, and can be included at the discretion of your project.</entry>
           <entry>Inserted by xi:fallback reference at the middle of the <filename>Preface.xml</filename> file.</entry>
         </row>
         <row>
           <entry>
             <filename>Feedback.xml</filename>
           </entry>
-          <entry>Contains information about how to raise a bug against the user documentation. Consider customizing this
-             information to help readers raise issues against your documentation.</entry>
+          <entry>Contains information about how to raise a bug against the user documentation. Consider customizing this information to help readers raise issues against your documentation.</entry>
           <entry>Inserted by xi:fallback reference at the end of the <filename>Preface.xml</filename> file.</entry>
         </row>
         <row>
           <entry>
             <filename>Legal_Notice.xml</filename>
           </entry>
-          <entry>Contains standardized Red Hat legal information. You can customize this content to suit the legal
-             requirements of your project.</entry>
+          <entry>Contains standardized Red Hat legal information. You can customize this content to suit the legal requirements of your project.</entry>
           <entry>Inserted by xi:fallback reference at the end of the <filename>Book_Info.xml</filename> file</entry>
         </row>
       </tbody>

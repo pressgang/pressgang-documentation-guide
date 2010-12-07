@@ -6,7 +6,7 @@
 <section id="sgawin-Structure_Guidlines_Admonitions_Warning_Important_Note">
   <title>Admonitions (Warning, Important, Note)</title>
   <para>To alert readers to information that might otherwise be overlooked, DocBook v4.5 supports a number of
-     admonitions you  can use to highlight concepts for readers.   The supported options are limited to:</para>
+     admonitions you  can use to highlight concepts for readers.   The supported options in order of priority are limited to:</para>
   <itemizedlist>
     <listitem>
       <para>Warning</para>
@@ -18,70 +18,106 @@
       <para>Note</para>
     </listitem>
   </itemizedlist>
-  <para>The options are listed in order of priority, and alert the reader to the following conditions:</para>
+  <para>The way these elements are formatted depends on what publishing toolchain style package you select to publish your user guide.  </para>
   <variablelist>
     <varlistentry>
-      <term>Warning</term>
+      <term>Publican Enterprise Brand</term>
       <listitem>
-        <para>Warnings contain information that must not be ignored.  Ignoring recommendations in Warnings may result in data loss, or other catastrophic issues.</para>
+        <para>The
+     <application>Publican</application> JBoss brand  formats this information using  lots of color, bold graphics, and
+     a slightly different typeface to the normal content.   </para>
       </listitem>
     </varlistentry>
     <varlistentry>
-      <term>Important</term>
+      <term>Publican Community Brand and Maven</term>
       <listitem>
-        <para>Includes information that might be easily overlooked and may cause unnecessary frustration when using the software.   For example, configuration changes that only apply to the current session, or services that need restarting before an update will apply.</para>
-      </listitem>
-    </varlistentry>
-    <varlistentry>
-      <term>Note</term>
-      <listitem>
-        <para>Contains information that may be useful to the reader.  Ignoring a note should have no negative consequences for the reader, but may result in the reader missing out on usability tips, or a shortcut that may help them complete a task.</para>
+        <para>The <application>Publican</application> jboss-community
+     brand and the Maven base <application>jDocBook</application> styles format the information  less aggressively
+     by using softer colors. Each admonition is still  quite conspicuous to the reader.</para>
       </listitem>
     </varlistentry>
   </variablelist>
-  <para>The way these elements are formatted depends on what publishing system you use to produce a user guide.  The
-     <application>Publican</application> JBoss brand  formats this information using  lots of color, bold graphics, and
-     a slightly different typeface to the normal content.   The <application>Publican</application> jboss-community
-     brand and the default <application>jDocBook</application> style format the information slightly less aggressively
-     by using softer colors, however  each admonition is still  quite conspicuous to the reader.</para>
   <para>When writing information for any of these elements, you can maximize the effectiveness of the information by
-     keeping the structure of the information consistent.  Consider the following examples to see how effective this
-     is.</para>
-  <para>If using the &lt;title&gt; element, it is mandatory to start the title with the admonition level, as shown in
-     the examples.</para>
-  <example>
-    <title>Warning and Important</title>
-    <para>Use the following XML structure when creating a Warning or Important admonition.  See the sample Warning and
+     keeping the structure of the information consistent.  <xref linkend="Default_Admonition_Titles"/> describes the basic structure used in admonitions.  <xref linkend="Custom_Admonition_Titles"/> describes situations where a customized title would be more appropriate, and what effects on translation these titles inherently introduce.</para>
+  <section id="Default_Admonition_Titles">
+    <title>Default Titles</title>
+    <para>By default, admonitions contain automatically generated text describing the admonition level. An example of each admonition is included below, including the structure to use and the resulting output.   </para>
+    <example>
+      <title>Basic &lt;warning&gt; structure</title>
+      <programlisting>&lt;warning&gt;
+   &lt;para&gt;Warnings contain information that must not be ignored.  Ignoring recommendations in Warnings may result in data loss, or other catastrophic issues.&lt;/para&gt;
+&lt;/warning&gt;
+</programlisting>
+    </example>
+    <warning>
+      <para>Warnings contain information that must not be ignored.  Ignoring recommendations in Warnings may result in data loss, or other catastrophic issues.</para>
+    </warning>
+    <example>
+      <title>Basic &lt;important&gt; structure</title>
+      <programlisting>&lt;important&gt;
+   &lt;para&gt;Includes information that might be easily overlooked and may cause unnecessary frustration when using the software.   For example, configuration changes that only apply to the current session, or services that need restarting before an update will apply.&lt;/para&gt;
+&lt;/important&gt;
+</programlisting>
+    </example>
+    <important>
+      <para>Includes information that might be easily overlooked and may cause unnecessary frustration when using the software.   For example, configuration changes that only apply to the current session, or services that need restarting before an update will apply.</para>
+    </important>
+    <example>
+      <title>Basic &lt;note&gt; structure</title>
+      <programlisting>&lt;note&gt;
+   &lt;para&gt;Contains information that may be useful to the reader.  Ignoring a note should have no negative consequences for the reader, but may result in the reader missing out on usability tips, or a shortcut that may help them complete a task.&lt;/para&gt;
+&lt;/note&gt;
+</programlisting>
+    </example>
+    <note>
+      <para>Contains information that may be useful to the reader.  Ignoring a note should have no negative consequences for the reader, but may result in the reader missing out on usability tips, or a shortcut that may help them complete a task.</para>
+    </note>
+  </section>
+  <section id="Custom_Admonition_Titles">
+    <title>Custom Titles</title>
+    <para>You can add a  <sgmltag>&lt;title&gt;</sgmltag> element to admonitions so the reader has a terse summary of the admonition contents.  The custome text  overrides the default text provided in the basic titles.  </para>
+    <important>
+      <title>Important - Start Titles with Admonition Level</title>
+      <para>It is mandatory to start the title with the admonition level, as shown in
+     the examples.  Following this guideline ensures consistency across all user guides, and allows vision-impaired customers to understand the admonition level in words rather than colors.</para>
+    </important>
+    <important>
+      <title>Important - Custom Title Translation Impacts</title>
+      <para>Before making the decision to use custom admonition titles, be aware that each admonition title must be translated separately for each language your project supports.  Basic titles (those that use the Warning, Important, and Note auto- text) are automatically handled by  translation work flows.</para>
+    </important>
+    <example>
+      <title>Warning and Important</title>
+      <para>Use the following XML structure when creating a Warning or Important admonition.  See the sample Warning and
        Important in this example as a reference.</para>
-    <programlisting language="XML" role="XML">&lt;warning&gt;
-  &lt;title&gt;<replaceable>Warning</replaceable> - Warning Summary&lt;/title&gt;
+      <programlisting language="XML">&lt;warning&gt;
+  &lt;title&gt;Warning - Warning Summary&lt;/title&gt;
   &lt;para&gt;Imperative instruction to the user.  Reason why the user should obey the instruction.&lt;/para&gt;
 &lt;/warning&gt;</programlisting>
-    <programlisting language="XML" role="XML">&lt;important&gt;
-  &lt;title&gt;<replaceable>Important</replaceable> - Important Summary&lt;/title&gt;
+      <programlisting language="XML">&lt;important&gt;
+  &lt;title&gt;Important - Important Summary&lt;/title&gt;
   &lt;para&gt;Information that will save the reader unnecessary frustration.&lt;/para&gt;
 &lt;/important&gt;</programlisting>
-  </example>
-  <warning>
-     <title>Warning - Warning Summary</title>
-     <para>Imperative instruction to the user. Reason why the user should obey the instruction.</para>
-  </warning>
-  <important>
-     <title>Important - Important Summary</title>
-     <para>Information that will save the reader unnecessary frustration</para>
-  </important>
-  <para>
+    </example>
+    <warning>
+      <title>Warning - Warning Summary</title>
+      <para>Imperative instruction to the user. Reason why the user should obey the instruction.</para>
+    </warning>
+    <important>
+      <title>Important - Important Summary</title>
+      <para>Information that will save the reader unnecessary frustration</para>
+    </important>
+    <para>
      The following are examples of a warning and an important admonition using this structure.
   </para>
-  <warning>
-    <title>Warning - Open Office Package Dependencies</title>
-    <para>Do not uninstall <application>Open Office</application> from Gnome Desktop systems. <application>Open
-          Office</application> package dependencies may result in critical system files, including X Windows System
+    <warning>
+      <title>Warning - Open Office Package Dependencies</title>
+      <para>Do not remove <application>Open Office</application> from Gnome Desktop systems. <application>Open Office</application> package dependencies may result in critical system files, including X Windows System
        files, being unintentionally  removed.</para>
-  </warning>
-  <important>
-    <title>Important - Install MSS for JBoss 0.7 or Later</title>
-    <para>Only MSS for JBoss v0.7 bundles the Diameter JBoss Service (the Diameter SAR, or Servlet Archive), which is
+    </warning>
+    <important>
+      <title>Important - Install MSS for JBoss 0.7 or Later</title>
+      <para>Only MSS for JBoss v0.7 bundles the Diameter JBoss Service (the Diameter SAR, or Servlet Archive), which is
        required to run the Diameter Event-Charging Service.</para>
-  </important>
+    </important>
+  </section>
 </section>

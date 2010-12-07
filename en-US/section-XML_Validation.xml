@@ -18,7 +18,7 @@
   <section>
     <title>DTD validation</title>
     <para>
-      With DocBook 4.5, use DTD validation and the non-namespaced styles (<code>jbossorg-docbook-xslt</code>).
+      With DocBook 4.5, use DTD validation and the non-namespaced styles (<code>pressgang-xslt</code>).
     </para>
     <para>
       The <code>DOCTYPE</code> declaration is located at the very beginning of a file.
@@ -32,7 +32,7 @@
   <section>
     <title>XSD validation</title>
     <para>
-      With DocBook 5, use XSD validation and the namespaced styles (<code>jbossorg-docbook-xslt-ns</code>).
+      With DocBook 5, use XSD validation and the namespaced styles (<code>pressgang-xslt-ns</code>).
       </para>
     <warning>
       <title>Warning - Productization Impact</title>
