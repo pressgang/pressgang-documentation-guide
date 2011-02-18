@@ -8,6 +8,22 @@
   <simpara>
     <revhistory>
       <revision>
+        <revnumber>1.6-0</revnumber>
+        <date>Fri Feb 25 2010</date>
+        <author>
+          <firstname>Jared</firstname>
+           <surname>Morgan</surname>
+          <email>jmorgan@redhat.com</email>
+        </author>
+        <revdescription>
+          <simplelist>
+            <member>Incorporated project fixes, including the following JIRA.</member>
+            <member>PRESSGANG-13 - Added link to the highlighter package Publican uses. Removed references to the role attribute, due to a fix implemented in the base style highlighter package. Noted that the base style highlighter package only renders XML and Java highlighting.</member>
+            <member>PRESSGANG-32 - Refreshed all Publican User Guide links in the guide.</member>
+          </simplelist>
+        </revdescription>
+      </revision>
+      <revision>
         <revnumber>1.4-1</revnumber>
         <date>Fri Dec 10 2010</date>
         <author>

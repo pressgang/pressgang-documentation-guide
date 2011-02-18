@@ -9,10 +9,13 @@
      code block examples is the <sgmltag>&lt;programlisting&gt;</sgmltag> element.</para>
   <para>There are a number of advantages with using <sgmltag>&lt;programlisting&gt;</sgmltag> to capture code samples.
      You can specify the way <application>Maven</application> and <application>Publican</application> formats the code
-     sample when published by using the <varname>language</varname> and <varname>role</varname> attributes.  When
+     sample when published by using the <varname>language</varname> attribute.  When
      <varname>language</varname> is defined, <application>Publican</application>
-     will format the code example with highlighting that will assist the reader in understanding the code structure. The
-     <varname>role</varname> attribute does the same when using <application>Maven</application>.</para>
+     will format the code example with highlighting that will assist the reader in understanding the code structure. </para>
+  <para>Code highlighting in Publican is generated with the <package>Syntax::Highlight::Engine::Kate</package> Perl module. Refer to <ulink url="http://search.cpan.org/~szabgab/Syntax-Highlight-Engine-Kate-0.06/lib/Syntax/Highlight/Engine/Kate.pm#PLUGINS"/> for the full list of languages that Syntax::Highlight::Engine::Kate supports, including their expected capitalization and punctuation.</para>
+  <important>
+    <para>Maven jDocBook can only render XML and Java syntax highlighting. This is a limitation of the <package>pressgang-highlighter</package> package that the <package>pressgang-jdocbook-style</package> packages use. </para>
+  </important>
   <para>Another advantage is that you do not need to XML escape special characters used as part of XML mark-up (refer to
      <xref linkend="sgscs-Structure_Guidlines_Special_Characters_Symbols"/> for a list of symbols that must be escaped
      in normal CDATA elements).</para>
@@ -26,7 +29,7 @@
          <varname>language</varname> and <varname>role</varname> values.</para>
   </formalpara>
   <para>The code for an XML program listing will look similar to the following example.</para>
-  <programlisting language="XML" role="XML">&lt;programlisting language=&quot;XML&quot; role=&quot;XML&quot;&gt;
+  <programlisting language="XML" role="XML">&lt;programlisting language=&quot;XML&quot;&gt;
   &lt;important&gt;
     &lt;title&gt;Important Summary&lt;/title&gt;
     &lt;para&gt;Information that will save the reader unnecessary
@@ -48,8 +51,8 @@
   <formalpara>
     <title>Java Samples</title>
     <para>For Java code samples, the same rules apply.  Instead of <literal>&quot;XML&quot;</literal>,
-       <literal>&quot;JAVA&quot;</literal> is specified as the <varname>role</varname> attribute value and
-       <literal>&quot;Java&quot;</literal> for the <varname>language</varname> attribute.</para>
+       
+       <literal>&quot;Java&quot;</literal> is specified for the <varname>language</varname> attribute.</para>
   </formalpara>
   <programlisting language="Java" role="JAVA">
 package org.jboss.book.jca.ex1;

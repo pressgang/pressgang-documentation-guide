@@ -16,5 +16,5 @@
       <para>produce translation files which  allow your community (and enterprise) documentation to be  translated economically.</para>
     </listitem>
   </itemizedlist>
-  <para>For a complete guide to <application>Publican</application>, including installation instructions and commands, visit the <ulink url="https://fedorahosted.org/publican/"><application>Publican</application> home page on fedorahosted.org</ulink>. </para>
+  <para>For a complete guide to <application>Publican</application>, including installation instructions and commands, visit the <ulink url="http://jfearn.fedorapeople.org/en-US/index.html"><application>Publican</application> home page on fedorahosted.org</ulink>. </para>
 </section>

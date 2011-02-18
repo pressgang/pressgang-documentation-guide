@@ -5,7 +5,7 @@
 ]>
 <section id="icbr-Interop_Create_Book_Repository">
   <title>Create Book Repository</title>
-  <para>You can use <application>Publican</application> to create a base documentation repository for you with the files required for <application>Publican</application> validity.  Refer to <ulink url="http://jfearn.fedorapeople.org/Publican/chap-Users_Guide-Creating_a_document.html">Creating a Document</ulink> in the <citetitle>Publican User Guide</citetitle> for detailed instructions.  The basic procedure  is described in <xref linkend="proc-Create_A_Publican_Book"/>.</para>
+  <para>You can use <application>Publican</application> to create a base documentation repository for you with the files required for <application>Publican</application> validity.  Refer to <ulink url="http://jfearn.fedorapeople.org/en-US/Publican/2.4/html/Users_Guide/chap-Users_Guide-Creating_a_document.html">Creating a Document</ulink> in the <citetitle>Publican User Guide</citetitle> for detailed instructions.  The basic procedure  is described in <xref linkend="proc-Create_A_Publican_Book"/>.</para>
   <procedure id="proc-Create_A_Publican_Book">
     <title>Create a Publican Book</title>
     <para>In this procedure, replace the <replaceable>book_name</replaceable> placeholder with the name of the book you want to create.  The name must not contain spaces.</para>
