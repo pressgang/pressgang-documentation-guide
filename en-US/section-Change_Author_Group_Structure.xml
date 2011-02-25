@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="cas-Change_Author_Group.xml_Structure">
+  <title>Change Author_Group.xml Structure</title>
+  <para>The default <filename>Author_Group.xml</filename> file uses the <sgmltag>&lt;orgname&gt;</sgmltag> element to capture the name of the organization (for example, Red Hat, Ltd). The structure as output directly after you create a new book using Publican is described in <xref linkend="exam-Default_Author_Group_Structure"/>. </para>
+  <example id="exam-Default_Author_Group_Structure">
+    <title>Default Author_Group.xml Structure</title>
+    <programlisting language="XML">&lt;authorgroup&gt;
+   &lt;author&gt;
+      &lt;firstname&gt;Dude&lt;/firstname&gt;
+      &lt;surname&gt;McPants&lt;/surname&gt;
+      &lt;affiliation&gt;
+         &lt;orgname&gt;Somewhere&lt;/orgname&gt;
+         &lt;orgdiv&gt;Someone&lt;/orgdiv&gt;
+      &lt;/affiliation&gt;
+      &lt;email&gt;Dude.McPants@example.com&lt;/email&gt;
+   &lt;/author&gt;
+&lt;/authorgroup&gt;</programlisting>
+  </example>
+  <para>Because the base PressGang styles were originally not designed to handle this element, the XSLT publishes the information in an incorrect order.  Using  <xref linkend="exam-Default_Author_Group_Structure"/>, the output would publish to <literal>Dude (Somewhere) McPants</literal>.</para>
+  <para>To ensure your Authors are formatted correctly in Publican and Maven documentation builds, use the <sgmltag>&lt;shortaffil&gt;</sgmltag> element instead of the <sgmltag>&lt;orgname&gt;</sgmltag> element, as described in <xref linkend="exam-Cross-compatible_Author_Group_Structure"/>. Using the cross-compatible structure results in the author name and company they work for publishing to <literal>Dude McPants (Somewhere)</literal>. The <sgmltag>&lt;shortaffil&gt;</sgmltag> element must be declared first in the <sgmltag>&lt;affiliation&gt;</sgmltag> element, otherwise the structure is invalid according to Publican validation standards.</para>
+  <example id="exam-Cross-compatible_Author_Group_Structure">
+    <title>Cross-compatible Author_Group.xml Structure</title>
+    <programlisting language="XML">&lt;authorgroup&gt;
+   &lt;author&gt;
+      &lt;firstname&gt;Dude&lt;/firstname&gt;
+      &lt;surname&gt;McPants&lt;/surname&gt;
+      &lt;affiliation&gt;
+         &lt;shortaffil&gt;Somewhere&lt;/shortaffil&gt;
+         &lt;jobtitle&gt;Something&lt;/jobtitle&gt;
+         &lt;orgdiv&gt;Someone&lt;/orgdiv&gt;
+      &lt;/affiliation&gt;
+      &lt;email&gt;Dude.McPants@example.com&lt;/email&gt;
+   &lt;/author&gt;
+&lt;/authorgroup&gt;</programlisting>
+  </example>
+</section>
