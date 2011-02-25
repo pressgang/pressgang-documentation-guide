@@ -20,7 +20,7 @@
     <para>Screenshots increase the maintenance of a user guide.  What happens if the interface changes?  What happens if the product logo is updated? These situations require the screen shot to be recaptured.</para>
   </note>
   <example>
-    <title>&lt;figure&gt; element structure</title>
+    <title>Basic &lt;figure&gt; element structure</title>
     <programlisting>&lt;figure id=&quot;figure-JBoss_Community_Logo&quot;&gt;
   &lt;title&gt;JBoss Community Logo&lt;/title&gt;
   &lt;mediaobject&gt;

@@ -12,12 +12,137 @@
     <para>JBoss documentation uses  the English (US), or en-US dictionary.  Ensure that you follow the requirements of this dictionary when writing content for your team&apos;s documentation. </para>
   </important>
   <section>
+    <title>Write Concisely</title>
+    <para>Writing concisely is key to effective technical communication. Readers do not want to wade through prose: they want facts, and they want it now. Remember: &quot;Documentation exists to reduce the user&apos;s uncertainty&quot;. As we give information we need to measure whether the information reduces overall uncertainty or increases it.</para>
+    <para>Read the examples in this section to learn how writing terse, efficient prose improves your procedural and conceptual information.</para>
+    <example>
+      <title>Use Active Imperative Voice</title>
+      <formalpara>
+        <title>Before</title>
+        <para>This chapter contains directions for the installation and upgrade of your JBoss Enterprise Application Platform server. There are several methods that you can use to install and depending on how you will be using the JBoss Enterprise Application Platform.</para>
+      </formalpara>
+      <formalpara>
+        <title>After</title>
+        <para>Follow the instructions in this chapter to install the JBoss Enterprise Application Platform. There are four different installation methods. Choose the most appropriate one for your situation.</para>
+      </formalpara>
+      <formalpara>
+        <title>Notes</title>
+        <para>When introducing a section or chapter, tell  users to &quot;read the description&quot; or &quot;follow the instructions&quot; to achieve X. The user can then skip the following material if they do not wish to achieve X.</para>
+      </formalpara>
+    </example>
+    <example>
+      <title>Introduce a Chapter or Section using Active Imperative Voice</title>
+      <formalpara>
+        <title>Before</title>
+        <para>This chapter takes you through the layout of your new installation of JBoss Enterprise Application Platform. If you navigate to the directory in which you installed JBoss Enterprise Application Platform, you will see that the platform is divided into three directories:</para>
+      </formalpara>
+      <formalpara>
+        <title>After</title>
+        <para>Read this chapter to familiarize yourself with the server layout. The JBoss Enterprise Application Platform installation root (here <filename>jboss-eap-5.0</filename>) contains three directories: </para>
+      </formalpara>
+      <formalpara>
+        <title>Notes</title>
+        <para>Use active imperative voice to introduce a section or chapter. In other words [do this] [to achieve this]. </para>
+      </formalpara>
+    </example>
+    <example>
+      <title>Use Direct Sentences</title>
+      <formalpara>
+        <title>Before</title>
+        <para>Ad-hoc installation refers to the JBoss Enterprise SOA Platform&apos;s ability to simply &lt;emphasis&gt;&quot;un-zip and run&quot;&lt;/emphasis&gt; with almost no configuration and without any changes to the host operating system. This method of installation is commonly used by developers on their personal workstations, or for demonstration and evaluation purposes.</para>
+      </formalpara>
+      <formalpara>
+        <title>After</title>
+        <para>Zip installation is useful for developers, and evaluation or demonstration purposes. It does not require administrative privileges. Zip installation is not recommended for production use.</para>
+      </formalpara>
+      <formalpara>
+        <title>Notes</title>
+        <para>The unedited version is indirect. Rather than describing the zip (or ad-hoc) installation, it states  the term &quot;ad-hoc installation&quot; refers to an ability of a piece of software to do something with certain characteristics. The edited version distills the information the unedited version wants to give to the user, and then gives it straight. </para>
+      </formalpara>
+    </example>
+    <example>
+      <title>Simplicity is Zen</title>
+      <formalpara>
+        <title>Before</title>
+        <para>The rest of this chapter takes you through each directory in turn to help you to become familiar with JBoss Enterprise Application Platform before you begin configuring your server and building web applications.</para>
+      </formalpara>
+      <formalpara>
+        <title>After</title>
+        <para>Descriptions of these directories follow.</para>
+      </formalpara>
+      <formalpara>
+        <title>Notes</title>
+        <para>It is not necessary to have all the waffle in the Before example. It adds nothing except fluff to your documentation.</para>
+      </formalpara>
+    </example>
+    <example>
+      <title>Do Not Mix Complexity Levels</title>
+      <formalpara>
+        <title>Before</title>
+        <para>Contains cross-platform startup and shutdown scripts and &lt;filename&gt;run.jar&lt;/filename&gt;. Also contains &lt;application&gt;twiddle&lt;/application&gt;, a command line tool that allows you to view and edit the server&apos;s internal state using JMX standard.</para>
+      </formalpara>
+      <formalpara>
+        <title>After</title>
+        <para>Contains all the binaries and scripts for launching and controlling the server.</para>
+      </formalpara>
+      <formalpara>
+        <title>Notes</title>
+        <para>Use a consistent &quot;complexity zoom level&quot; - all the low level details, or just the high-level ones. </para>
+      </formalpara>
+    </example>
+    <example>
+      <title>Do Not Increase Uncertainty</title>
+      <formalpara>
+        <title>Before</title>
+        <para>Contains JARs for connecting client JARs to JBoss. This directory is optional and can be removed when building a server image for deployment.</para>
+      </formalpara>
+      <formalpara>
+        <title>After</title>
+        <para>Contains the JBoss JARs required for clients. These libraries are provided for developing applications that use JBoss Enterprise Application Platform services, and are not used by the server.</para>
+      </formalpara>
+      <formalpara>
+        <title>Notes</title>
+        <para>The unedited version states that something is optional and can be removed, but with no guidance on when or why to exercise this option. Another, related pattern is to state that there are many options you can choose, with no guidance on <emphasis>when</emphasis> to use which. The edited version gives information without increasing uncertainty. </para>
+      </formalpara>
+    </example>
+    <example>
+      <title>Choose Your Words Carefully</title>
+      <formalpara>
+        <title>Before</title>
+        <para>The default memory setting is conservative; you will need to increase the amount of memory allocated to the server for production use.</para>
+      </formalpara>
+      <formalpara>
+        <title>After</title>
+        <para>Minimal memory is allocated by default; you will need to increase the amount of memory allocated to the server for production use</para>
+      </formalpara>
+      <formalpara>
+        <title>Notes</title>
+        <para>&quot;Conservative&quot; is open to interpretation. &quot;Minimal memory&quot; is not so much.</para>
+      </formalpara>
+    </example>
+    <example>
+      <title>Putting It All Together</title>
+      <formalpara>
+        <title>Before</title>
+        <para>The Hypersonic database is unsuitable for use in production environments due to limited transaction isolation and low reliability under high load. It should be used for development and testing use <emphasis>only</emphasis>. Red Hat does not provide technical support for production use of the embedded Hypersonic database.</para>
+      </formalpara>
+      <formalpara>
+        <title>After</title>
+        <para>The Hypersonic database has limited transaction isolation and low reliability under load. It is provided for development and testing use <emphasis>only</emphasis>. Red Hat does not provide technical support for production use of the embedded Hypersonic database.</para>
+      </formalpara>
+      <formalpara>
+        <title>Notes</title>
+        <para>Reduce the number of words and state the facts plainly. Be wary of &quot;should not&quot; - use the imperative voice &quot;must not&quot; or &quot;do not&quot; to tell the user they &quot;should not&quot; do something. If something must be done in situation X and not in situation Y, then explain that clearly. Partial recommendations increase uncertainty.</para>
+      </formalpara>
+    </example>
+  </section>
+  <section>
     <title>Dictionary</title>
     <para>JBoss user documentation uses the American English dictionary.  If your XML editing program has a spell-check function, ensure it is set to check for American English language requirements. </para>
   </section>
   <section>
     <title>Active Voice</title>
-    <para>Use the active voice (&quot;Start Linuxconf by typing...&quot;) rather than passive (&quot;Linuxconf can be started by typing...&quot;) whenever possible. Active voice makes for more lively, interesting reading.</para>
+    <para>Use the active imperative voice (&quot;Start Linuxconf by typing...&quot;) rather than passive (&quot;Linuxconf can be started by typing...&quot;) whenever possible. Active voice makes for more lively, interesting reading.</para>
     <para>If you are unsure whether you are writing in the active voice, read your text aloud.  If you are writing a procedure, does it sound like you are explaining it like you would if you were sitting next to someone?  If it does, you are most likely writing in active voice.    </para>
   </section>
   <section>
@@ -76,44 +201,43 @@ There are two common problems that occur in sentence construction: Sentence frag
       <para>In the complex run-on, the previous run-on sentence was technically correct because of the punctuation; however, it could have been broken to help readability.</para>
     </example>
   </section>
-  <section>
-    <title>Conversational Language</title>
-    <para>It is often tempting  to write like you are talking to someone face to face.  It is an easy way of writing, and allows you to write using a stream of consciousness method.   </para>
-    <para>The problem with this type of writing style, is that it is very hard for the reader to quickly grasp a concept.  They must read through the content and try to extract the information that is relevant to them from the information you have provided them.  The writing style often leads to verbosity (or wordiness) and this can quickly frustrate readers.</para>
-    <para>The following examples will show you how pruning your writing can cut down the word count, and allow readers to easily understand the information they are reading.</para>
-    <example>
-      <title>Reordering and Restructuring for Readability</title>
-      <para>This (real-life) example shows how how you can increase the readability of the information by removing  unnecessary words and restructuring content.</para>
-      <formalpara>
-        <title>Original Wording</title>
-        <para>
+<!--<section>
+  <title>Conversational Language</title>
+  <para>It is often tempting  to write like you are talking to someone face to face.  It is an easy way of writing, and allows you to write using a stream of consciousness method.   </para>
+  <para>The problem with this type of writing style, is that it is very hard for the reader to quickly grasp a concept.  They must read through the content and try to extract the information that is relevant to them from the information you have provided them.  The writing style often leads to verbosity (or wordiness) and this can quickly frustrate readers.</para>
+  <para>The following examples will show you how pruning your writing can cut down the word count, and allow readers to easily understand the information they are reading.</para>
+  <example>
+    <title>Reordering and Restructuring for Readability</title>
+    <para>This (real-life) example shows how how you can increase the readability of the information by removing  unnecessary words and restructuring content.</para>
+    <formalpara>
+      <title>Original Wording</title>
+      <para>
 As the SIP Servlets Server employs JBoss Application Server as its servlet container and takes advantage of its capabilities, including clustering and failover, familiarity with the basics of JBoss Clustering is helpful. Refer to this chapter in the Clustering Guide for background or if you wish to dig further: JBoss Application Server Clustering Guide. </para>
-      </formalpara>
-      <formalpara>
-        <title>Suggested Wording</title>
-        <para>To further understand the complete clustering and failover capabilities of the JBoss Application Server, refer to the JBoss Application Server Clustering Guide.
+    </formalpara>
+    <formalpara>
+      <title>Suggested Wording</title>
+      <para>To further understand the complete clustering and failover capabilities of the JBoss Application Server, refer to the JBoss Application Server Clustering Guide.
 </para>
-      </formalpara>
-      <formalpara>
-        <title>Result</title>
-        <para>After the edit, notice how concise the paragraph is.  Also notice how the colloquialism in the reference has been removed.  Depending on the reader&apos;s language skills, the usage of &quot;dig further&quot; might not be understood.  When this is translated to other languages, the meaning of this sentence might also be lost in translation.</para>
-      </formalpara>
-    </example>
-    <example>
-      <title>Writing Like You Are Speaking</title>
-      <para>This (real-life) example demonstrates how writing like you are speaking can result in unordered concepts, and reduces the effectiveness of the information you are writing about.</para>
-      <formalpara>
-        <title>Original Wording</title>
-        <para>An important note here with regard to that second scenario that according to the SIP Servlets 1.1 specification, Sections 15.1.2 The Role of Applications and 15.1.4 Application Independence, the Call Blocking application cannot just do nothing with the request and expect the container to route the request in its place (either to a next application in chain if another one is present or to the outside world if none is present). The Application has to do something with request (either proxy it or act as a UAS)</para>
-      </formalpara>
-      <formalpara>
-        <title>Suggested Wording</title>
-        <para>For the second scenario, the Call Blocking application must be responsible for routing the request to the next chained application (internally) or to the outside world (externally).  The application must either proxy, or act as a User Agent Server (UAS), for the request.  This requirement is stated in greater detail within the SIP Servlets 1.1 specification&apos;s &quot;The Role of Applications&quot; and &quot;Application Independence&quot; sections.</para>
-      </formalpara>
-      <formalpara>
-        <title>Result</title>
-        <para>In the original wording, the main point (that the application must handle the routing, and how it must do this) was right at the end of the paragraph.  In the suggested wording, the application requirement has been moved up to the front of the paragraph.  This allows the reader to quickly decide whether the information relates to them.  The references, which were interrupting the sentence flow, are now at the end of the paragraph.  </para>
-      </formalpara>
-    </example>
-  </section>
-</chapter>
+    </formalpara>
+    <formalpara>
+      <title>Result</title>
+      <para>After the edit, notice how concise the paragraph is.  Also notice how the colloquialism in the reference has been removed.  Depending on the reader&apos;s language skills, the usage of &quot;dig further&quot; might not be understood.  When this is translated to other languages, the meaning of this sentence might also be lost in translation.</para>
+    </formalpara>
+  </example>
+  <example>
+    <title>Writing Like You Are Speaking</title>
+    <para>This (real-life) example demonstrates how writing like you are speaking can result in unordered concepts, and reduces the effectiveness of the information you are writing about.</para>
+    <formalpara>
+      <title>Original Wording</title>
+      <para>An important note here with regard to that second scenario that according to the SIP Servlets 1.1 specification, Sections 15.1.2 The Role of Applications and 15.1.4 Application Independence, the Call Blocking application cannot just do nothing with the request and expect the container to route the request in its place (either to a next application in chain if another one is present or to the outside world if none is present). The Application has to do something with request (either proxy it or act as a UAS)</para>
+    </formalpara>
+    <formalpara>
+      <title>Suggested Wording</title>
+      <para>For the second scenario, the Call Blocking application must be responsible for routing the request to the next chained application (internally) or to the outside world (externally).  The application must either proxy, or act as a User Agent Server (UAS), for the request.  This requirement is stated in greater detail within the SIP Servlets 1.1 specification&apos;s &quot;The Role of Applications&quot; and &quot;Application Independence&quot; sections.</para>
+    </formalpara>
+    <formalpara>
+      <title>Result</title>
+      <para>In the original wording, the main point (that the application must handle the routing, and how it must do this) was right at the end of the paragraph.  In the suggested wording, the application requirement has been moved up to the front of the paragraph.  This allows the reader to quickly decide whether the information relates to them.  The references, which were interrupting the sentence flow, are now at the end of the paragraph.  </para>
+    </formalpara>
+  </example>
+</section>--></chapter>

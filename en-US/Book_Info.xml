@@ -7,7 +7,8 @@
   <title>JBoss Documentation Guide</title>
   <subtitle>The canonical reference for JBoss developers and writers </subtitle>
   <productname>PressGang</productname>
-  <edition>1.4</edition>
+  <productnumber>1.6</productnumber>
+  <edition>1.6</edition>
   <pubsnumber>1</pubsnumber>
   <abstract>
     <para>Throughout JBoss Middleware, the amount of user documentation is
