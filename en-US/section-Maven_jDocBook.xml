@@ -5,8 +5,8 @@
 ]>
 <section id="mj-Maven_jDocBook">
   <title>Maven jDocBook</title>
-  <para><application>Apache Maven</application> (or <application>Maven</application>, as it is commonly referred to)  is a project management tool that is used extensively throughout JBoss Middleware.  As a JBoss developer, you are  probably quite familiar with <application>Maven</application> from a software project management perspective.  </para>
+  <para><application>Apache Maven</application> (or <application>Maven</application>, as it is commonly referred to)  is a project management tool used extensively throughout JBoss Middleware.  As a JBoss developer, you are  probably quite familiar with <application>Maven</application> from a software project management perspective.  </para>
   <para>There are some excellent resources available for developers that are new to <application>Maven</application>.  For further reading, refer to the  <ulink url="http://maven.apache.org/articles.html">Apache Maven homepage</ulink>.     </para>
-  <para><application>Maven</application> supports many plug-ins which extend the functionality of the tool.  One such plug-in is the maven-jdocbook-plug-in (or <application>jDocBook</application> as it is commonly referred to). The plug-in checks the validity of your XML documentation prior to publish, and transforms the XML source to a number of output formats as part of your Maven build.  </para>
+  <para><application>Maven</application> supports many plug-ins which extend the functionality of the tool.  One such plug-in is the maven-jdocbook-plugin (or <application>jDocBook</application> as it is commonly referred to). The plug-in checks the validity of your XML documentation prior to publish, and transforms the XML source to a number of output formats as part of your Maven build.  </para>
   <para>Rather than relying  on locally installed  DocBook transformation engines, <application>jDocBook</application> utilizes the <application>Maven</application> dependency mechanism to import the components it requires to execute the publish.  <application>SAXON</application> is used as the transformer factory for the XML source.</para>
 </section>
