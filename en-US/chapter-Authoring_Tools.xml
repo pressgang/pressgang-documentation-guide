@@ -13,8 +13,7 @@
   <section>
     <title>Project Documentation Editor</title>
     <para>You may need your community to contribute directly to documentation without the upskill time required to learn DocBook XML to the required level. Or you may need to seek heavy collaboration on a document your team is writing. In these cases,  DocBook XML may not be the best choice for your project.</para>
-    <para>The JBoss Community team offers an online documentation editor called <ulink url="https://docs.jboss.org/author/dashboard.action">Project Documentation Editor</ulink> that allows individual contributors and  teams to quickly contribute community documentation using a web-based  interface and clearly defined wiki markup. </para>
-    <para>The wiki markup you use in Confluence is governed by the <ulink url="https://docs.jboss.org/author/display/AUTHGUIDE/Introduction">Confluence Authoring Guide</ulink>. Follow the  Confluence Authoring Guide closely to ensure you are writing wiki documentation that will be exported cleanly from the system.</para>
-    <para>The Confluence Authoring Guide references the JBoss Documentation Guide  when you export your documentation to DocBook XML,  and publish the exported XML to PDF or HTML formats.</para>
+    <para>The JBoss Community Team offers an online Project Documentation Editor ( <ulink url="https://docs.jboss.org/author/dashboard.action">Confluence</ulink>) that allows individual contributors and  teams to quickly contribute community documentation using a web-based  interface and clearly defined wiki markup. </para>
+    <para>The <ulink url="https://docs.jboss.org/author/display/AUTHGUIDE/Introduction">Authoring Guide</ulink> describes which wiki markup to use, how to export it to DocBook XML, and how to transform the DocBook XML into a structure suitable for publishing.</para>
   </section>
 </chapter>
