@@ -8,5 +8,5 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="fallback_content/section-Share_and_Share_Alike.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="fallback_content/Conventions.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="fallback_content/Feedback.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="fallback_content/section-Acknowledgements.xml" encoding="UTF-8"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="fallback_content/section-Acknowledgements.xml"/>
 </preface>
