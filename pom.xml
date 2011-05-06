@@ -4,12 +4,20 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.jboss.project</groupId>
-	<artifactId>${docname}-${translation}</artifactId>
-	<version>1.0</version>
-	<packaging>jdocbook</packaging>
-	<name>${bookname}-(${translation})</name>
+	<groupId>org.jboss.pressgang</groupId>
+	<artifactId>pressgang-documenation-guide</artifactId>
+  <packaging>jdocbook</packaging>
+  <version>1.1.0-SNAPSHOT</version>
+  
+	<name>JBoss Documentation Guide</name>
+  <description>JBoss Documentation Guide</description>
+  <url>http://www.jboss.org/pressgang/</url>
 
+  <organization>
+    <name>JBoss.org</name>
+    <url>http://www.jboss.org</url>
+  </organization>
+  
   <properties>
     <translation>en-US</translation>
     <docname>JBoss_Documentation_Guide</docname>
@@ -17,47 +25,34 @@
   </properties> 
 
   <repositories>
-      <repository>
-          <id>jboss-public-repository-group</id>
-          <name>JBoss Public Maven Repository Group</name>
-          <url>https://repository.jboss.org/nexus/content/groups/public/</url>
-          <layout>default</layout>
-          <releases>
-            <enabled>true</enabled>
-            <updatePolicy>never</updatePolicy>
-          </releases>
-          <snapshots>
-            <enabled>true</enabled>
-            <updatePolicy>never</updatePolicy>
-          </snapshots>
-      </repository>
+    <!-- Conventions are described in http://community.jboss.org/wiki/MavenGettingStarted-Developers -->
+    <repository>
+      <id>jboss-public-repository-group</id>
+      <name>JBoss Public Repository Group</name>
+      <url>http://repository.jboss.org/nexus/content/groups/public/</url>
+      <releases>
+        <enabled>true</enabled>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>daily</updatePolicy>
+      </snapshots>
+    </repository>
   </repositories>
   <pluginRepositories>
     <pluginRepository>
-          <id>jboss-public-repository-group</id>
-          <name>JBoss Public Maven Repository Group</name>
-          <url>https://repository.jboss.org/nexus/content/groups/public/</url>
-          <layout>default</layout>
-          <releases>
-            <enabled>true</enabled>
-          </releases>
-          <snapshots>
-            <enabled>true</enabled>
-          </snapshots>
+      <id>jboss-public-repository-group</id>
+      <name>JBoss Public Repository Group</name>
+      <url>http://repository.jboss.org/nexus/content/groups/public/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
     </pluginRepository>
-    <!--pluginRepository>
-          <id>jboss-snapshot-repository-group</id>
-          <name>JBoss Snapshot Maven Repository Group</name>
-          <url>https://repository.jboss.org/nexus/content/groups/snapshot/</url>
-          <layout>default</layout>
-          <releases>
-            <enabled>true</enabled>
-          </releases>
-          <snapshots>
-            <enabled>true</enabled>
-          </snapshots>
-    </pluginRepository-->
- </pluginRepositories>
+  </pluginRepositories>
   
   <profiles>
 
