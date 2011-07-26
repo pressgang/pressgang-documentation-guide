@@ -10,19 +10,20 @@
   <para>You may not be aware, but this element is used extensively throughout this user guide to capture the steps involved in the Authoring Process.</para>
   <para>The biggest advantage to using a <sgmltag>&lt;procedure&gt;</sgmltag> element is that it uses the <sgmltag>&lt;step&gt;</sgmltag> element.  <sgmltag>&lt;step&gt;</sgmltag> elements  can contain a much wider variety of child elements than the <sgmltag>&lt;listitem&gt;</sgmltag> element used in <sgmltag>&lt;itemizedlist&gt;</sgmltag> and <sgmltag>&lt;orderedlist&gt;</sgmltag>.</para>
   <para>The  XML form of a procedure has a number of mandatory elements.  For a complete list, refer to the  <ulink url="http://www.docbook.org/tdg/en/html/procedure.html">DocBook.org <sgmltag>&lt;procedure&gt;</sgmltag> page</ulink>.    Be sure to visit the pages of the child elements that the <sgmltag>&lt;procedure&gt;</sgmltag> element supports, particularly the  <ulink url="http://www.docbook.org/tdg/en/html/procedure.html"><sgmltag>&lt;step&gt;</sgmltag> element</ulink>.</para>
-  <para>For each procedure, add a lead-in sentence which clarifies the procedure's purpose, for example: "Complete this procedure to configure the television".</para>
+  <para>For each procedure, add a lead-in sentence which clarifies the procedure's purpose, for example: "Complete &lt;xref linkend="<replaceable>proc-Example_procedure</replaceable>" /&gt; to correctly install the television".</para>
   <formalpara>
     <title>ID Attributes for Procedures</title>
     <para>To allow cross-referencing within the book, the <varname>id</varname> attribute must be set for each procedure.  The format for the procedure ID is explicit, to ensure cross-referencing within each user guide is consistent.  For more information about links and references, refer to <xref linkend="sgl-Structure_Guidlines_Links"/>   </para>
   </formalpara>
   <para>The format to use for <sgmltag>&lt;procedure&gt;</sgmltag> IDs throughout your documentation is as follows:</para>
   <para><code>&lt;procedure id=&quot;proc-<replaceable>[procedure_title]</replaceable>&quot;&gt;</code></para>
-  <para>Replace the <replaceable>[procedure_title]</replaceable> text with the actual title of the procedure.  Exclude any XML special characters from your ID.</para>
   <para>The minimum set of elements required for all procedure lists in JBoss Documentation are described in the following example:</para>
+  <para>Replace the <replaceable>[procedure_title]</replaceable> text with the actual title of the procedure.  Exclude any XML special characters from your ID.</para>
   <example>
     <title>&lt;procedure&gt; Mandatory Elements</title>
     <programlisting>&lt;procedure id=&quot;proc-Procedure_Title&quot;&gt;
   &lt;title&gt;&amp;lt;procedure&amp;gt; Title&lt;/title&gt;
+  &lt;para&gt;Lead-in sentence&lt;para&gt;
   &lt;step&gt;
     &lt;title&gt;Step One Title&lt;/title&gt;
     &lt;para&gt;Step one info.&lt;/para&gt;
@@ -34,6 +35,7 @@
     <para>The XML structure looks like this when published:</para>
     <procedure>
       <title>&lt;procedure&gt; Title</title>
+      <para>Lead-in sentence</para>
       <step>
         <title>Step One Title</title>
         <para>Step one info.</para>
