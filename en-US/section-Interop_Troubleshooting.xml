@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "JBoss_Documentation_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="icp-Interop_Troubleshooting">
+  <title>Troubleshooting</title>
+  <qandaset>
+    <qandaentry>
+      <question>
+        <para>
+          I can build documents fine but from some point onward the text is all bold. What is wrong?
+        </para>
+      </question>
+      <answer>
+        <para>
+          This can occur if Maven encounters empty tags, unresolved entities or images in SVG format.
+          Resolve this by correcting the empty tags and/or unresolved entities. For images, convert
+          them to PNG format.
+        </para>
+      </answer>
+    </qandaentry>
+  </qandaset>
+
+</section>

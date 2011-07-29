@@ -13,4 +13,5 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="section-Interop_Configure_Pom.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="section-Interop_Publish_With_jDocBook.xml" encoding="UTF-8"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="section-Interop_Begin_Authoring.xml" encoding="UTF-8"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="section-Interop_Troubleshooting.xml" encoding="UTF-8"/>
 </section>
