@@ -23,6 +23,12 @@
     <docname>JBoss_Documentation_Guide</docname>
   </properties>
 
+  <scm>
+    <connection>scm:git:git@github.com:pressgang/pressgang-documentation-guide.git</connection>
+    <developerConnection>scm:git:git@github.com:pressgang/pressgang-documentation-guide.git</developerConnection>
+    <url>https://github.com/pressgang/pressgang-documentation-guide</url>
+  </scm>
+
   <repositories>
     <!-- Conventions are described in http://community.jboss.org/wiki/MavenGettingStarted-Developers -->
     <repository>
