@@ -26,7 +26,7 @@
       </listitem>
     </varlistentry>
     <varlistentry>
-      <term>Once Source, multiple outputs</term>
+      <term>One Source, multiple outputs</term>
       <listitem>
         <para>XML allows you to publish your XML content to multiple output formats.  You can output your documentation to PDF, single-page HTML   and multiple-page HTML.  </para>
       </listitem>
